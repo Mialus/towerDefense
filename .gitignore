@@ -1,6 +1,6 @@
 # Ignoring auto-created files by Code::Blocks
-bin\
-obj\
+bin/
+obj/
 *.layout
 
 # Compiled Object files

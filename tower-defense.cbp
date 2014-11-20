@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="tower-defense" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/tower-defense" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="bin/Debug/." />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-std=c++11" />
+					<Add option="-g" />
+				</Compiler>
+				<Linker>
+					<Add library="sfml-graphics-d" />
+					<Add library="sfml-network-d" />
+					<Add library="sfml-audio-d" />
+					<Add library="sfml-window-d" />
+					<Add library="sfml-system-d" />
+					<Add library="libboost_system-mgw48-mt-d-1_57" />
+					<Add library="libboost_filesystem-mgw48-mt-d-1_57" />
+				</Linker>
+				<ExtraCommands>
+					<Add after="xcopy res bin\Debug\res /H /S /E /Y /V /I /J" />
+					<Mode after="always" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/tower-defense" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="bin/Release" />
+				<Option object_output="obj/Release/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="-std=c++11" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="sfml-graphics" />
+					<Add library="sfml-network" />
+					<Add library="sfml-audio" />
+					<Add library="sfml-window" />
+					<Add library="sfml-system" />
+					<Add library="libboost_system-mgw48-mt-1_57" />
+					<Add library="libboost_filesystem-mgw48-mt-1_57" />
+				</Linker>
+				<ExtraCommands>
+					<Add after="xcopy res bin\Release\res /H /S /E /Y /V /I /J" />
+					<Mode after="always" />
+				</ExtraCommands>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-std=c++11" />
+			<Add option="-Wall" />
+			<Add directory="E:/Dev/boost_1_57_0" />
+			<Add directory="E:/Dev/SFML-2.1/include" />
+			<Add directory="include" />
+		</Compiler>
+		<Linker>
+			<Add directory="E:/Dev/boost_1_57_0/stage/lib" />
+			<Add directory="E:/Dev/SFML-2.1/lib" />
+		</Linker>
+		<Unit filename="include/towerdefense/Animation.h" />
+		<Unit filename="include/towerdefense/Entity.h" />
+		<Unit filename="include/towerdefense/Event.h" />
+		<Unit filename="include/towerdefense/Random.h" />
+		<Unit filename="include/towerdefense/Resource.h" />
+		<Unit filename="include/towerdefense/World.h" />
+		<Unit filename="lib/Animation.cpp" />
+		<Unit filename="lib/Entity.cpp" />
+		<Unit filename="lib/Random.cpp" />
+		<Unit filename="lib/Resource.cpp" />
+		<Unit filename="lib/World.cpp" />
+		<Unit filename="src/bin/config.h.in" />
+		<Unit filename="src/bin/example_animation.cpp" />
+		<Unit filename="src/bin/main.cpp" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
