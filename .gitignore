@@ -2,8 +2,6 @@
 bin/
 obj/
 *.layout
-*.cbp
-*.depend
 
 # Compiled Object files
 *.slo
