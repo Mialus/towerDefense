@@ -7,4 +7,3 @@ This project also needs external libraries:
 
 - SFML2.1
 - Boost 1.57
-- 
