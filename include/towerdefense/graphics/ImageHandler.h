@@ -1,0 +1,6 @@
+#ifndef IMAGEHANDLER_H
+#define IMAGEHANDLER_H
+
+
+
+#endif // IMAGEHANDLER_H

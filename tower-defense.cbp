@@ -73,6 +73,7 @@
 		<Unit filename="include/towerdefense/Random.h" />
 		<Unit filename="include/towerdefense/Resource.h" />
 		<Unit filename="include/towerdefense/World.h" />
+		<Unit filename="include/towerdefense/graphics/ImageHandler.h" />
 		<Unit filename="lib/Animation.cpp" />
 		<Unit filename="lib/Entity.cpp" />
 		<Unit filename="lib/Random.cpp" />
@@ -81,6 +82,7 @@
 		<Unit filename="src/bin/config.h.in" />
 		<Unit filename="src/bin/example_animation.cpp" />
 		<Unit filename="src/bin/main.cpp" />
+		<Unit filename="src/graphics/ImageHandler.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
