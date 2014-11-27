@@ -15,8 +15,6 @@
 				<Compiler>
 					<Add option="-std=c++11" />
 					<Add option="-g" />
-					<Add directory="D:/SFML-2.1/include" />
-					<Add directory="D:/boost_1_57_0/boost" />
 				</Compiler>
 				<Linker>
 					<Add library="sfml-graphics-d" />
@@ -26,8 +24,6 @@
 					<Add library="sfml-system-d" />
 					<Add library="libboost_system-mgw48-mt-d-1_57" />
 					<Add library="libboost_filesystem-mgw48-mt-d-1_57" />
-					<Add directory="D:/SFML-2.1/lib" />
-					<Add directory="D:/boost_1_57_0/libs" />
 				</Linker>
 				<ExtraCommands>
 					<Add after="xcopy res bin\Debug\res /H /S /E /Y /V /I /J" />
@@ -43,8 +39,6 @@
 				<Compiler>
 					<Add option="-O2" />
 					<Add option="-std=c++11" />
-					<Add directory="D:/SFML-2.1/include" />
-					<Add directory="D:/boost_1_57_0/boost" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -55,8 +49,6 @@
 					<Add library="sfml-system" />
 					<Add library="libboost_system-mgw48-mt-1_57" />
 					<Add library="libboost_filesystem-mgw48-mt-1_57" />
-					<Add directory="D:/SFML-2.1/lib" />
-					<Add directory="D:/boost_1_57_0/libs" />
 				</Linker>
 				<ExtraCommands>
 					<Add after="xcopy res bin\Release\res /H /S /E /Y /V /I /J" />
@@ -67,13 +59,13 @@
 		<Compiler>
 			<Add option="-std=c++11" />
 			<Add option="-Wall" />
-			<Add directory="D:/boost_1_57_0" />
-			<Add directory="D:/SFML-2.1/include" />
+			<Add directory="E:/Dev/boost_1_57_0" />
+			<Add directory="E:/Dev/SFML-2.1/include" />
 			<Add directory="include" />
 		</Compiler>
 		<Linker>
-			<Add directory="D:/boost_1_57_0/stage/lib" />
-			<Add directory="D:/SFML-2.1/lib" />
+			<Add directory="E:/Dev/boost_1_57_0/stage/lib" />
+			<Add directory="E:/Dev/SFML-2.1/lib" />
 		</Linker>
 		<Unit filename="include/towerdefense/Animation.h" />
 		<Unit filename="include/towerdefense/Entity.h" />
@@ -82,6 +74,7 @@
 		<Unit filename="include/towerdefense/Resource.h" />
 		<Unit filename="include/towerdefense/World.h" />
 		<Unit filename="include/towerdefense/graphics/ImageHandler.h" />
+		<Unit filename="include/towerdefense/graphics/Map.h" />
 		<Unit filename="lib/Animation.cpp" />
 		<Unit filename="lib/Entity.cpp" />
 		<Unit filename="lib/Random.cpp" />
@@ -91,6 +84,7 @@
 		<Unit filename="src/bin/example_animation.cpp" />
 		<Unit filename="src/bin/main.cpp" />
 		<Unit filename="src/graphics/ImageHandler.cpp" />
+		<Unit filename="src/graphics/Map.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
