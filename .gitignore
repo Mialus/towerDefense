@@ -1,9 +1,11 @@
-# Ignoring auto-created files by Code::Blocks
+# Ignoring auto-created files by Code::Blocks and base file's project
 bin/
 obj/
+help/
 *.layout
 *.depend
 *.cbp
+tower-defense.cbp
 
 # Compiled Object files
 *.slo

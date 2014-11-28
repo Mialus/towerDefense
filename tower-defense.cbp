@@ -59,13 +59,13 @@
 		<Compiler>
 			<Add option="-std=c++11" />
 			<Add option="-Wall" />
-			<Add directory="E:/Dev/boost_1_57_0" />
-			<Add directory="E:/Dev/SFML-2.1/include" />
+			<Add directory="D:/boost_1_57_0" />
+			<Add directory="D:/SFML-2.1/include" />
 			<Add directory="include" />
 		</Compiler>
 		<Linker>
-			<Add directory="E:/Dev/boost_1_57_0/stage/lib" />
-			<Add directory="E:/Dev/SFML-2.1/lib" />
+			<Add directory="D:/boost_1_57_0/stage/lib" />
+			<Add directory="D:/SFML-2.1/lib" />
 		</Linker>
 		<Unit filename="include/towerdefense/Animation.h" />
 		<Unit filename="include/towerdefense/Entity.h" />
@@ -83,8 +83,12 @@
 		<Unit filename="src/bin/config.h.in" />
 		<Unit filename="src/bin/example_animation.cpp" />
 		<Unit filename="src/bin/main.cpp" />
+		<Unit filename="src/computer/Ennemy.cpp" />
+		<Unit filename="src/computer/Ennemy.h" />
 		<Unit filename="src/graphics/ImageHandler.cpp" />
+		<Unit filename="src/graphics/ImageHandler.h" />
 		<Unit filename="src/graphics/Map.cpp" />
+		<Unit filename="src/graphics/Map.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
