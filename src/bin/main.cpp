@@ -16,7 +16,7 @@
 #include <towerdefense/World.h>
 
 #include "config.h.in"
-
+/*
 int main() {
   // initialize
   towerdefense::World world;
@@ -63,4 +63,4 @@ int main() {
 
   return 0;
 }
-
+*/
