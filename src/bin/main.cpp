@@ -28,6 +28,7 @@
 namespace fs = boost::filesystem;
 
 int main(int argc, char *argv[]) {
+
   // initialize
   towerdefense::World world;
   sf::RenderWindow window(sf::VideoMode(500, 500), "Tower Defense (version " GAME_VERSION ")");
@@ -84,4 +85,3 @@ int main(int argc, char *argv[]) {
 
   return 0;
 }
-
