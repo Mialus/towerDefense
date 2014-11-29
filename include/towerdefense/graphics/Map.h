@@ -1,14 +1,27 @@
 #ifndef MAP_H
 #define MAP_H
 
-
-
-#endif // MAP_H
-
 #include <vector>
-#include <tmx/Map.h>
 #include <boost/filesystem.hpp>
 
+#include <towerdefense/Resource.h>
+
+namespace towerdefense{
+
+    class Map {
+public:
+        Map(ResourceManager manager);
+        ~Map();
+
+        void update();
+        void render();
+private:
+        FILE *m_level;
+    };
+}
+
+#endif // MAP_H
+/*
 #include <gzzzt/client/Resource.h>
 #include <gzzzt/client/ClientEntity.h>
 #include <gzzzt/shared/Block.h>
@@ -43,3 +56,4 @@ namespace gzzzt {
 
 
 #endif // GZZZT_CLIENT_MAP_H
+//*/

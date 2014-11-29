@@ -13,18 +13,39 @@
  * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
+
+#include <iostream>
+
+#include <towerdefense/Resource.h>
 #include <towerdefense/World.h>
+#include <towerdefense/graphics/Map.h>
+
+#include <boost/filesystem.hpp>
+#include <SFML/Graphics.hpp>
 
 #include "config.h.in"
 
-int main() {
+namespace fs = boost::filesystem;
+
+int main(int argc, char *argv[]) {
   // initialize
   towerdefense::World world;
   sf::RenderWindow window(sf::VideoMode(500, 500), "Tower Defense (version " GAME_VERSION ")");
   window.setKeyRepeatEnabled(false);
 
   // load resources
+  fs::path bindir_path(argv[0]);
+  bindir_path = bindir_path.parent_path();
+  fs::path datadir_path = bindir_path / fs::path("\\res\\maps");
 
+  std::cout << "Path: " << datadir_path << std::endl;
+
+  towerdefense::ResourceManager manager;
+
+  manager.addSearchDir(datadir_path.string());
+  manager.addSearchDir(GAME_DATADIR);
+
+  towerdefense::Map *mapLevel = new towerdefense::Map(manager);
 
   // add entities
 

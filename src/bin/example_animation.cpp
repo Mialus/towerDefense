@@ -25,7 +25,7 @@
 #include <towerdefense/World.h>
 
 #include "config.h.in"
-/*
+
 namespace fs = boost::filesystem;
 
 class Ninja : public towerdefense::Entity, public sf::Transformable {
@@ -81,7 +81,7 @@ private:
   sf::Texture *m_texture_idle = nullptr;
   towerdefense::Animation m_texture_walking;
 };
-
+/*
 int main(int argc, char *argv[]) {
   // initialize
   towerdefense::World world;
@@ -154,4 +154,4 @@ int main(int argc, char *argv[]) {
 
   return 0;
 }
-*/
+//*/
