@@ -1,4 +1,4 @@
-#include "Ennemy.h"
+#include <towerdefense/computer/Ennemy.h>
 
 void Ennemy::SetCoin(int coin)
 {
