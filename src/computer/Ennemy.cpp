@@ -86,6 +86,7 @@ sf::Sprite Ennemy::Show()
 
 
 //Main de test
+/*
 int main() {
   // initialize
   Ennemy enn = Ennemy();
@@ -98,3 +99,4 @@ int main() {
   }
 
 }
+//*/

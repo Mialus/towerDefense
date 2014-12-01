@@ -67,10 +67,6 @@ namespace towerdefense {
     return getResource(path, m_textures);
   }
 
-  FILE *ResourceManager::getLevel(const std::string& path){
-    return getResource(path, m_levels);
-  }
-
   template<typename T>
   T *ResourceManager::getResource(const std::string& path, ResourceCache<T>& cache) {
     auto res = cache.findResource(path);

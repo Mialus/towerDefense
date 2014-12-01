@@ -4,7 +4,7 @@
 #include <sfml/Graphics.hpp>
 #include <sfml/Window.hpp>
 #include <towerdefense/World.h>
-#include "../bin/config.h.in"
+#include "../src/bin/config.h.in"
 
 class Ennemy
 {

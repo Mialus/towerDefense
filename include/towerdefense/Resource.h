@@ -39,7 +39,6 @@ namespace towerdefense {
   extern template class ResourceCache<sf::Font>;
   extern template class ResourceCache<sf::SoundBuffer>;
   extern template class ResourceCache<sf::Texture>;
-  extern template class ResourceCache<FILE>;
 
   class ResourceManager {
   public:
@@ -48,7 +47,6 @@ namespace towerdefense {
     sf::Font *getFont(const std::string& path);
     sf::SoundBuffer *getSoundBuffer(const std::string& path);
     sf::Texture *getTexture(const std::string& path);
-    FILE *getLevel(const std::string& path);
 
   private:
     std::vector<std::string> m_searchdirs;
@@ -56,7 +54,6 @@ namespace towerdefense {
     ResourceCache<sf::Font> m_fonts;
     ResourceCache<sf::SoundBuffer> m_sounds;
     ResourceCache<sf::Texture> m_textures;
-    ResourceCache<FILE> m_levels;
 
   private:
     template<typename T>

@@ -36,3 +36,7 @@ tower-defense.depend
 *.exe
 *.out
 *.app
+*.cbp
+tower-defense.cbp
+*.depend
+tower-defense.depend
