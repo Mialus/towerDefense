@@ -3691,12 +3691,12 @@
 	<SFML/System/Vector2.hpp>
 	<SFML/Graphics/Color.hpp>
 
-1417102213 source:e:\dev\github\towerdefense\lib\resource.cpp
+1417285934 source:e:\dev\github\towerdefense\lib\resource.cpp
 	<towerdefense/Resource.h>
 	<iostream>
 	<boost/filesystem.hpp>
 
-1417102073 e:\dev\github\towerdefense\include\towerdefense\resource.h
+1417285925 e:\dev\github\towerdefense\include\towerdefense\resource.h
 	<string>
 	<map>
 	<memory>
@@ -3736,10 +3736,11 @@
 
 1416508599 e:\dev\github\towerdefense\src\bin\config.h.in
 
-1417102312 source:e:\dev\github\towerdefense\src\bin\main.cpp
+1417366784 source:e:\dev\github\towerdefense\src\bin\main.cpp
 	<iostream>
 	<towerdefense/Resource.h>
 	<towerdefense/World.h>
+	"towerdefense/graphics/Map.h"
 	<boost/filesystem.hpp>
 	<SFML/Graphics.hpp>
 	"config.h.in"
@@ -7764,18 +7765,32 @@
 
 1416758606 d:\boost_1_57_0\boost\thread
 
-1416933976 source:e:\dev\github\towerdefense\src\graphics\imagehandler.cpp
+1417279909 source:e:\dev\github\towerdefense\src\graphics\imagehandler.cpp
 	<towerdefense/graphics/ImageHandler.h>
 
 1416933909 e:\dev\github\towerdefense\include\towerdefense\graphics\imagehandler.h
 
-1416945973 source:e:\dev\github\towerdefense\src\graphics\map.cpp
+1417391453 source:e:\dev\github\towerdefense\src\graphics\map.cpp
 	<towerdefense/graphics/Map.h>
-
-1417100229 e:\dev\github\towerdefense\include\towerdefense\graphics\map.h
-	<vector>
 	<boost/filesystem.hpp>
 	<towerdefense/Resource.h>
-	<gzzzt/client/Resource.h>
-	<gzzzt/client/ClientEntity.h>
-	<gzzzt/shared/Block.h>
+	<towerdefense/World.h>
+	<SFML/Graphics.hpp>
+	"../src/bin/config.h.in"
+
+1417462734 e:\dev\github\towerdefense\include\towerdefense\graphics\map.h
+	<vector>
+	<iostream>
+	<fstream>
+	<SFML/Graphics.hpp>
+	<towerdefense/Entity.h>
+
+1417283069 source:e:\dev\github\towerdefense\src\computer\ennemy.cpp
+	<towerdefense/computer/Ennemy.h>
+
+1417279720 e:\dev\github\towerdefense\include\towerdefense\computer\ennemy.h
+	<sfml/Graphics.hpp>
+	<sfml/Window.hpp>
+	<towerdefense/World.h>
+	"../src/bin/config.h.in"
+

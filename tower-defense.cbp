@@ -59,13 +59,13 @@
 		<Compiler>
 			<Add option="-std=c++11" />
 			<Add option="-Wall" />
-			<Add directory="D:/boost_1_57_0" />
-			<Add directory="D:/SFML-2.1/include" />
+			<Add directory="E:/Dev/boost_1_57_0" />
+			<Add directory="E:/Dev/SFML-2.1/include" />
 			<Add directory="include" />
 		</Compiler>
 		<Linker>
-			<Add directory="D:/boost_1_57_0/stage/lib" />
-			<Add directory="D:/SFML-2.1/lib" />
+			<Add directory="E:/Dev/boost_1_57_0/stage/lib" />
+			<Add directory="E:/Dev/SFML-2.1/lib" />
 		</Linker>
 		<Unit filename="include/towerdefense/Animation.h" />
 		<Unit filename="include/towerdefense/Entity.h" />
@@ -73,6 +73,7 @@
 		<Unit filename="include/towerdefense/Random.h" />
 		<Unit filename="include/towerdefense/Resource.h" />
 		<Unit filename="include/towerdefense/World.h" />
+		<Unit filename="include/towerdefense/computer/Ennemy.h" />
 		<Unit filename="include/towerdefense/graphics/ImageHandler.h" />
 		<Unit filename="include/towerdefense/graphics/Map.h" />
 		<Unit filename="lib/Animation.cpp" />
@@ -84,11 +85,8 @@
 		<Unit filename="src/bin/example_animation.cpp" />
 		<Unit filename="src/bin/main.cpp" />
 		<Unit filename="src/computer/Ennemy.cpp" />
-		<Unit filename="src/computer/Ennemy.h" />
 		<Unit filename="src/graphics/ImageHandler.cpp" />
-		<Unit filename="src/graphics/ImageHandler.h" />
 		<Unit filename="src/graphics/Map.cpp" />
-		<Unit filename="src/graphics/Map.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
