@@ -8,11 +8,11 @@
 namespace towerdefense {
 
   Map::Map(){
-    std::ifstream levelTxt("res/maps/level1.txt");
+    std::ifstream levelTxt("res/maps/level2.txt");
     std::string line;
 
-    m_tileWidth=10;
-    m_tileHeight=10;
+    m_tileWidth=500/10;
+    m_tileHeight=500/5;
     m_width=500;
     m_height=500;
 
@@ -59,7 +59,7 @@ namespace towerdefense {
 
     for(unsigned int i=0; i<m_level.size(); ++i){
       std::string& line = m_level[i];
-      for(unsigned int j=0; j<line.size(); ++i){
+      for(unsigned int j=0; j<line.size(); ++j){
         switch(line[j]){
         case '#':
           sprite = m_spriteTower;
@@ -86,17 +86,61 @@ namespace towerdefense {
 
 }
 
+namespace fs = boost::filesystem;
+namespace td = towerdefense;
 //*
-int main() {
-  // initialize
-  towerdefense::World world;
-  sf::RenderWindow window(sf::VideoMode(500, 500), "Tower Defense (version " GAME_VERSION ")");
-  towerdefense::Map *mapLevel;
+int main(int argc, char *argv[]) {
 
-  while (window.isOpen())
-  {
-     mapLevel->render(window);
+    // initialize
+  td::World world;
+  sf::RenderWindow window(sf::VideoMode(500, 500), "Tower Defense (version " GAME_VERSION ")");
+  window.setKeyRepeatEnabled(false);
+  td::Map mapLevel;
+
+  // load resources
+  fs::path bindir_path(argv[0]);
+  bindir_path = bindir_path.parent_path();
+  fs::path datadir_path = bindir_path / fs::path("\\res\\maps");
+
+  std::cout << "Path: " << datadir_path << std::endl;
+
+  td::ResourceManager manager;
+
+  manager.addSearchDir(datadir_path.string());
+  manager.addSearchDir(GAME_DATADIR);
+
+  // add entities
+
+  // main loop
+  sf::Clock clock;
+  while (window.isOpen()) {
+    // input
+    sf::Event event;
+    while (window.pollEvent(event)) {
+      if (event.type == sf::Event::Closed) {
+        window.close();
+      } else if (event.type == sf::Event::KeyPressed) {
+
+        switch (event.key.code) {
+          case sf::Keyboard::Escape:
+            window.close();
+            break;
+
+          default:
+            break;
+        }
+
+      }
+    }
+
+    // update
+    sf::Time elapsed = clock.restart();
+    world.update(elapsed.asSeconds());
+    mapLevel.render(window);
+
+    window.display();
   }
 
+  return 0;
 }
 //*/
