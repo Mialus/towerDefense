@@ -9,13 +9,15 @@
 class Ennemy
 {
 public:
-    Ennemy();
-   // Ennemy(int speed,int life,int level,int coin,const char* image);
+
+    Ennemy(int speed,int life,int level,int coin,const char* image, int defense);
+    void SetDefense(int defense,int level);
     void SetSpeed(int speed);
     void SetLife(int life);
     void SetLevel(int level);
     void SetCoin(int coin);
     void SetImage(const char* image);
+    int getDefense();
     int GetSpeed();
     int GetLife();
     int GetLevel();
@@ -25,6 +27,7 @@ public:
 
 
 private:
+    int m_defense;
     int m_level;
     int m_life;
     int m_speed;

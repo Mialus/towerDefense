@@ -10,6 +10,10 @@ void Ennemy::SetLevel(int level)
     m_level=level;
 }
 
+void Ennemy::SetDefense(int def, int lvl){
+    m_defense=def*lvl;
+}
+
 void Ennemy::SetLife(int life)
 {
     m_life=life;
@@ -50,23 +54,19 @@ const char* Ennemy::GetImage()
     return m_image;
 }
 
-Ennemy::Ennemy()
-{
-    Ennemy::SetLife(50);
-    Ennemy::SetSpeed(1);
-    Ennemy::SetLevel(1);
-    Ennemy::SetCoin(20);
-    Ennemy::SetImage("../../res/computer/enemy.jpg");
+int Ennemy::getDefense(){
+    return m_defense;
 }
 
-/*Ennemy::Ennemy(int speed,int life,int level,int coin,const char* image)
+Ennemy::Ennemy(int speed,int life,int level,int coin,const char* image, int defense)
 {
     Ennemy::SetLife(life);
     Ennemy::SetSpeed(speed);
     Ennemy::SetLevel(level);
     Ennemy::SetCoin(coin);
     Ennemy::SetImage(image);
-}*/
+    Ennemy::SetDefense(defense,level);
+}
 
 sf::Sprite Ennemy::Show()
 {
@@ -83,20 +83,3 @@ sf::Sprite Ennemy::Show()
 
     return spriteEnnemy;
 }
-
-
-//Main de test
-/*
-int main() {
-  // initialize
-  Ennemy enn = Ennemy();
-  towerdefense::World world;
-  sf::RenderWindow window(sf::VideoMode(500, 500), "Tower Defense (version " GAME_VERSION ")");
-
-  while (window.isOpen())
-  {
-//     window.draw(Ennemy::Show());
-  }
-
-}
-//*/
