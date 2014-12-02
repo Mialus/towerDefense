@@ -18,20 +18,19 @@ public:
 
         void update();
         void render(sf::RenderWindow& window);
-        sf::Texture GetTextureEnemy();
-        sf::Sprite GetSpriteEnemy();
-        sf::Texture GetTextureTower();
-        sf::Sprite GetSpriteTower();
+        sf::Sprite GetSprite(int pos);
+
+        static const int PATH = 0;
+        static const int FIELD = 1;
+        static const int START = 2;
+        static const int END = 3;
 private:
         unsigned int m_tileWidth;
         unsigned int m_tileHeight;
         unsigned int m_width;
         unsigned int m_height;
         std::vector<std::string> m_level;
-        sf::Texture m_textureEnemy;
-        sf::Sprite m_spriteEnemy;
-        sf::Texture m_textureTower;
-        sf::Sprite m_spriteTower;
+        std::vector<sf::Sprite> m_sprites;
     };
 }
 

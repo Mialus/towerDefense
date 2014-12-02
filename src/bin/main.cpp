@@ -33,6 +33,7 @@ int main(int argc, char *argv[]) {
   td::World world;
   sf::RenderWindow window(sf::VideoMode(500, 500), "Tower Defense (version " GAME_VERSION ")");
   window.setKeyRepeatEnabled(false);
+  td::Map mapLevel;
 
   // load resources
   fs::path bindir_path(argv[0]);
@@ -46,15 +47,12 @@ int main(int argc, char *argv[]) {
   manager.addSearchDir(datadir_path.string());
   manager.addSearchDir(GAME_DATADIR);
 
-//  td::Map *mapLevel = new td::Map::Map();
-
   // add entities
-
-//  world.addEntity(mapLevel);
 
   // main loop
   sf::Clock clock;
   while (window.isOpen()) {
+
     // input
     sf::Event event;
     while (window.pollEvent(event)) {
@@ -81,6 +79,7 @@ int main(int argc, char *argv[]) {
     // render
     window.clear(sf::Color::White);
     world.render(window);
+    mapLevel.render(window);
     window.display();
   }
 
