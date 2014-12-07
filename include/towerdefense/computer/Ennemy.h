@@ -1,10 +1,11 @@
 #ifndef ENNEMY_H_INCLUDED
 #define ENNEMY_H_INCLUDED
 
-#include <sfml/Graphics.hpp>
-#include <sfml/Window.hpp>
+#include <SFML/Graphics.hpp>
+#include <SFML/Window/Window.hpp>
 #include <towerdefense/World.h>
 #include "../src/bin/config.h.in"
+#include <boost/filesystem.hpp>
 
 class Ennemy
 {
@@ -15,7 +16,6 @@ public:
     void SetSpeed(int speed);
     void SetLife(int life);
     void SetLevel(int level);
-    void moveGo();
     void giveSprite();
     void SetPosX(int pos);
     void SetPosY(int posY);

@@ -108,6 +108,4 @@ sf::Sprite Ennemy::Show(){
 return m_sprite;
 }
 
-void moveGo(){
 
-}

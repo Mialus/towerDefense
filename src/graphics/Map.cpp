@@ -56,6 +56,32 @@ namespace towerdefense {
   void Map::update(){
   }
 
+void Map::moveGo(sf::RenderWindow& window, Ennemy en){
+    unsigned int x=en.getPosX();
+    unsigned int y=en.getPosY();
+      std::string& line= m_level[y+1];
+
+ if(line[x]=='.'){
+ en.SetPosY(y+1);
+ }else {
+    line= m_level[y];
+    if(line[x+1]=='.'){
+    en.SetPosX(x+1);
+    }else{
+        line= m_level[y];
+        if(line[x-1]=='.'){
+        en.SetPosX(x-1);
+        }else{
+            line= m_level[y-1];
+            if(line[x]=='.'){
+            en.SetPosY(y-1);
+            }
+            }
+        }
+       }
+
+}
+
   void Map::render(sf::RenderWindow& window, Ennemy en, Tower to){
     sf::Sprite sprite;
 
@@ -75,8 +101,20 @@ namespace towerdefense {
           sprite = m_spriteEnemy;
           break;
         }
-
+        if(((j)==to.getPosX())&& ((i==to.getPosY()))){// we put the tower on map
+                sprite=to.Show();
+        sprite.setPosition(to.getPosX()*m_tileWidth, to.getPosY()*m_tileHeight);
+        }else{
         sprite.setPosition(j*m_tileWidth, i*m_tileHeight);
+        }
+
+        if(((j)==en.getPosX())&& ((i==en.getPosY()))){//we put the enemy on map
+                sprite=en.Show();
+        sprite.setPosition(en.getPosX()*m_tileWidth, en.getPosY()*m_tileHeight);
+        }else{
+        sprite.setPosition(j*m_tileWidth, i*m_tileHeight);
+        }
+
         window.draw(sprite);
       }
     }
@@ -113,14 +151,13 @@ int main(int argc, char *argv[]) {
   manager.addSearchDir(GAME_DATADIR);
 
   // add entities
-Ennemy cube = Ennemy(1,10,1,25,"res/computer/ennemy.jpg",1,1,3);
-Tower to = Tower(1,1,2,1,"res/user/tower.jpg");
+Ennemy cube = Ennemy(1,10,1,25,"res/computer/ennemy2.jpg",1,1,0);
+Tower to = Tower(1,1,4,2,"res/user/tower2.jpg");
 
   // main loop
   sf::Clock clock;
   while (window.isOpen()) {
     //Enemy
-
 
     // input
     sf::Event event;
@@ -145,7 +182,7 @@ Tower to = Tower(1,1,2,1,"res/user/tower.jpg");
     sf::Time elapsed = clock.restart();
     world.update(elapsed.asSeconds());
     mapLevel.render(window,cube,to);
-
+    mapLevel.moveGo(window, cube);//we move the enemy
     window.display();
   }
 
