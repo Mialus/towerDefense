@@ -10,6 +10,20 @@ void Ennemy::SetLevel(int level)
     m_level=level;
 }
 
+    void Ennemy::SetPosX(int posX){
+        m_posX=posX;
+    }
+    void Ennemy::SetPosY(int posY){
+        m_posY=posY;
+    }
+
+    int Ennemy::getPosX(){
+        return m_posX;
+    }
+    int Ennemy::getPosY(){
+        return m_posY;
+    }
+
 void Ennemy::SetDefense(int def, int lvl){
     m_defense=def*lvl;
 }
@@ -58,7 +72,7 @@ int Ennemy::getDefense(){
     return m_defense;
 }
 
-Ennemy::Ennemy(int speed,int life,int level,int coin,const char* image, int defense)
+Ennemy::Ennemy(int speed,int life,int level,int coin,const char* image, int defense, int posX, int posY)
 {
     Ennemy::SetLife(life);
     Ennemy::SetSpeed(speed);
@@ -66,14 +80,18 @@ Ennemy::Ennemy(int speed,int life,int level,int coin,const char* image, int defe
     Ennemy::SetCoin(coin);
     Ennemy::SetImage(image);
     Ennemy::SetDefense(defense,level);
-}
+    Ennemy::SetPosX(posX);
+    Ennemy::SetPosY(posY);
 
-sf::Sprite Ennemy::Show()
-{
+}
+void Ennemy::giveSprite(){
+
     sf::Texture ennemy;
     sf::Sprite spriteEnnemy;
+    int m_tileWidth=500/10;
+    int m_tileHeight=500/5;
 
-    if(!ennemy.loadFromFile(GetImage(), sf::IntRect(10,10,10,10)))// commence en 10,10 et fais 10 par 10
+    if(!ennemy.loadFromFile(GetImage(), sf::IntRect(10,10,m_tileWidth,m_tileHeight)))
     {
         printf("Enemy's Texture don't be load ! Error !");
         exit(1);
@@ -81,5 +99,15 @@ sf::Sprite Ennemy::Show()
 
     spriteEnnemy.setTexture(ennemy);
 
-    return spriteEnnemy;
+    m_sprite= spriteEnnemy;
+
+}
+
+sf::Sprite Ennemy::Show(){
+
+return m_sprite;
+}
+
+void moveGo(){
+
 }

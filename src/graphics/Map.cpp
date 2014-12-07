@@ -3,6 +3,8 @@
 #include <towerdefense/Resource.h>
 #include <towerdefense/World.h>
 #include <SFML/Graphics.hpp>
+#include <towerdefense/computer/Ennemy.h>
+#include <towerdefense/user/tower.h>
 #include "../src/bin/config.h.in"
 
 namespace towerdefense {
@@ -54,7 +56,7 @@ namespace towerdefense {
   void Map::update(){
   }
 
-  void Map::render(sf::RenderWindow& window){
+  void Map::render(sf::RenderWindow& window, Ennemy en, Tower to){
     sf::Sprite sprite;
 
     for(unsigned int i=0; i<m_level.size(); ++i){
@@ -73,6 +75,7 @@ namespace towerdefense {
           sprite = m_spriteEnemy;
           break;
         }
+
         sprite.setPosition(j*m_tileWidth, i*m_tileHeight);
         window.draw(sprite);
       }
@@ -110,10 +113,15 @@ int main(int argc, char *argv[]) {
   manager.addSearchDir(GAME_DATADIR);
 
   // add entities
+Ennemy cube = Ennemy(1,10,1,25,"res/computer/ennemy.jpg",1,1,3);
+Tower to = Tower(1,1,2,1,"res/user/tower.jpg");
 
   // main loop
   sf::Clock clock;
   while (window.isOpen()) {
+    //Enemy
+
+
     // input
     sf::Event event;
     while (window.pollEvent(event)) {
@@ -136,7 +144,7 @@ int main(int argc, char *argv[]) {
     // update
     sf::Time elapsed = clock.restart();
     world.update(elapsed.asSeconds());
-    mapLevel.render(window);
+    mapLevel.render(window,cube,to);
 
     window.display();
   }

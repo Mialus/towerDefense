@@ -1,5 +1,6 @@
 #ifndef TOWER_H_INCLUDED
 #define TOWER_H_INCLUDED
+#include <SFML/Graphics.hpp>
 
 class Tower{
 public :
@@ -8,6 +9,8 @@ public :
     void setDegat(int degat,int level);
     void setPosX(int posX);
     void setPosY(int posY);
+    sf::Sprite Show();
+    void giveSprite();
     void setImage(const char* image);
     int getLevel();
     int getDegat();
@@ -24,6 +27,7 @@ private :
     int m_posX;
     int m_posY;
     const char* m_image;
+    sf::Sprite m_sprite;
 
 };
 

@@ -8,6 +8,8 @@
 #include <SFML/Graphics.hpp>
 
 #include <towerdefense/Entity.h>
+#include <towerdefense/computer/Ennemy.h>
+#include <towerdefense/user/tower.h>
 
 namespace towerdefense{
 
@@ -17,7 +19,7 @@ public:
         ~Map();
 
         void update();
-        void render(sf::RenderWindow& window);
+        void render(sf::RenderWindow& window, Ennemy en, Tower to);
         sf::Texture GetTextureEnemy();
         sf::Sprite GetSpriteEnemy();
         sf::Texture GetTextureTower();
