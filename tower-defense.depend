@@ -7768,12 +7768,15 @@
 
 1416758606 d:\boost_1_57_0\boost\thread
 
-1417511828 source:e:\dev\github\towerdefense\src\graphics\imagehandler.cpp
+1418122107 source:e:\dev\github\towerdefense\src\graphics\imagehandler.cpp
 	<towerdefense/graphics/ImageHandler.h>
+	"../src/bin/config.h.in"
 
-1416934935 e:\dev\github\towerdefense\include\towerdefense\graphics\imagehandler.h
+1418121394 e:\dev\github\towerdefense\include\towerdefense\graphics\imagehandler.h
+	<vector>
+	<SFML/graphics.hpp>
 
-1418096591 source:e:\dev\github\towerdefense\src\graphics\map.cpp
+1418126466 source:e:\dev\github\towerdefense\src\graphics\map.cpp
 	<towerdefense/graphics/Map.h>
 	<boost/filesystem.hpp>
 	<towerdefense/Resource.h>
@@ -7783,7 +7786,7 @@
 	<towerdefense/user/tower.h>
 	"../src/bin/config.h.in"
 
-1417991533 e:\dev\github\towerdefense\include\towerdefense\graphics\map.h
+1418126132 e:\dev\github\towerdefense\include\towerdefense\graphics\map.h
 	<vector>
 	<iostream>
 	<fstream>
@@ -7792,13 +7795,14 @@
 	<towerdefense/computer/Ennemy.h>
 	<towerdefense/user/tower.h>
 
-1418092828 source:e:\dev\github\towerdefense\src\computer\ennemy.cpp
+1418126749 source:e:\dev\github\towerdefense\src\computer\ennemy.cpp
 	<towerdefense/computer/Ennemy.h>
 
-1418092766 e:\dev\github\towerdefense\include\towerdefense\computer\ennemy.h
+1418126723 e:\dev\github\towerdefense\include\towerdefense\computer\ennemy.h
 	<SFML/Graphics.hpp>
 	<SFML/Window/Window.hpp>
 	<towerdefense/World.h>
+	<towerdefense/Entity.h>
 	"../src/bin/config.h.in"
 	<boost/filesystem.hpp>
 
@@ -7857,6 +7861,7 @@
 	<towerdefense/user/Tower.h>
 	<SFML/Graphics.hpp>
 
-1417966781 e:\dev\github\towerdefense\include\towerdefense\user\tower.h
+1418126701 e:\dev\github\towerdefense\include\towerdefense\user\tower.h
 	<SFML/Graphics.hpp>
+	<towerdefense/Entity.h>
 

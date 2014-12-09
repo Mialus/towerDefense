@@ -4,11 +4,13 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Window/Window.hpp>
 #include <towerdefense/World.h>
+#include <towerdefense/Entity.h>
 #include "../src/bin/config.h.in"
 #include <boost/filesystem.hpp>
 
-class Ennemy
-{
+namespace towerdefense {
+
+class Ennemy : public Entity {
 public:
 
     Ennemy(int speed,int life,int level,int coin,const char* image, int defense, int posX, int posY);
@@ -49,5 +51,6 @@ private:
     int m_posXb;
     int m_posYb;
 };
+}
 
 #endif // ENNEMY_H_INCLUDED

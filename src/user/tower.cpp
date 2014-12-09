@@ -1,6 +1,7 @@
 #include <towerdefense/user/Tower.h>
 #include <SFML/Graphics.hpp>
 
+namespace towerdefense {
     void Tower::setLevel(int level){
         m_level=level;
     }
@@ -62,4 +63,6 @@
 sf::Sprite Tower::Show(){
 
 return m_sprite;
+}
+
 }

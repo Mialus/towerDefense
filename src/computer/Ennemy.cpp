@@ -1,5 +1,7 @@
 #include <towerdefense/computer/Ennemy.h>
 
+namespace towerdefense {
+
 void Ennemy::SetCoin(int coin)
 {
     m_coin=coin;
@@ -120,8 +122,7 @@ void Ennemy::giveSprite(){
 }
 
 sf::Sprite Ennemy::Show(){
-
-return m_sprite;
+  return m_sprite;
 }
 
-
+}

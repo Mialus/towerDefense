@@ -32,7 +32,7 @@ namespace towerdefense {
     }
 
     // Loading Map's texture
-    if(!m_textureEnemy.loadFromFile("res/maps/enemy.jpg",
+    if(!m_textureEnemy.loadFromFile("res/maps/path.jpg",
                                     sf::IntRect(0,0,m_tileWidth,m_tileHeight))){
       printf("A texture of the map can't be loaded !");
       exit(1);
@@ -40,7 +40,7 @@ namespace towerdefense {
       m_spriteEnemy.setTexture(m_textureEnemy);
     }
 
-    if(!m_textureTower.loadFromFile("res/maps/tower.jpg",
+    if(!m_textureTower.loadFromFile("res/maps/field.jpg",
                                     sf::IntRect(0,0,m_tileWidth,m_tileHeight))){
       printf("A texture of the map can't be loaded !");
       exit(1);
@@ -56,37 +56,36 @@ namespace towerdefense {
   void Map::update(){
   }
 
-void Map::moveGo(sf::RenderWindow& window, Ennemy en){
+  void Map::moveGo(Ennemy en){
     unsigned int x=en.getPosX();
     unsigned int y=en.getPosY();
     unsigned int xb=en.getPosXb();
     unsigned int yb=en.getPosYb();
-      std::string& line= m_level[y+1];
+    std::string& line= m_level[y+1];
 
- if((line[x]=='.')&&(yb!=y+1)){
- en.SetPosYb(en.getPosY());
- en.SetPosY(y+1);
- }else {
-    line= m_level[y];
-    if((line[x+1]=='.')&&(xb!=x+1)){
-    en.SetPosXb(en.getPosX());
-    en.SetPosX(x+1);
-    }else{
+    if((line[x]=='.')&&(yb!=y+1)){
+      en.SetPosYb(en.getPosY());
+      en.SetPosY(y+1);
+    }else {
+      line= m_level[y];
+      if((line[x+1]=='.')&&(xb!=x+1)){
+        en.SetPosXb(en.getPosX());
+        en.SetPosX(x+1);
+      }else{
         line= m_level[y];
         if((line[x-1]=='.')&&(xb!=x-1)){
-        en.SetPosXb(en.getPosX());
-        en.SetPosX(x-1);
+          en.SetPosXb(en.getPosX());
+          en.SetPosX(x-1);
         }else{
-            line= m_level[y-1];
-            if((line[x]=='.')&&(yb!=y-1)){
+          line= m_level[y-1];
+          if((line[x]=='.')&&(yb!=y-1)){
             en.SetPosYb(en.getPosY());
             en.SetPosY(y-1);
-            }
-            }
+          }
         }
-       }
-
-}
+      }
+    }
+  }
 
   void Map::render(sf::RenderWindow& window, Ennemy en, Tower to){
     sf::Sprite sprite;
@@ -108,8 +107,8 @@ void Map::moveGo(sf::RenderWindow& window, Ennemy en){
           break;
         }
         if(((j)==to.getPosX())&& ((i==to.getPosY()))){// we put the tower on map
-                sprite=to.Show();
-        sprite.setPosition(to.getPosX()*m_tileWidth, to.getPosY()*m_tileHeight);
+          sprite=to.Show();
+          sprite.setPosition(to.getPosX()*m_tileWidth, to.getPosY()*m_tileHeight);
         }else{
             if(((j)==en.getPosX())&& ((i==en.getPosY()))){//we put the enemy on map
                     sprite=en.Show();
@@ -154,10 +153,11 @@ int main(int argc, char *argv[]) {
   manager.addSearchDir(GAME_DATADIR);
 
   // add entities
-Ennemy cube = Ennemy(1,10,1,25,"res/computer/ennemy2.jpg",1,1,0);
-Tower to = Tower(1,1,4,2,"res/user/tower2.jpg");
-cube.SetPosXb(cube.getPosX());
-cube.SetPosYb(cube.getPosY());
+  //(int speed,int life,int level,int coin,const char* image, int defense, int posX, int posY)
+  td::Ennemy cube = td::Ennemy(1,10,1,25,"res/computer/ennemy2.jpg",1,1,0);
+  td::Tower to = td::Tower(1,1,4,2,"res/user/tower2.jpg");
+  cube.SetPosXb(cube.getPosX());
+  cube.SetPosYb(cube.getPosY());
   // main loop
   sf::Clock clock;
   while (window.isOpen()) {
@@ -185,8 +185,8 @@ cube.SetPosYb(cube.getPosY());
     // update
     sf::Time elapsed = clock.restart();
     world.update(elapsed.asSeconds());
+    mapLevel.moveGo(cube);//we move the enemy
     mapLevel.render(window,cube,to);
-    mapLevel.moveGo(window, cube);//we move the enemy
     window.display();
   }
 

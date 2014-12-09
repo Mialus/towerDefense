@@ -2,7 +2,10 @@
 #define TOWER_H_INCLUDED
 #include <SFML/Graphics.hpp>
 
-class Tower{
+#include <towerdefense/Entity.h>
+
+namespace towerdefense{
+  class Tower : public Entity {
 public :
     Tower(int level,int degat, int posX, int posY, const char* m_image);
     void setLevel(int level);
@@ -18,8 +21,6 @@ public :
     int getPosY();
     const char* getImage();
 
-
-
 private :
 
     int m_level;
@@ -28,8 +29,7 @@ private :
     int m_posY;
     const char* m_image;
     sf::Sprite m_sprite;
-
 };
-
+}
 
 #endif // TOWER_H_INCLUDED

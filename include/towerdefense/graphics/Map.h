@@ -21,7 +21,7 @@ public:
         void update();
         void render(sf::RenderWindow& window, Ennemy en, Tower to);
         sf::Texture GetTextureEnemy();
-        void moveGo(sf::RenderWindow& window, Ennemy en);
+        void moveGo(Ennemy en);
         sf::Sprite GetSpriteEnemy();
         sf::Texture GetTextureTower();
         sf::Sprite GetSpriteTower();
