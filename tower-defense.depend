@@ -3665,38 +3665,38 @@
 	<towerdefense/World.h>
 	"config.h.in"
 
-1416508599 source:e:\dev\github\towerdefense\lib\animation.cpp
+1416754762 source:e:\dev\github\towerdefense\lib\animation.cpp
 	<towerdefense/Animation.h>
 	<iostream>
 
-1416508599 e:\dev\github\towerdefense\include\towerdefense\animation.h
+1416754762 e:\dev\github\towerdefense\include\towerdefense\animation.h
 	<vector>
 	<SFML/Graphics/Texture.hpp>
 	<SFML/Graphics/Rect.hpp>
 	<towerdefense/Entity.h>
 
-1416508599 e:\dev\github\towerdefense\include\towerdefense\entity.h
+1416754762 e:\dev\github\towerdefense\include\towerdefense\entity.h
 	<SFML/Graphics.hpp>
 
-1416508599 source:e:\dev\github\towerdefense\lib\entity.cpp
+1416754762 source:e:\dev\github\towerdefense\lib\entity.cpp
 	<towerdefense/Entity.h>
 
-1416508599 source:e:\dev\github\towerdefense\lib\random.cpp
+1416754762 source:e:\dev\github\towerdefense\lib\random.cpp
 	<towerdefense/Random.h>
 	<ctime>
 
-1416508599 e:\dev\github\towerdefense\include\towerdefense\random.h
+1416754762 e:\dev\github\towerdefense\include\towerdefense\random.h
 	<random>
 	<functional>
 	<SFML/System/Vector2.hpp>
 	<SFML/Graphics/Color.hpp>
 
-1417285934 source:e:\dev\github\towerdefense\lib\resource.cpp
+1417511828 source:e:\dev\github\towerdefense\lib\resource.cpp
 	<towerdefense/Resource.h>
 	<iostream>
 	<boost/filesystem.hpp>
 
-1417285925 e:\dev\github\towerdefense\include\towerdefense\resource.h
+1417511827 e:\dev\github\towerdefense\include\towerdefense\resource.h
 	<string>
 	<map>
 	<memory>
@@ -3705,13 +3705,13 @@
 	<SFML/Graphics/Font.hpp>
 	<SFML/Audio/SoundBuffer.hpp>
 
-1416508599 source:e:\dev\github\towerdefense\lib\world.cpp
+1416754762 source:e:\dev\github\towerdefense\lib\world.cpp
 	<towerdefense/World.h>
 	<cassert>
 	<algorithm>
 	<memory>
 
-1416508599 e:\dev\github\towerdefense\include\towerdefense\world.h
+1416754762 e:\dev\github\towerdefense\include\towerdefense\world.h
 	<functional>
 	<map>
 	<type_traits>
@@ -3720,11 +3720,11 @@
 	<towerdefense/Entity.h>
 	<towerdefense/Event.h>
 
-1416508599 e:\dev\github\towerdefense\include\towerdefense\event.h
+1416754762 e:\dev\github\towerdefense\include\towerdefense\event.h
 	<cstdint>
 	<functional>
 
-1417099925 source:e:\dev\github\towerdefense\src\bin\example_animation.cpp
+1417373511 source:e:\dev\github\towerdefense\src\bin\example_animation.cpp
 	<cassert>
 	<iostream>
 	<boost/filesystem.hpp>
@@ -3734,16 +3734,15 @@
 	<towerdefense/World.h>
 	"config.h.in"
 
-1416508599 e:\dev\github\towerdefense\src\bin\config.h.in
+1416754762 e:\dev\github\towerdefense\src\bin\config.h.in
 
-1417512301 source:e:\dev\github\towerdefense\src\bin\main.cpp
-	<iostream>
+1418125357 source:e:\dev\github\towerdefense\src\bin\main.cpp
+	<towerdefense/graphics/Map.h>
+	<boost/filesystem.hpp>
 	<towerdefense/Resource.h>
 	<towerdefense/World.h>
-	"towerdefense/graphics/Map.h"
-	<boost/filesystem.hpp>
 	<SFML/Graphics.hpp>
-	"config.h.in"
+	"../src/bin/config.h.in"
 
 1416754762 source:d:\travail\informatique\licence l3\towerdefense\towerdefense\lib\animation.cpp
 	<towerdefense/Animation.h>
@@ -7769,33 +7768,39 @@
 
 1416758606 d:\boost_1_57_0\boost\thread
 
-1417279909 source:e:\dev\github\towerdefense\src\graphics\imagehandler.cpp
+1417511828 source:e:\dev\github\towerdefense\src\graphics\imagehandler.cpp
 	<towerdefense/graphics/ImageHandler.h>
 
-1416933909 e:\dev\github\towerdefense\include\towerdefense\graphics\imagehandler.h
+1416934935 e:\dev\github\towerdefense\include\towerdefense\graphics\imagehandler.h
 
-1417512301 source:e:\dev\github\towerdefense\src\graphics\map.cpp
+1418096591 source:e:\dev\github\towerdefense\src\graphics\map.cpp
 	<towerdefense/graphics/Map.h>
 	<boost/filesystem.hpp>
 	<towerdefense/Resource.h>
 	<towerdefense/World.h>
+	<SFML/Graphics.hpp>
+	<towerdefense/computer/Ennemy.h>
+	<towerdefense/user/tower.h>
 	"../src/bin/config.h.in"
 
-1417511745 e:\dev\github\towerdefense\include\towerdefense\graphics\map.h
+1417991533 e:\dev\github\towerdefense\include\towerdefense\graphics\map.h
 	<vector>
 	<iostream>
 	<fstream>
 	<SFML/Graphics.hpp>
 	<towerdefense/Entity.h>
+	<towerdefense/computer/Ennemy.h>
+	<towerdefense/user/tower.h>
 
-1417283069 source:e:\dev\github\towerdefense\src\computer\ennemy.cpp
+1418092828 source:e:\dev\github\towerdefense\src\computer\ennemy.cpp
 	<towerdefense/computer/Ennemy.h>
 
-1417279720 e:\dev\github\towerdefense\include\towerdefense\computer\ennemy.h
-	<sfml/Graphics.hpp>
-	<sfml/Window.hpp>
+1418092766 e:\dev\github\towerdefense\include\towerdefense\computer\ennemy.h
+	<SFML/Graphics.hpp>
+	<SFML/Window/Window.hpp>
 	<towerdefense/World.h>
 	"../src/bin/config.h.in"
+	<boost/filesystem.hpp>
 
 1417991533 d:\travail\informatique\licence l3\towerdefense\towerdefense\include\towerdefense\graphics\map.h
 	<vector>
@@ -7842,4 +7847,16 @@
 	<towerdefense/computer/Bullet.h>
 
 1418095570 d:\travail\informatique\licence l3\towerdefense\towerdefense\include\towerdefense\computer\bullet.h
+
+1418095647 source:e:\dev\github\towerdefense\src\computer\bullet.cpp
+	<towerdefense/computer/Bullet.h>
+
+1418095570 e:\dev\github\towerdefense\include\towerdefense\computer\bullet.h
+
+1418095346 source:e:\dev\github\towerdefense\src\user\tower.cpp
+	<towerdefense/user/Tower.h>
+	<SFML/Graphics.hpp>
+
+1417966781 e:\dev\github\towerdefense\include\towerdefense\user\tower.h
+	<SFML/Graphics.hpp>
 

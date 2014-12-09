@@ -1,23 +1,17 @@
 #include <towerdefense/graphics/Map.h>
-//*
 #include <boost/filesystem.hpp>
 #include <towerdefense/Resource.h>
 #include <towerdefense/World.h>
-
 #include <SFML/Graphics.hpp>
 #include <towerdefense/computer/Ennemy.h>
 #include <towerdefense/user/tower.h>
-
 #include "../src/bin/config.h.in"
-//*/
 
 namespace towerdefense {
 
   Map::Map(){
     std::ifstream levelTxt("res/maps/level2.txt");
     std::string line;
-    sf::Texture texture;
-    sf::Sprite sprite;
 
     m_tileWidth=500/10;
     m_tileHeight=500/5;
@@ -34,44 +28,24 @@ namespace towerdefense {
       levelTxt.close();
     }
     else {
-      std::cout << "Unable to open level file";
+      std::cout << "Unable to open file";
     }
 
     // Loading Map's texture
-    if(!texture.loadFromFile("res/maps/path.jpg",
+    if(!m_textureEnemy.loadFromFile("res/maps/enemy.jpg",
                                     sf::IntRect(0,0,m_tileWidth,m_tileHeight))){
-      std::cout << "A texture of map can't be loaded !" << std::endl;
+      printf("A texture of the map can't be loaded !");
       exit(1);
     } else {
-      sprite.setTexture(texture);
-      m_sprites.push_back(sprite);
+      m_spriteEnemy.setTexture(m_textureEnemy);
     }
 
-    if(!texture.loadFromFile("res/maps/field.jpg",
+    if(!m_textureTower.loadFromFile("res/maps/tower.jpg",
                                     sf::IntRect(0,0,m_tileWidth,m_tileHeight))){
-      std::cout << "A texture of map can't be loaded !" << std::endl;
+      printf("A texture of the map can't be loaded !");
       exit(1);
     } else {
-      sprite.setTexture(texture);
-      m_sprites.push_back(sprite);
-    }
-
-    if(!texture.loadFromFile("res/maps/start.jpg",
-                                    sf::IntRect(0,0,m_tileWidth,m_tileHeight))){
-      std::cout << "A texture of map can't be loaded !" << std::endl;
-      exit(1);
-    } else {
-      sprite.setTexture(texture);
-      m_sprites.push_back(sprite);
-    }
-
-    if(!texture.loadFromFile("res/maps/end.jpg",
-                                    sf::IntRect(0,0,m_tileWidth,m_tileHeight))){
-      std::cout << "A texture of map can't be loaded !" << std::endl;
-      exit(1);
-    } else {
-      sprite.setTexture(texture);
-      m_sprites.push_back(sprite);
+      m_spriteTower.setTexture(m_textureTower);
     }
     // END LOAD TEXTURE
   }
@@ -122,19 +96,15 @@ void Map::moveGo(sf::RenderWindow& window, Ennemy en){
       for(unsigned int j=0; j<line.size(); ++j){
         switch(line[j]){
         case '#':
-          sprite = m_sprites.at(FIELD);
+          sprite = m_spriteTower;
           break;
         case 'D':
-          sprite = m_sprites.at(START);
-          break;
         case 'A':
-          sprite = m_sprites.at(END);
-          break;
         case '.':
-          sprite = m_sprites.at(PATH);
+          sprite = m_spriteEnemy;
           break;
         default:
-          sprite = m_sprites.at(FIELD);
+          sprite = m_spriteEnemy;
           break;
         }
         if(((j)==to.getPosX())&& ((i==to.getPosY()))){// we put the tower on map
@@ -153,15 +123,16 @@ void Map::moveGo(sf::RenderWindow& window, Ennemy en){
     }
   }
 
-  sf::Sprite Map::GetSprite(int pos){
-    return m_sprites.at(pos);
-  }
+  sf::Texture Map::GetTextureEnemy(){ return m_textureEnemy; }
+  sf::Sprite Map::GetSpriteEnemy(){ return m_spriteEnemy; }
+  sf::Texture Map::GetTextureTower(){ return m_textureTower; }
+  sf::Sprite Map::GetSpriteTower(){ return m_spriteTower; }
+
 }
 
-//*
 namespace fs = boost::filesystem;
 namespace td = towerdefense;
-
+//*
 int main(int argc, char *argv[]) {
 
     // initialize

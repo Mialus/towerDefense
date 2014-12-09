@@ -31,7 +31,10 @@ private:
         unsigned int m_width;
         unsigned int m_height;
         std::vector<std::string> m_level;
-        std::vector<sf::Sprite> m_sprites;
+        sf::Texture m_textureEnemy;
+        sf::Sprite m_spriteEnemy;
+        sf::Texture m_textureTower;
+        sf::Sprite m_spriteTower;
     };
 }
 
