@@ -10,6 +10,40 @@ void Ennemy::SetLevel(int level)
     m_level=level;
 }
 
+    void Ennemy::SetPosX(int posX){
+        m_posX=posX;
+    }
+    void Ennemy::SetPosY(int posY){
+        m_posY=posY;
+    }
+
+    void Ennemy::SetPosXb(int posXb){
+        m_posXb=posXb;
+    }
+    void Ennemy::SetPosYb(int posYb){
+        m_posYb=posYb;
+    }
+
+    int Ennemy::getPosX(){
+        return m_posX;
+    }
+    int Ennemy::getPosY(){
+        return m_posY;
+    }
+
+    int Ennemy::getPosXb(){
+        return m_posXb;
+    }
+    int Ennemy::getPosYb(){
+        return m_posYb;
+    }
+
+
+
+void Ennemy::SetDefense(int def, int lvl){
+    m_defense=def*lvl;
+}
+
 void Ennemy::SetLife(int life)
 {
     m_life=life;
@@ -50,30 +84,30 @@ const char* Ennemy::GetImage()
     return m_image;
 }
 
-Ennemy::Ennemy()
-{
-    Ennemy::SetLife(50);
-    Ennemy::SetSpeed(1);
-    Ennemy::SetLevel(1);
-    Ennemy::SetCoin(20);
-    Ennemy::SetImage("../../res/computer/enemy.jpg");
+int Ennemy::getDefense(){
+    return m_defense;
 }
 
-/*Ennemy::Ennemy(int speed,int life,int level,int coin,const char* image)
+Ennemy::Ennemy(int speed,int life,int level,int coin,const char* image, int defense, int posX, int posY)
 {
     Ennemy::SetLife(life);
     Ennemy::SetSpeed(speed);
     Ennemy::SetLevel(level);
     Ennemy::SetCoin(coin);
     Ennemy::SetImage(image);
-}*/
+    Ennemy::SetDefense(defense,level);
+    Ennemy::SetPosX(posX);
+    Ennemy::SetPosY(posY);
 
-sf::Sprite Ennemy::Show()
-{
+}
+void Ennemy::giveSprite(){
+
     sf::Texture ennemy;
     sf::Sprite spriteEnnemy;
+    int m_tileWidth=500/10;
+    int m_tileHeight=500/5;
 
-    if(!ennemy.loadFromFile(GetImage(), sf::IntRect(10,10,10,10)))// commence en 10,10 et fais 10 par 10
+    if(!ennemy.loadFromFile(GetImage(), sf::IntRect(10,10,m_tileWidth,m_tileHeight)))
     {
         printf("Enemy's Texture don't be load ! Error !");
         exit(1);
@@ -81,22 +115,13 @@ sf::Sprite Ennemy::Show()
 
     spriteEnnemy.setTexture(ennemy);
 
-    return spriteEnnemy;
+    m_sprite= spriteEnnemy;
+
+}
+
+sf::Sprite Ennemy::Show(){
+
+return m_sprite;
 }
 
 
-//Main de test
-/*
-int main() {
-  // initialize
-  Ennemy enn = Ennemy();
-  towerdefense::World world;
-  sf::RenderWindow window(sf::VideoMode(500, 500), "Tower Defense (version " GAME_VERSION ")");
-
-  while (window.isOpen())
-  {
-//     window.draw(Ennemy::Show());
-  }
-
-}
-//*/

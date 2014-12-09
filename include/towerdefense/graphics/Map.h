@@ -8,6 +8,8 @@
 #include <SFML/Graphics.hpp>
 
 #include <towerdefense/Entity.h>
+#include <towerdefense/computer/Ennemy.h>
+#include <towerdefense/user/tower.h>
 
 namespace towerdefense{
 
@@ -17,13 +19,12 @@ public:
         ~Map();
 
         void update();
-        void render(sf::RenderWindow& window);
-        sf::Sprite GetSprite(int pos);
-
-        static const int PATH = 0;
-        static const int FIELD = 1;
-        static const int START = 2;
-        static const int END = 3;
+        void render(sf::RenderWindow& window, Ennemy en, Tower to);
+        sf::Texture GetTextureEnemy();
+        void moveGo(sf::RenderWindow& window, Ennemy en);
+        sf::Sprite GetSpriteEnemy();
+        sf::Texture GetTextureTower();
+        sf::Sprite GetSpriteTower();
 private:
         unsigned int m_tileWidth;
         unsigned int m_tileHeight;

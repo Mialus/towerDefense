@@ -13,19 +13,13 @@
  * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
-#include <iostream>
-
+#include <towerdefense/graphics/Map.h>
+#include <boost/filesystem.hpp>
 #include <towerdefense/Resource.h>
 #include <towerdefense/World.h>
-#include "towerdefense/graphics/Map.h"
-
-#include <boost/filesystem.hpp>
 #include <SFML/Graphics.hpp>
+#include "../src/bin/config.h.in"
 
-#include "config.h.in"
-
-namespace fs = boost::filesystem;
-namespace td = towerdefense;
 /*
 int main(int argc, char *argv[]) {
 

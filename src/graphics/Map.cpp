@@ -3,6 +3,11 @@
 #include <boost/filesystem.hpp>
 #include <towerdefense/Resource.h>
 #include <towerdefense/World.h>
+
+#include <SFML/Graphics.hpp>
+#include <towerdefense/computer/Ennemy.h>
+#include <towerdefense/user/tower.h>
+
 #include "../src/bin/config.h.in"
 //*/
 
@@ -77,7 +82,39 @@ namespace towerdefense {
   void Map::update(){
   }
 
-  void Map::render(sf::RenderWindow& window){
+void Map::moveGo(sf::RenderWindow& window, Ennemy en){
+    unsigned int x=en.getPosX();
+    unsigned int y=en.getPosY();
+    unsigned int xb=en.getPosXb();
+    unsigned int yb=en.getPosYb();
+      std::string& line= m_level[y+1];
+
+ if((line[x]=='.')&&(yb!=y+1)){
+ en.SetPosYb(en.getPosY());
+ en.SetPosY(y+1);
+ }else {
+    line= m_level[y];
+    if((line[x+1]=='.')&&(xb!=x+1)){
+    en.SetPosXb(en.getPosX());
+    en.SetPosX(x+1);
+    }else{
+        line= m_level[y];
+        if((line[x-1]=='.')&&(xb!=x-1)){
+        en.SetPosXb(en.getPosX());
+        en.SetPosX(x-1);
+        }else{
+            line= m_level[y-1];
+            if((line[x]=='.')&&(yb!=y-1)){
+            en.SetPosYb(en.getPosY());
+            en.SetPosY(y-1);
+            }
+            }
+        }
+       }
+
+}
+
+  void Map::render(sf::RenderWindow& window, Ennemy en, Tower to){
     sf::Sprite sprite;
 
     for(unsigned int i=0; i<m_level.size(); ++i){
@@ -100,7 +137,17 @@ namespace towerdefense {
           sprite = m_sprites.at(FIELD);
           break;
         }
-        sprite.setPosition(j*m_tileWidth, i*m_tileHeight);
+        if(((j)==to.getPosX())&& ((i==to.getPosY()))){// we put the tower on map
+                sprite=to.Show();
+        sprite.setPosition(to.getPosX()*m_tileWidth, to.getPosY()*m_tileHeight);
+        }else{
+            if(((j)==en.getPosX())&& ((i==en.getPosY()))){//we put the enemy on map
+                    sprite=en.Show();
+            sprite.setPosition(en.getPosX()*m_tileWidth, en.getPosY()*m_tileHeight);
+            }else{
+                sprite.setPosition(j*m_tileWidth, i*m_tileHeight);
+            }
+        }
         window.draw(sprite);
       }
     }
@@ -136,10 +183,15 @@ int main(int argc, char *argv[]) {
   manager.addSearchDir(GAME_DATADIR);
 
   // add entities
-
+Ennemy cube = Ennemy(1,10,1,25,"res/computer/ennemy2.jpg",1,1,0);
+Tower to = Tower(1,1,4,2,"res/user/tower2.jpg");
+cube.SetPosXb(cube.getPosX());
+cube.SetPosYb(cube.getPosY());
   // main loop
   sf::Clock clock;
   while (window.isOpen()) {
+    //Enemy
+
     // input
     sf::Event event;
     while (window.pollEvent(event)) {
@@ -162,8 +214,8 @@ int main(int argc, char *argv[]) {
     // update
     sf::Time elapsed = clock.restart();
     world.update(elapsed.asSeconds());
-    mapLevel.render(window);
-
+    mapLevel.render(window,cube,to);
+    mapLevel.moveGo(window, cube);//we move the enemy
     window.display();
   }
 
