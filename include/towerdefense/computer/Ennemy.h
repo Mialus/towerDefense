@@ -19,6 +19,8 @@ public:
     void giveSprite();
     void SetPosX(int pos);
     void SetPosY(int posY);
+    void SetPosXb(int pos);
+    void SetPosYb(int posY);
     void SetCoin(int coin);
     void SetImage(const char* image);
     int getDefense();
@@ -26,6 +28,8 @@ public:
     int GetLife();
     int getPosX();
     int getPosY();
+    int getPosXb();
+    int getPosYb();
     int GetLevel();
     int GetCoin();
     const char* GetImage();
@@ -42,6 +46,8 @@ private:
     int m_posY;
     const char* m_image;
     sf::Sprite m_sprite;
+    int m_posXb;
+    int m_posYb;
 };
 
 #endif // ENNEMY_H_INCLUDED

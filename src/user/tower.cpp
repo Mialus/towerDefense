@@ -1,5 +1,6 @@
 #include <towerdefense/user/Tower.h>
 #include <SFML/Graphics.hpp>
+
     void Tower::setLevel(int level){
         m_level=level;
     }

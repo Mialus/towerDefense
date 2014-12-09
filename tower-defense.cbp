@@ -73,6 +73,7 @@
 		<Unit filename="include/towerdefense/Random.h" />
 		<Unit filename="include/towerdefense/Resource.h" />
 		<Unit filename="include/towerdefense/World.h" />
+		<Unit filename="include/towerdefense/computer/Bullet.h" />
 		<Unit filename="include/towerdefense/computer/Ennemy.h" />
 		<Unit filename="include/towerdefense/graphics/ImageHandler.h" />
 		<Unit filename="include/towerdefense/graphics/Map.h" />
@@ -85,6 +86,7 @@
 		<Unit filename="src/bin/config.h.in" />
 		<Unit filename="src/bin/example_animation.cpp" />
 		<Unit filename="src/bin/main.cpp" />
+		<Unit filename="src/computer/Bullet.cpp" />
 		<Unit filename="src/computer/Ennemy.cpp" />
 		<Unit filename="src/graphics/ImageHandler.cpp" />
 		<Unit filename="src/graphics/Map.cpp" />

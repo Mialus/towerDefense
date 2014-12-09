@@ -59,21 +59,27 @@ namespace towerdefense {
 void Map::moveGo(sf::RenderWindow& window, Ennemy en){
     unsigned int x=en.getPosX();
     unsigned int y=en.getPosY();
+    unsigned int xb=en.getPosXb();
+    unsigned int yb=en.getPosYb();
       std::string& line= m_level[y+1];
 
- if(line[x]=='.'){
+ if((line[x]=='.')&&(yb!=y+1)){
+ en.SetPosYb(en.getPosY());
  en.SetPosY(y+1);
  }else {
     line= m_level[y];
-    if(line[x+1]=='.'){
+    if((line[x+1]=='.')&&(xb!=x+1)){
+    en.SetPosXb(en.getPosX());
     en.SetPosX(x+1);
     }else{
         line= m_level[y];
-        if(line[x-1]=='.'){
+        if((line[x-1]=='.')&&(xb!=x-1)){
+        en.SetPosXb(en.getPosX());
         en.SetPosX(x-1);
         }else{
             line= m_level[y-1];
-            if(line[x]=='.'){
+            if((line[x]=='.')&&(yb!=y-1)){
+            en.SetPosYb(en.getPosY());
             en.SetPosY(y-1);
             }
             }
@@ -105,16 +111,13 @@ void Map::moveGo(sf::RenderWindow& window, Ennemy en){
                 sprite=to.Show();
         sprite.setPosition(to.getPosX()*m_tileWidth, to.getPosY()*m_tileHeight);
         }else{
-        sprite.setPosition(j*m_tileWidth, i*m_tileHeight);
+            if(((j)==en.getPosX())&& ((i==en.getPosY()))){//we put the enemy on map
+                    sprite=en.Show();
+            sprite.setPosition(en.getPosX()*m_tileWidth, en.getPosY()*m_tileHeight);
+            }else{
+                sprite.setPosition(j*m_tileWidth, i*m_tileHeight);
+            }
         }
-
-        if(((j)==en.getPosX())&& ((i==en.getPosY()))){//we put the enemy on map
-                sprite=en.Show();
-        sprite.setPosition(en.getPosX()*m_tileWidth, en.getPosY()*m_tileHeight);
-        }else{
-        sprite.setPosition(j*m_tileWidth, i*m_tileHeight);
-        }
-
         window.draw(sprite);
       }
     }
@@ -153,7 +156,8 @@ int main(int argc, char *argv[]) {
   // add entities
 Ennemy cube = Ennemy(1,10,1,25,"res/computer/ennemy2.jpg",1,1,0);
 Tower to = Tower(1,1,4,2,"res/user/tower2.jpg");
-
+cube.SetPosXb(cube.getPosX());
+cube.SetPosYb(cube.getPosY());
   // main loop
   sf::Clock clock;
   while (window.isOpen()) {

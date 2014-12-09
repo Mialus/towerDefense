@@ -17,12 +17,28 @@ void Ennemy::SetLevel(int level)
         m_posY=posY;
     }
 
+    void Ennemy::SetPosXb(int posXb){
+        m_posXb=posXb;
+    }
+    void Ennemy::SetPosYb(int posYb){
+        m_posYb=posYb;
+    }
+
     int Ennemy::getPosX(){
         return m_posX;
     }
     int Ennemy::getPosY(){
         return m_posY;
     }
+
+    int Ennemy::getPosXb(){
+        return m_posXb;
+    }
+    int Ennemy::getPosYb(){
+        return m_posYb;
+    }
+
+
 
 void Ennemy::SetDefense(int def, int lvl){
     m_defense=def*lvl;
