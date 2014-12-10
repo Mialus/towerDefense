@@ -60,7 +60,6 @@ namespace towerdefense {
     T *getResource(const std::string& path, ResourceCache<T>& cache);
   };
 
-
 }
 
 #endif // TOWERDEFENSE_RESOURCE_H

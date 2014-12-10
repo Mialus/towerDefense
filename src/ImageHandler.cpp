@@ -1,6 +1,4 @@
-#include <towerdefense/graphics/ImageHandler.h>
-
-#include "../src/bin/config.h.in"
+#include <towerdefense/ImageHandler.h>
 
 namespace towerdefense {
 
@@ -13,4 +11,5 @@ namespace towerdefense {
   sf::Sprite ImageHandler::getSprite(){
     return m_sprites.at(0);
   }
+
 }

@@ -59,38 +59,38 @@
 		<Compiler>
 			<Add option="-std=c++11" />
 			<Add option="-Wall" />
-			<Add directory="E:/Dev/boost_1_57_0" />
-			<Add directory="E:/Dev/SFML-2.1/include" />
+			<Add directory="C:/boost_1_57_0" />
+			<Add directory="C:/SFML-2.1/include" />
 			<Add directory="include" />
 		</Compiler>
 		<Linker>
-			<Add directory="E:/Dev/boost_1_57_0/stage/lib" />
-			<Add directory="E:/Dev/SFML-2.1/lib" />
+			<Add directory="C:/boost_1_57_0/stage/lib" />
+			<Add directory="C:/SFML-2.1/lib" />
 		</Linker>
 		<Unit filename="include/towerdefense/Animation.h" />
+		<Unit filename="include/towerdefense/Bullet.h" />
+		<Unit filename="include/towerdefense/Enemy.h" />
 		<Unit filename="include/towerdefense/Entity.h" />
 		<Unit filename="include/towerdefense/Event.h" />
+		<Unit filename="include/towerdefense/ImageHandler.h" />
+		<Unit filename="include/towerdefense/Map.h" />
 		<Unit filename="include/towerdefense/Random.h" />
 		<Unit filename="include/towerdefense/Resource.h" />
+		<Unit filename="include/towerdefense/Tower.h" />
 		<Unit filename="include/towerdefense/World.h" />
-		<Unit filename="include/towerdefense/computer/Bullet.h" />
-		<Unit filename="include/towerdefense/computer/Ennemy.h" />
-		<Unit filename="include/towerdefense/graphics/ImageHandler.h" />
-		<Unit filename="include/towerdefense/graphics/Map.h" />
-		<Unit filename="include/towerdefense/user/tower.h" />
-		<Unit filename="lib/Animation.cpp" />
-		<Unit filename="lib/Entity.cpp" />
-		<Unit filename="lib/Random.cpp" />
-		<Unit filename="lib/Resource.cpp" />
-		<Unit filename="lib/World.cpp" />
+		<Unit filename="src/Animation.cpp" />
+		<Unit filename="src/Bullet.cpp" />
+		<Unit filename="src/Enemy.cpp" />
+		<Unit filename="src/Entity.cpp" />
+		<Unit filename="src/ImageHandler.cpp" />
+		<Unit filename="src/Map.cpp" />
+		<Unit filename="src/Random.cpp" />
+		<Unit filename="src/Resource.cpp" />
+		<Unit filename="src/Tower.cpp" />
+		<Unit filename="src/World.cpp" />
 		<Unit filename="src/bin/config.h.in" />
 		<Unit filename="src/bin/example_animation.cpp" />
 		<Unit filename="src/bin/main.cpp" />
-		<Unit filename="src/computer/Bullet.cpp" />
-		<Unit filename="src/computer/Ennemy.cpp" />
-		<Unit filename="src/graphics/ImageHandler.cpp" />
-		<Unit filename="src/graphics/Map.cpp" />
-		<Unit filename="src/user/tower.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

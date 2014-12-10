@@ -13,14 +13,19 @@
  * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
-#include <towerdefense/graphics/Map.h>
 #include <boost/filesystem.hpp>
-#include <towerdefense/Resource.h>
-#include <towerdefense/World.h>
 #include <SFML/Graphics.hpp>
+
 #include "../src/bin/config.h.in"
 
-/*
+#include <towerdefense/Map.h>
+#include <towerdefense/Resource.h>
+#include <towerdefense/World.h>
+#include <towerdefense/Enemy.h>
+
+namespace td = towerdefense;
+namespace fs = boost::filesystem;
+//*
 int main(int argc, char *argv[]) {
 
   // initialize
@@ -42,6 +47,11 @@ int main(int argc, char *argv[]) {
   manager.addSearchDir(GAME_DATADIR);
 
   // add entities
+  //(int speed,int life,int level,int coin,const char* image, int defense, int posX, int posY)
+  td::Enemy cube = td::Enemy(1,10,1,25,"res/computer/ennemy2.jpg",1,1,0);
+  td::Tower to = td::Tower(1,1,4,2,"res/user/tower2.jpg");
+  cube.SetPosXb(cube.GetPosX());
+  cube.SetPosYb(cube.GetPosY());
 
   // main loop
   sf::Clock clock;

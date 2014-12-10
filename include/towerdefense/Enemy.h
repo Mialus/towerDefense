@@ -1,44 +1,45 @@
 #ifndef ENNEMY_H_INCLUDED
 #define ENNEMY_H_INCLUDED
 
+#include <boost/filesystem.hpp>
+
 #include <SFML/Graphics.hpp>
 #include <SFML/Window/Window.hpp>
+
 #include <towerdefense/World.h>
 #include <towerdefense/Entity.h>
-#include "../src/bin/config.h.in"
-#include <boost/filesystem.hpp>
 
 namespace towerdefense {
 
-class Ennemy : public Entity {
-public:
-
-    Ennemy(int speed,int life,int level,int coin,const char* image, int defense, int posX, int posY);
+  class Enemy : public Entity {
+  public:
+    Enemy(int speed,int life,int level,int coin,const char* image, int defense, int posX, int posY);
     void SetDefense(int defense,int level);
     void SetSpeed(int speed);
     void SetLife(int life);
     void SetLevel(int level);
-    void giveSprite();
+    void GiveSprite();
     void SetPosX(int pos);
     void SetPosY(int posY);
     void SetPosXb(int pos);
     void SetPosYb(int posY);
     void SetCoin(int coin);
     void SetImage(const char* image);
-    int getDefense();
+    int GetDefense();
     int GetSpeed();
     int GetLife();
-    int getPosX();
-    int getPosY();
-    int getPosXb();
-    int getPosYb();
+    int GetPosX();
+    int GetPosY();
+    int GetPosXb();
+    int GetPosYb();
     int GetLevel();
     int GetCoin();
     const char* GetImage();
     sf::Sprite Show();
+    void update(float dt);
+    void render(sf::RenderWindow& window);
 
-
-private:
+  private:
     int m_defense;
     int m_level;
     int m_life;
@@ -50,7 +51,8 @@ private:
     sf::Sprite m_sprite;
     int m_posXb;
     int m_posYb;
-};
+  };
+
 }
 
 #endif // ENNEMY_H_INCLUDED

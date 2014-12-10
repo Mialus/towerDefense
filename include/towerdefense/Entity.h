@@ -33,5 +33,4 @@ namespace towerdefense {
 
 }
 
-
 #endif // TOWERDEFENSE_ENTITY_H

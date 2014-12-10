@@ -2,6 +2,7 @@
 #define IMAGEHANDLER_H
 
 #include <vector>
+
 #include <SFML/graphics.hpp>
 
 namespace towerdefense{
@@ -15,6 +16,7 @@ namespace towerdefense{
   private:
     std::vector<sf::Sprite> m_sprites;
   };
+
 }
 
 #endif // IMAGEHANDLER_H

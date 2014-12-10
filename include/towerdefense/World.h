@@ -128,8 +128,6 @@ namespace towerdefense {
     std::map<EventType, std::vector<EventHandler>> m_handlers;
   };
 
-
 }
-
 
 #endif // TOWERDEFENSE_WORLD_H
