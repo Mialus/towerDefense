@@ -23,7 +23,7 @@ namespace towerdefense{
 
     static void initialize();
 
-    static sf::Sprite getSprite(SpriteList selected);
+    static sf::Texture getTexture(SpriteList selected);
   private:
     static std::vector<sf::Texture> m_textures;
   };

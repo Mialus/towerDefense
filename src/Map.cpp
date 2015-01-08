@@ -19,19 +19,19 @@ namespace towerdefense {
       for(unsigned int j=0; j<line.size(); ++j){
         switch(line[j]){
         case MapIdentifier::FIELD:
-          sprite = ImageHandler::getSprite(SpriteList::FIELD);
+          sprite.setTexture(ImageHandler::getTexture(SpriteList::FIELD));
           break;
         case MapIdentifier::START:
-          sprite = ImageHandler::getSprite(SpriteList::START);
+          sprite.setTexture(ImageHandler::getTexture(SpriteList::START));
           break;
         case MapIdentifier::END:
-          sprite = ImageHandler::getSprite(SpriteList::END);
+          sprite.setTexture(ImageHandler::getTexture(SpriteList::END));
           break;
         case MapIdentifier::PATH:
-          sprite = ImageHandler::getSprite(SpriteList::PATH);
+          sprite.setTexture(ImageHandler::getTexture(SpriteList::PATH));
           break;
         default:
-          sprite = ImageHandler::getSprite(SpriteList::FIELD);
+          sprite.setTexture(ImageHandler::getTexture(SpriteList::FIELD));
           break;
         }
         sprite.setPosition(j*m_tileWidth, i*m_tileHeight);

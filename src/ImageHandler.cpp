@@ -56,32 +56,30 @@ namespace towerdefense {
     // END LOAD OTHERS ENTITY TEXTURE
   }
 
-  sf::Sprite ImageHandler::getSprite(SpriteList selected){
-    sf::Sprite sprite;
+  sf::Texture ImageHandler::getTexture(SpriteList selected){
     switch(selected){
     case SpriteList::START:
-      sprite.setTexture(m_textures.at(0));
+      return m_textures.at(0);
       break;
     case SpriteList::PATH:
-      sprite.setTexture(m_textures.at(1));
+      return m_textures.at(1);
       break;
     case SpriteList::FIELD:
-      sprite.setTexture(m_textures.at(2));
+      return m_textures.at(2);
       break;
     case SpriteList::ENEMY:
-      sprite.setTexture(m_textures.at(3));
+      return m_textures.at(3);
       break;
     case SpriteList::TOWER:
-      sprite.setTexture(m_textures.at(4));
+      return m_textures.at(4);
       break;
     case SpriteList::END:
-      sprite.setTexture(m_textures.at(5));
+      return m_textures.at(5);
       break;
     default:
-      sprite.setTexture(m_textures.at(2));
+      return m_textures.at(2);
       break;
     }
-    return sprite;
   }
 
 }
