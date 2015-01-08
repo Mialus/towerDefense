@@ -7,14 +7,25 @@
 
 namespace towerdefense{
 
+  enum class SpriteList {
+        PATH,
+        FIELD,
+        START,
+        END,
+        ENEMY,
+        TOWER,
+  };
+
   class ImageHandler {
   public:
-    ImageHandler();
-    ~ImageHandler();
 
-    sf::Sprite getSprite();
+    ImageHandler();
+
+    static void initialize();
+
+    static sf::Sprite getSprite(SpriteList selected);
   private:
-    std::vector<sf::Sprite> m_sprites;
+    static std::vector<sf::Texture*> m_textures;
   };
 
 }

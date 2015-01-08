@@ -74,23 +74,25 @@
 		<Unit filename="include/towerdefense/Event.h" />
 		<Unit filename="include/towerdefense/ImageHandler.h" />
 		<Unit filename="include/towerdefense/Map.h" />
+		<Unit filename="include/towerdefense/MapLoader.h" />
 		<Unit filename="include/towerdefense/Random.h" />
 		<Unit filename="include/towerdefense/Resource.h" />
-		<Unit filename="include/towerdefense/Tower.h" />
 		<Unit filename="include/towerdefense/World.h" />
+		<Unit filename="include/towerdefense/tower.h" />
 		<Unit filename="src/Animation.cpp" />
 		<Unit filename="src/Bullet.cpp" />
 		<Unit filename="src/Enemy.cpp" />
 		<Unit filename="src/Entity.cpp" />
 		<Unit filename="src/ImageHandler.cpp" />
 		<Unit filename="src/Map.cpp" />
+		<Unit filename="src/MapLoader.cpp" />
 		<Unit filename="src/Random.cpp" />
 		<Unit filename="src/Resource.cpp" />
-		<Unit filename="src/Tower.cpp" />
 		<Unit filename="src/World.cpp" />
 		<Unit filename="src/bin/config.h.in" />
 		<Unit filename="src/bin/example_animation.cpp" />
 		<Unit filename="src/bin/main.cpp" />
+		<Unit filename="src/tower.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

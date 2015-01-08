@@ -19,6 +19,7 @@
 #include "../src/bin/config.h.in"
 
 #include <towerdefense/Map.h>
+#include <towerdefense/MapLoader.h>
 #include <towerdefense/Resource.h>
 #include <towerdefense/World.h>
 #include <towerdefense/Enemy.h>
@@ -32,7 +33,8 @@ int main(int argc, char *argv[]) {
   td::World world;
   sf::RenderWindow window(sf::VideoMode(500, 500), "Tower Defense (version " GAME_VERSION ")");
   window.setKeyRepeatEnabled(false);
-  td::Map mapLevel;
+  td::ImageHandler::initialize();
+  td::Map mapLevel = td::MapLoader::loadMap("res/maps/level2.txt");
 
   // load resources
   fs::path bindir_path(argv[0]);
@@ -48,10 +50,10 @@ int main(int argc, char *argv[]) {
 
   // add entities
   //(int speed,int life,int level,int coin,const char* image, int defense, int posX, int posY)
-  td::Enemy cube = td::Enemy(1,10,1,25,"res/computer/ennemy2.jpg",1,1,0);
-  td::Tower to = td::Tower(1,1,4,2,"res/user/tower2.jpg");
-  cube.SetPosXb(cube.GetPosX());
-  cube.SetPosYb(cube.GetPosY());
+//  td::Enemy cube = td::Enemy(1,10,1,25,"res/computer/ennemy2.jpg",1,1,0);
+//  td::Tower to = td::Tower(1,1,4,2,"res/user/tower2.jpg");
+//  cube.SetPosXb(cube.GetPosX());
+//  cube.SetPosYb(cube.GetPosY());
 
   // main loop
   sf::Clock clock;

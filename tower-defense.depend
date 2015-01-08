@@ -3736,11 +3736,12 @@
 
 1416754762 e:\dev\github\towerdefense\src\bin\config.h.in
 
-1418231164 source:e:\dev\github\towerdefense\src\bin\main.cpp
+1420563571 source:e:\dev\github\towerdefense\src\bin\main.cpp
 	<boost/filesystem.hpp>
 	<SFML/Graphics.hpp>
 	"../src/bin/config.h.in"
 	<towerdefense/Map.h>
+	<towerdefense/MapLoader.h>
 	<towerdefense/Resource.h>
 	<towerdefense/World.h>
 	<towerdefense/Enemy.h>
@@ -11461,14 +11462,13 @@
 	<towerdefense/Animation.h>
 	<iostream>
 
-1418231002 e:\dev\github\towerdefense\include\towerdefense\map.h
+1420556267 e:\dev\github\towerdefense\include\towerdefense\map.h
 	<vector>
 	<iostream>
 	<fstream>
 	<SFML/Graphics.hpp>
 	<towerdefense/Entity.h>
-	<towerdefense/Enemy.h>
-	<towerdefense/Tower.h>
+	<towerdefense/ImageHandler.h>
 
 1418230371 e:\dev\github\towerdefense\include\towerdefense\enemy.h
 	<boost/filesystem.hpp>
@@ -11493,15 +11493,14 @@
 1416754762 source:e:\dev\github\towerdefense\src\entity.cpp
 	<towerdefense/Entity.h>
 
-1418229205 source:e:\dev\github\towerdefense\src\imagehandler.cpp
+1420563518 source:e:\dev\github\towerdefense\src\imagehandler.cpp
 	<towerdefense/ImageHandler.h>
 
-1418228921 e:\dev\github\towerdefense\include\towerdefense\imagehandler.h
+1420568999 e:\dev\github\towerdefense\include\towerdefense\imagehandler.h
 	<vector>
 	<SFML/graphics.hpp>
 
-1418231862 source:e:\dev\github\towerdefense\src\map.cpp
-	<SFML/Graphics.hpp>
+1420556499 source:e:\dev\github\towerdefense\src\map.cpp
 	<towerdefense/Map.h>
 
 1416754762 source:e:\dev\github\towerdefense\src\random.cpp
@@ -11522,4 +11521,11 @@
 	<cassert>
 	<algorithm>
 	<memory>
+
+1420556367 e:\dev\github\towerdefense\include\towerdefense\maploader.h
+	<vector>
+	<towerdefense/Map.h>
+
+1420563716 source:e:\dev\github\towerdefense\src\maploader.cpp
+	<towerdefense/MapLoader.h>
 
