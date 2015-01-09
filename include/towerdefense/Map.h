@@ -21,7 +21,7 @@ namespace towerdefense{
 
   class Map : public Entity {
   public:
-    Map();
+    Map(std::string levelpath);
     ~Map();
 
     void update(float dt);
@@ -37,6 +37,7 @@ namespace towerdefense{
     unsigned int m_width;
     unsigned int m_height;
     std::vector<std::vector<MapIdentifier>> m_level;
+    std::vector<sf::Sprite> m_sprites;
   };
 
 }

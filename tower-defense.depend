@@ -3736,12 +3736,11 @@
 
 1416754762 e:\dev\github\towerdefense\src\bin\config.h.in
 
-1420563571 source:e:\dev\github\towerdefense\src\bin\main.cpp
+1420809911 source:e:\dev\github\towerdefense\src\bin\main.cpp
 	<boost/filesystem.hpp>
 	<SFML/Graphics.hpp>
 	"../src/bin/config.h.in"
 	<towerdefense/Map.h>
-	<towerdefense/MapLoader.h>
 	<towerdefense/Resource.h>
 	<towerdefense/World.h>
 	<towerdefense/Enemy.h>
@@ -11462,7 +11461,7 @@
 	<towerdefense/Animation.h>
 	<iostream>
 
-1420556267 e:\dev\github\towerdefense\include\towerdefense\map.h
+1420810060 e:\dev\github\towerdefense\include\towerdefense\map.h
 	<vector>
 	<iostream>
 	<fstream>
@@ -11500,7 +11499,7 @@
 	<vector>
 	<SFML/graphics.hpp>
 
-1420556499 source:e:\dev\github\towerdefense\src\map.cpp
+1420810638 source:e:\dev\github\towerdefense\src\map.cpp
 	<towerdefense/Map.h>
 
 1416754762 source:e:\dev\github\towerdefense\src\random.cpp
@@ -11522,7 +11521,7 @@
 	<algorithm>
 	<memory>
 
-1420556367 e:\dev\github\towerdefense\include\towerdefense\maploader.h
+1420808001 e:\dev\github\towerdefense\include\towerdefense\maploader.h
 	<vector>
 	<towerdefense/Map.h>
 

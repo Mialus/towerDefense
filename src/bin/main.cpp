@@ -19,7 +19,6 @@
 #include "../src/bin/config.h.in"
 
 #include <towerdefense/Map.h>
-#include <towerdefense/MapLoader.h>
 #include <towerdefense/Resource.h>
 #include <towerdefense/World.h>
 #include <towerdefense/Enemy.h>
@@ -34,7 +33,7 @@ int main(int argc, char *argv[]) {
   sf::RenderWindow window(sf::VideoMode(500, 500), "Tower Defense (version " GAME_VERSION ")");
   window.setKeyRepeatEnabled(false);
   td::ImageHandler::initialize();
-  td::Map mapLevel = td::MapLoader::loadMap("res/maps/level2.txt");
+  td::Map mapLevel("res/maps/level1.txt");
 
   // load resources
   fs::path bindir_path(argv[0]);
