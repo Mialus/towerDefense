@@ -43,16 +43,6 @@ namespace towerdefense {
     else {
       std::cout << "Unable to open file";
     }
-
-    m_sprites = std::vector<sf::Sprite>();
-    m_sprites.push_back(sf::Sprite());
-    m_sprites.at(0).setTexture(ImageHandler::getTexture(SpriteList::FIELD));
-    m_sprites.push_back(sf::Sprite());
-    m_sprites.at(1).setTexture(ImageHandler::getTexture(SpriteList::START));
-    m_sprites.push_back(sf::Sprite());
-    m_sprites.at(2).setTexture(ImageHandler::getTexture(SpriteList::END));
-    m_sprites.push_back(sf::Sprite());
-    m_sprites.at(3).setTexture(ImageHandler::getTexture(SpriteList::PATH));
   }
 
   Map::~Map(){
@@ -69,19 +59,19 @@ namespace towerdefense {
       for(unsigned int j=0; j<line.size(); ++j){
         switch(line[j]){
         case MapIdentifier::FIELD:
-          sprite = m_sprites.at(0);
+          sprite.setTexture(ImageHandler::getTexture(SpriteList::FIELD));
           break;
         case MapIdentifier::START:
-          sprite = m_sprites.at(1);
+          sprite.setTexture(ImageHandler::getTexture(SpriteList::START));
           break;
         case MapIdentifier::END:
-          sprite = m_sprites.at(2);
+          sprite.setTexture(ImageHandler::getTexture(SpriteList::END));
           break;
         case MapIdentifier::PATH:
-          sprite = m_sprites.at(3);
+          sprite.setTexture(ImageHandler::getTexture(SpriteList::PATH));
           break;
         default:
-          sprite = m_sprites.at(0);
+          sprite.setTexture(ImageHandler::getTexture(SpriteList::FIELD));
           break;
         }
         sprite.setPosition(j*m_tileWidth, i*m_tileHeight);
@@ -102,10 +92,6 @@ namespace towerdefense {
       m_height = height;
       m_tileHeight = height/10;
     }
-  }
-
-  void Map::setLevel(std::vector<std::vector<MapIdentifier>> level){
-    m_level = level;
   }
 
 }

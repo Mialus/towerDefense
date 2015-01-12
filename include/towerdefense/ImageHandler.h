@@ -26,6 +26,8 @@ namespace towerdefense{
     static sf::Texture getTexture(SpriteList selected);
   private:
     static std::vector<sf::Texture *> m_textures;
+
+    static sf::Texture* createPTexture();
   };
 
 }

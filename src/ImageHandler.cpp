@@ -5,27 +5,30 @@ namespace towerdefense {
   std::vector<sf::Texture *> ImageHandler::m_textures = std::vector<sf::Texture *>();
 
   ImageHandler::ImageHandler(){
-    initialize();
+  }
+
+  sf::Texture* ImageHandler::createPTexture(){
+    sf::Texture * texture = new sf::Texture();
+    return texture;
   }
 
   void ImageHandler::initialize(){
-    sf::Texture* pTexture = new sf::Texture();
     // Loading Map's texture
-    m_textures.push_back(pTexture);
+    m_textures.push_back(createPTexture());
     if(!m_textures.at(0)->loadFromFile("res/img/start.jpg",
                                     sf::IntRect(0,0,32,32))){
       printf("Start texture of the map can't be loaded !");
       exit(1);
     }
 
-    m_textures.push_back(pTexture);
+    m_textures.push_back(createPTexture());
     if(!m_textures.at(1)->loadFromFile("res/img/path.jpg",
                                     sf::IntRect(0,0,32,32))){
       printf("Path texture of the map can't be loaded !");
       exit(1);
     }
 
-    m_textures.push_back(pTexture);
+    m_textures.push_back(createPTexture());
     if(!m_textures.at(2)->loadFromFile("res/img/field.jpg",
                                     sf::IntRect(0,0,32,32))){
       printf("Field texture of the map can't be loaded !");
@@ -34,21 +37,21 @@ namespace towerdefense {
     // END LOAD MAP TEXTURE
 
     // LOADING OTHERS ENTITY TEXTURE
-    m_textures.push_back(pTexture);
+    m_textures.push_back(createPTexture());
     if(!m_textures.at(3)->loadFromFile("res/img/enemy.jpg",
                                     sf::IntRect(0,0,32,32))){
       printf("Enemy texture can't be loaded !");
       exit(1);
     }
 
-    m_textures.push_back(pTexture);
+    m_textures.push_back(createPTexture());
     if(!m_textures.at(4)->loadFromFile("res/img/tower.jpg",
                                     sf::IntRect(0,0,32,32))){
       printf("Tower texture can't be loaded !");
       exit(1);
     }
 
-    m_textures.push_back(pTexture);
+    m_textures.push_back(createPTexture());
     if(!m_textures.at(5)->loadFromFile("res/img/end.jpg",
                                     sf::IntRect(0,0,32,32))){
       printf("End texture can't be loaded !");

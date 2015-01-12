@@ -29,7 +29,6 @@ namespace towerdefense{
 
     void setWidth(int width);
     void setHeight(int height);
-    void setLevel(std::vector<std::vector<MapIdentifier>> level);
 
   private:
     unsigned int m_tileWidth;
@@ -37,7 +36,6 @@ namespace towerdefense{
     unsigned int m_width;
     unsigned int m_height;
     std::vector<std::vector<MapIdentifier>> m_level;
-    std::vector<sf::Sprite> m_sprites;
   };
 
 }
