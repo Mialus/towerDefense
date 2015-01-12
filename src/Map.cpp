@@ -13,9 +13,9 @@ namespace towerdefense {
     // Loading text file for level definition
     if (levelTxt.is_open())
     {
+      int j=0;
       while(getline(levelTxt,line))
       {
-        int j=0;
         m_level.push_back(std::vector<MapIdentifier>());
         for(int i=0; i<line.length(); i++){
           switch(line[i]){
