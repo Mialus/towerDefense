@@ -32,7 +32,7 @@ int main(int argc, char *argv[]) {
   td::World world;
   sf::RenderWindow window(sf::VideoMode(500, 500), "Tower Defense (version " GAME_VERSION ")");
   window.setKeyRepeatEnabled(false);
-  td::ImageHandler::initialize();
+  td::ImageHandler::initialize(500, 500);
   td::Map mapLevel("res/maps/level1.txt");
 
   // load resources

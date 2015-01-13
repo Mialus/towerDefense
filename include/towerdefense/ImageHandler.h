@@ -1,6 +1,7 @@
 #ifndef IMAGEHANDLER_H
 #define IMAGEHANDLER_H
 
+#include <iostream>
 #include <vector>
 
 #include <SFML/graphics.hpp>
@@ -21,7 +22,7 @@ namespace towerdefense{
 
     ImageHandler();
 
-    static void initialize();
+    static void initialize(int winwidth, int winheight);
 
     static sf::Texture getTexture(SpriteList selected);
   private:

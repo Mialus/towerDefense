@@ -17,7 +17,7 @@ namespace towerdefense {
       while(getline(levelTxt,line))
       {
         m_level.push_back(std::vector<MapIdentifier>());
-        for(int i=0; i<line.length(); i++){
+        for(unsigned int i=0; i<line.length(); i++){
           switch(line[i]){
           case '#':
             m_level.at(j).push_back(MapIdentifier::FIELD);
@@ -53,27 +53,29 @@ namespace towerdefense {
 
   void Map::render(sf::RenderWindow& window){
     sf::Sprite sprite;
+    sf::Texture texture;
 
     for(unsigned int i=0; i<m_level.size(); ++i){
       std::vector<MapIdentifier> line = m_level[i];
       for(unsigned int j=0; j<line.size(); ++j){
         switch(line[j]){
         case MapIdentifier::FIELD:
-          sprite.setTexture(ImageHandler::getTexture(SpriteList::FIELD));
+          texture = ImageHandler::getTexture(SpriteList::FIELD);
           break;
         case MapIdentifier::START:
-          sprite.setTexture(ImageHandler::getTexture(SpriteList::START));
+          texture = ImageHandler::getTexture(SpriteList::START);
           break;
         case MapIdentifier::END:
-          sprite.setTexture(ImageHandler::getTexture(SpriteList::END));
+          texture = ImageHandler::getTexture(SpriteList::END);
           break;
         case MapIdentifier::PATH:
-          sprite.setTexture(ImageHandler::getTexture(SpriteList::PATH));
+          texture = ImageHandler::getTexture(SpriteList::PATH);
           break;
         default:
-          sprite.setTexture(ImageHandler::getTexture(SpriteList::FIELD));
+          texture = ImageHandler::getTexture(SpriteList::FIELD);
           break;
         }
+        sprite.setTexture(texture);
         sprite.setPosition(j*m_tileWidth, i*m_tileHeight);
         window.draw(sprite);
       }
@@ -90,7 +92,7 @@ namespace towerdefense {
   void Map::setHeight(int height){
     if(height > 0) {
       m_height = height;
-      m_tileHeight = height/10;
+      m_tileHeight = height/5;
     }
   }
 
