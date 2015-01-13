@@ -21,7 +21,6 @@
 #include <towerdefense/Map.h>
 #include <towerdefense/Resource.h>
 #include <towerdefense/World.h>
-#include <towerdefense/Enemy.h>
 
 namespace td = towerdefense;
 namespace fs = boost::filesystem;
@@ -32,8 +31,8 @@ int main(int argc, char *argv[]) {
   td::World world;
   sf::RenderWindow window(sf::VideoMode(500, 500), "Tower Defense (version " GAME_VERSION ")");
   window.setKeyRepeatEnabled(false);
-  td::ImageHandler::initialize(500, 500);
-  td::Map mapLevel("res/maps/level1.txt");
+  td::ImageHandler::initialize();
+  td::Map mapLevel("res/maps/level1.txt", 500, 500);
 
   // load resources
   fs::path bindir_path(argv[0]);
@@ -48,11 +47,7 @@ int main(int argc, char *argv[]) {
   manager.addSearchDir(GAME_DATADIR);
 
   // add entities
-  //(int speed,int life,int level,int coin,const char* image, int defense, int posX, int posY)
-//  td::Enemy cube = td::Enemy(1,10,1,25,"res/computer/ennemy2.jpg",1,1,0);
-//  td::Tower to = td::Tower(1,1,4,2,"res/user/tower2.jpg");
-//  cube.SetPosXb(cube.GetPosX());
-//  cube.SetPosYb(cube.GetPosY());
+  world.addEntity(&mapLevel, td::Memory::FROM_STACK);
 
   // main loop
   sf::Clock clock;
@@ -70,6 +65,10 @@ int main(int argc, char *argv[]) {
             window.close();
             break;
 
+          case sf::Keyboard::Space:
+            mapLevel.changeLevel("res/maps/level2.txt");
+            break;
+
           default:
             break;
         }
@@ -84,10 +83,10 @@ int main(int argc, char *argv[]) {
     // render
     window.clear(sf::Color::White);
     world.render(window);
-    mapLevel.render(window);
     window.display();
   }
 
+  td::ImageHandler::freedisk();
   return 0;
 }
 //*/

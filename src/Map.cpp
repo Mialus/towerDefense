@@ -2,47 +2,10 @@
 
 namespace towerdefense {
 
-  Map::Map(std::string levelpath){
-    std::ifstream levelTxt(levelpath);
-    std::string line;
-    m_level = std::vector<std::vector<MapIdentifier>>();
-
-    setWidth(500);
-    setHeight(500);
-
-    // Loading text file for level definition
-    if (levelTxt.is_open())
-    {
-      int j=0;
-      while(getline(levelTxt,line))
-      {
-        m_level.push_back(std::vector<MapIdentifier>());
-        for(unsigned int i=0; i<line.length(); i++){
-          switch(line[i]){
-          case '#':
-            m_level.at(j).push_back(MapIdentifier::FIELD);
-            break;
-          case 'D':
-            m_level.at(j).push_back(MapIdentifier::START);
-            break;
-          case 'A':
-            m_level.at(j).push_back(MapIdentifier::END);
-            break;
-          case '.':
-            m_level.at(j).push_back(MapIdentifier::PATH);
-            break;
-          default:
-            m_level.at(j).push_back(MapIdentifier::FIELD);
-            break;
-          }
-        }
-        j++;
-      }
-      levelTxt.close();
-    }
-    else {
-      std::cout << "Unable to open file";
-    }
+  Map::Map(std::string levelpath, int width, int height){
+    setWidth(width);
+    setHeight(height);
+    changeLevel(levelpath);
   }
 
   Map::~Map(){
@@ -85,15 +48,63 @@ namespace towerdefense {
   void Map::setWidth(int width){
     if(width > 0) {
       m_width = width;
-      m_tileWidth = width/10;
     }
   }
 
   void Map::setHeight(int height){
     if(height > 0) {
       m_height = height;
-      m_tileHeight = height/5;
     }
   }
 
+  void Map::setTileWidth(int nTile){
+    m_tileWidth = m_width/nTile;
+  }
+
+  void Map::setTileHeight(int nTile){
+    m_tileHeight = m_height/nTile;
+  }
+
+  void Map::changeLevel(std::string levelpath){
+    std::ifstream levelTxt(levelpath);
+    std::string line;
+    m_level = std::vector<std::vector<MapIdentifier>>();
+
+    // Loading text file for level definition
+    if (levelTxt.is_open())
+    {
+      unsigned int i=0;
+      int j=0;
+      while(getline(levelTxt,line))
+      {
+        m_level.push_back(std::vector<MapIdentifier>());
+        for(i=0; i<line.length(); i++){
+          switch(line[i]){
+          case '#':
+            m_level.at(j).push_back(MapIdentifier::FIELD);
+            break;
+          case 'D':
+            m_level.at(j).push_back(MapIdentifier::START);
+            break;
+          case 'A':
+            m_level.at(j).push_back(MapIdentifier::END);
+            break;
+          case '.':
+            m_level.at(j).push_back(MapIdentifier::PATH);
+            break;
+          default:
+            m_level.at(j).push_back(MapIdentifier::FIELD);
+            break;
+          }
+        }
+        j++;
+      }
+      levelTxt.close();
+      setTileWidth(i);
+      setTileHeight(j);
+    }
+    else {
+      std::cout << "Unable to open level file";
+    }
+  }
 }

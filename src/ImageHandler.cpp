@@ -12,27 +12,22 @@ namespace towerdefense {
     return texture;
   }
 
-  void ImageHandler::initialize(int winwidth, int winheight){
-    int tileWidth = winwidth/10;
-    int tileHeight = winheight/5;
+  void ImageHandler::initialize(){
     // Loading Map's texture
     m_textures.push_back(createPTexture());
-    if(!m_textures.at(0)->loadFromFile("res/img/start.jpg",
-                                    sf::IntRect(0,0,tileWidth,tileHeight))){
+    if(!m_textures.at(0)->loadFromFile("res/img/start.jpg")){
       std::cout << "Start texture of the map can't be loaded !" << std::endl;
       exit(1);
     }
 
     m_textures.push_back(createPTexture());
-    if(!m_textures.at(1)->loadFromFile("res/img/path.jpg",
-                                    sf::IntRect(0,0,tileWidth,tileHeight))){
+    if(!m_textures.at(1)->loadFromFile("res/img/Sand.png")){
       std::cout << "Path texture of the map can't be loaded !" << std::endl;
       exit(1);
     }
 
     m_textures.push_back(createPTexture());
-    if(!m_textures.at(2)->loadFromFile("res/img/field.jpg",
-                                    sf::IntRect(0,0,tileWidth,tileHeight))){
+    if(!m_textures.at(2)->loadFromFile("res/img/Grass.png")){
       std::cout << "Field texture of the map can't be loaded !" << std::endl;
       exit(1);
     }
@@ -40,22 +35,19 @@ namespace towerdefense {
 
     // LOADING OTHERS ENTITY TEXTURE
     m_textures.push_back(createPTexture());
-    if(!m_textures.at(3)->loadFromFile("res/img/enemy.jpg",
-                                    sf::IntRect(0,0,32,32))){
+    if(!m_textures.at(3)->loadFromFile("res/img/enemy.jpg")){
       std::cout << "Enemy texture can't be loaded !" << std::endl;
       exit(1);
     }
 
     m_textures.push_back(createPTexture());
-    if(!m_textures.at(4)->loadFromFile("res/img/tower.jpg",
-                                    sf::IntRect(0,0,32,32))){
+    if(!m_textures.at(4)->loadFromFile("res/img/tower.jpg")){
       std::cout << "Tower texture can't be loaded !" << std::endl;
       exit(1);
     }
 
     m_textures.push_back(createPTexture());
-    if(!m_textures.at(5)->loadFromFile("res/img/end.jpg",
-                                    sf::IntRect(0,0,tileWidth,tileHeight))){
+    if(!m_textures.at(5)->loadFromFile("res/img/end.jpg")){
       std::cout << "End texture can't be loaded !" << std::endl;
       exit(1);
     }
@@ -88,4 +80,9 @@ namespace towerdefense {
     }
   }
 
+  void ImageHandler::freedisk(){
+    for(unsigned int i=0;i<m_textures.size();i++){
+      delete m_textures.at(i);
+    }
+  }
 }

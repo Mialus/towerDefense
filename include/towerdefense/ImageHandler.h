@@ -19,10 +19,10 @@ namespace towerdefense{
 
   class ImageHandler {
   public:
-
     ImageHandler();
 
-    static void initialize(int winwidth, int winheight);
+    static void initialize();
+    static void freedisk();
 
     static sf::Texture getTexture(SpriteList selected);
   private:
