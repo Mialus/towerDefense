@@ -54,10 +54,6 @@ namespace towerdefense {
     m_speed=speed;
   }
 
-  void Enemy::SetImage(const char* image){
-    m_image=image;
-  }
-
   int Enemy::GetCoin(){
     return m_coin;
   }
@@ -74,27 +70,23 @@ namespace towerdefense {
     return m_speed;
   }
 
-  const char* Enemy::GetImage(){
-    return m_image;
-  }
-
   int Enemy::GetDefense(){
     return m_defense;
   }
 
-  Enemy::Enemy(int speed,int life,int level,int coin,const char* image, int defense, int posX, int posY)
+  Enemy::Enemy(int speed,int life,int level,int coin, int defense)
   {
     m_life = life;
     m_speed = speed;
     m_level = level;
     m_coin = coin;
-    m_image = image;
     m_defense = defense*level;
-    m_posX = posX;
-    m_posY = posY;
   }
 
-  void Enemy::GiveSprite(){
+    Enemy::~Enemy() {
+  }
+
+  /*void Enemy::GiveSprite(){
     sf::Texture enemy;
     sf::Sprite spriteEnemy;
     int m_tileWidth=500/10;
@@ -109,60 +101,5 @@ namespace towerdefense {
     spriteEnemy.setTexture(enemy);
 
     m_sprite= spriteEnemy;
-  }
-
-  sf::Sprite Enemy::Show(){
-    return m_sprite;
-  }
-
-  void Enemy::update(float dt){
-/*
-    unsigned int x=en.getPosX();
-    unsigned int y=en.getPosY();
-    unsigned int xb=en.getPosXb();
-    unsigned int yb=en.getPosYb();
-    std::string& line= m_level[y+1];
-
-    if((line[x]=='.')&&(yb!=y+1)){
-      en.SetPosYb(en.getPosY());
-      en.SetPosY(y+1);
-    }else {
-      line= m_level[y];
-      if((line[x+1]=='.')&&(xb!=x+1)){
-        en.SetPosXb(en.getPosX());
-        en.SetPosX(x+1);
-      }else{
-        line= m_level[y];
-        if((line[x-1]=='.')&&(xb!=x-1)){
-          en.SetPosXb(en.getPosX());
-          en.SetPosX(x-1);
-        }else{
-          line= m_level[y-1];
-          if((line[x]=='.')&&(yb!=y-1)){
-            en.SetPosYb(en.getPosY());
-            en.SetPosY(y-1);
-          }
-        }
-      }
-    }
-//*/
-  }
-
-  // DEMERDE TOI AVEC TES FONCTIONS UPDATE ET RENDER
-  void Enemy::render(sf::RenderWindow& window){
-/*
-    if(((j)==to.getPosX())&& ((i==to.getPosY()))){// we put the tower on map
-      sprite=to.Show();
-      sprite.setPosition(to.getPosX()*m_tileWidth, to.getPosY()*m_tileHeight);
-    }else{
-      if(((j)==en.getPosX())&& ((i==en.getPosY()))){//we put the enemy on map
-        sprite=en.Show();
-        sprite.setPosition(en.getPosX()*m_tileWidth, en.getPosY()*m_tileHeight);
-      }else{
-        sprite.setPosition(j*m_tileWidth, i*m_tileHeight);
-      }
-    }
-//*/
-  }
-
+  }*/
 }
