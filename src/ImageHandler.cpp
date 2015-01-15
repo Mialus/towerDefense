@@ -15,7 +15,7 @@ namespace towerdefense {
   void ImageHandler::initialize(){
     // Loading Map's texture
     m_textures.push_back(createPTexture());
-    if(!m_textures.at(0)->loadFromFile("res/img/start.jpg")){
+    if(!m_textures.at(0)->loadFromFile("res/img/spawn.png")){
       std::cout << "Start texture of the map can't be loaded !" << std::endl;
       exit(1);
     }
@@ -47,7 +47,7 @@ namespace towerdefense {
     }
 
     m_textures.push_back(createPTexture());
-    if(!m_textures.at(5)->loadFromFile("res/img/end.jpg")){
+    if(!m_textures.at(5)->loadFromFile("res/img/door.png")){
       std::cout << "End texture can't be loaded !" << std::endl;
       exit(1);
     }
