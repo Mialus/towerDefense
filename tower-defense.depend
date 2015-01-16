@@ -11468,7 +11468,7 @@
 	<towerdefense/Entity.h>
 	<towerdefense/ImageHandler.h>
 
-1418230371 e:\dev\github\towerdefense\include\towerdefense\enemy.h
+1421340886 e:\dev\github\towerdefense\include\towerdefense\enemy.h
 	<boost/filesystem.hpp>
 	<SFML/Graphics.hpp>
 	<SFML/Window/Window.hpp>
@@ -11485,16 +11485,16 @@
 1418228806 e:\dev\github\towerdefense\include\towerdefense\bullet.h
 	<towerdefense/Entity.h>
 
-1418231290 source:e:\dev\github\towerdefense\src\enemy.cpp
+1421340886 source:e:\dev\github\towerdefense\src\enemy.cpp
 	<towerdefense/Enemy.h>
 
-1416754762 source:e:\dev\github\towerdefense\src\entity.cpp
+1421340886 source:e:\dev\github\towerdefense\src\entity.cpp
 	<towerdefense/Entity.h>
 
-1421167710 source:e:\dev\github\towerdefense\src\imagehandler.cpp
+1421426086 source:e:\dev\github\towerdefense\src\imagehandler.cpp
 	<towerdefense/ImageHandler.h>
 
-1421167670 e:\dev\github\towerdefense\include\towerdefense\imagehandler.h
+1421426101 e:\dev\github\towerdefense\include\towerdefense\imagehandler.h
 	<iostream>
 	<vector>
 	<SFML/graphics.hpp>
@@ -11608,4 +11608,19 @@
 
 1421265059 source:d:\travail\informatique\licence l3\towerdefense\towerdefense\src\tank.cpp
 	"Tank.h"
+
+1421340886 source:e:\dev\github\towerdefense\src\enemymanager.cpp
+	"towerdefense/EnemyManager.h"
+
+1421340886 e:\dev\github\towerdefense\include\towerdefense\enemymanager.h
+	<iostream>
+	<vector>
+	<SFML/graphics.hpp>
+	<towerdefense/Enemy.h>
+	<towerdefense/ImageHandler.h>
+	"towerdefense/Tank.h"
+	<towerdefense/Map.h>
+
+1421340886 e:\dev\github\towerdefense\include\towerdefense\tank.h
+	"Enemy.h"
 

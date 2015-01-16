@@ -1,4 +1,4 @@
-#include "Tank.h"
+#include <towerdefense/Tank.h>
 
 namespace towerdefense {
 

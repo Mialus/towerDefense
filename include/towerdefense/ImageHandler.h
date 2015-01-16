@@ -15,18 +15,20 @@ namespace towerdefense{
         END,
         ENEMY,
         TOWER,
+        TANK,
+        BULLET,
   };
 
   class ImageHandler {
   public:
-    ImageHandler();
-
     static void initialize();
     static void freedisk();
 
     static sf::Texture getTexture(SpriteList selected);
   private:
     static std::vector<sf::Texture *> m_textures;
+
+    ImageHandler();
 
     static sf::Texture* createPTexture();
   };
