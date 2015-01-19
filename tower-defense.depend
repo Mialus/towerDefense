@@ -3792,7 +3792,7 @@
 1367997281 d:\travail\informatique\licence l3\towerdefense\towerdefense\include\sfml\window\export.hpp
 	<SFML/Config.hpp>
 
-1421284975 d:\travail\informatique\licence l3\towerdefense\towerdefense\include\towerdefense\entity.h
+1421629852 d:\travail\informatique\licence l3\towerdefense\towerdefense\include\towerdefense\entity.h
 	<SFML/Graphics.hpp>
 
 1367997278 d:\travail\informatique\licence l3\towerdefense\towerdefense\include\sfml\graphics.hpp
@@ -11547,11 +11547,11 @@
 	<iostream>
 	<boost/filesystem.hpp>
 
-1420431885 source:d:\travail\informatique\licence l3\towerdefense\towerdefense\src\tower.cpp
+1421632565 source:d:\travail\informatique\licence l3\towerdefense\towerdefense\src\tower.cpp
 	<towerdefense/Tower.h>
 	<SFML/Graphics.hpp>
 
-1420431885 d:\travail\informatique\licence l3\towerdefense\towerdefense\include\towerdefense\tower.h
+1421633042 d:\travail\informatique\licence l3\towerdefense\towerdefense\include\towerdefense\tower.h
 	<SFML/Graphics.hpp>
 	<towerdefense/Entity.h>
 
@@ -11569,45 +11569,47 @@
 	<towerdefense/Entity.h>
 	<towerdefense/ImageHandler.h>
 
-1421219476 d:\travail\informatique\licence l3\towerdefense\towerdefense\include\towerdefense\imagehandler.h
+1421627820 d:\travail\informatique\licence l3\towerdefense\towerdefense\include\towerdefense\imagehandler.h
 	<iostream>
 	<vector>
 	<SFML/graphics.hpp>
 
-1421263332 source:d:\travail\informatique\licence l3\towerdefense\towerdefense\src\enemy.cpp
+1421631354 source:d:\travail\informatique\licence l3\towerdefense\towerdefense\src\enemy.cpp
 	<towerdefense/Enemy.h>
 
-1421263343 d:\travail\informatique\licence l3\towerdefense\towerdefense\include\towerdefense\enemy.h
+1421630365 d:\travail\informatique\licence l3\towerdefense\towerdefense\include\towerdefense\enemy.h
 	<boost/filesystem.hpp>
 	<SFML/Graphics.hpp>
 	<SFML/Window/Window.hpp>
 	<towerdefense/World.h>
 	<towerdefense/Entity.h>
 
-1421284975 source:d:\travail\informatique\licence l3\towerdefense\towerdefense\src\entity.cpp
+1421629864 source:d:\travail\informatique\licence l3\towerdefense\towerdefense\src\entity.cpp
 	<towerdefense/Entity.h>
 
-1421219476 source:d:\travail\informatique\licence l3\towerdefense\towerdefense\src\imagehandler.cpp
+1421627820 source:d:\travail\informatique\licence l3\towerdefense\towerdefense\src\imagehandler.cpp
 	<towerdefense/ImageHandler.h>
 
 1421219476 source:d:\travail\informatique\licence l3\towerdefense\towerdefense\src\map.cpp
 	<towerdefense/Map.h>
 
-1421259354 source:d:\travail\informatique\licence l3\towerdefense\towerdefense\src\enemymanager.cpp
-	"EnemyManager.h"
-	"Tank.h"
+1421629861 source:d:\travail\informatique\licence l3\towerdefense\towerdefense\src\enemymanager.cpp
+	"towerdefense/EnemyManager.h"
 
-1421257584 d:\travail\informatique\licence l3\towerdefense\towerdefense\include\towerdefense\enemymanager.h
+1421326211 d:\travail\informatique\licence l3\towerdefense\towerdefense\include\towerdefense\enemymanager.h
 	<iostream>
 	<vector>
 	<SFML/graphics.hpp>
 	<towerdefense/Enemy.h>
+	<towerdefense/ImageHandler.h>
+	"towerdefense/Tank.h"
+	<towerdefense/Map.h>
 
 1421264897 d:\travail\informatique\licence l3\towerdefense\towerdefense\include\towerdefense\tank.h
 	"Enemy.h"
 
-1421265059 source:d:\travail\informatique\licence l3\towerdefense\towerdefense\src\tank.cpp
-	"Tank.h"
+1421627820 source:d:\travail\informatique\licence l3\towerdefense\towerdefense\src\tank.cpp
+	<towerdefense/Tank.h>
 
 1421340886 source:e:\dev\github\towerdefense\src\enemymanager.cpp
 	"towerdefense/EnemyManager.h"
@@ -11623,4 +11625,22 @@
 
 1421340886 e:\dev\github\towerdefense\include\towerdefense\tank.h
 	"Enemy.h"
+
+1421632637 source:d:\travail\informatique\licence l3\towerdefense\towerdefense\src\towermanager.cpp
+	"TowerManager.h"
+
+1421632678 d:\travail\informatique\licence l3\towerdefense\towerdefense\include\towerdefense\towermanager.h
+	<iostream>
+	<vector>
+	<SFML/graphics.hpp>
+	<towerdefense/tower.h>
+	<towerdefense/ImageHandler.h>
+	"towerdefense/Tank.h"
+	<towerdefense/Map.h>
+
+1421632884 source:d:\travail\informatique\licence l3\towerdefense\towerdefense\src\antichar.cpp
+	"AntiChar.h"
+
+1421633221 d:\travail\informatique\licence l3\towerdefense\towerdefense\include\towerdefense\antichar.h
+	"tower.h"
 

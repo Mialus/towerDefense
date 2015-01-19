@@ -16,6 +16,7 @@ namespace towerdefense {
     Enemy(int speed,int life,int level,int coin,int defense);
     ~Enemy();
     void SetDefense(int defense,int level);
+    void update(float dt);
     void SetSpeed(int speed);
     void SetLife(int life);
     void SetLevel(int level);

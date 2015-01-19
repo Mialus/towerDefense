@@ -86,20 +86,12 @@ namespace towerdefense {
     Enemy::~Enemy() {
   }
 
-  /*void Enemy::GiveSprite(){
-    sf::Texture enemy;
-    sf::Sprite spriteEnemy;
-    int m_tileWidth=500/10;
-    int m_tileHeight=500/5;
+    void Enemy::update(float dt){
+      if(dt){
 
-    if(!enemy.loadFromFile(GetImage(), sf::IntRect(10,10,m_tileWidth,m_tileHeight)))
-    {
-        printf("Enemy's Texture can't be load ! Error !");
-        exit(1);
-    }
 
-    spriteEnemy.setTexture(enemy);
 
-    m_sprite= spriteEnemy;
-  }*/
+      }
+
+  }
 }

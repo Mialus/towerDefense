@@ -7,31 +7,24 @@
 
 namespace towerdefense{
 
-  class Tower : public Entity {
+  class tower : public Entity {
   public :
-    Tower(int level,int degat, int posX, int posY, const char* m_image);
+    tower(int level,int degat, int posX, int posY);
     void setLevel(int level);
     void setDegat(int degat,int level);
     void setPosX(int posX);
     void setPosY(int posY);
-    sf::Sprite Show();
-    void giveSprite();
-    void setImage(const char* image);
     int getLevel();
     int getDegat();
     int getPosX();
     int getPosY();
-    const char* getImage();
     void update(float dt);
-    void render(sf::RenderWindow& window);
 
   private :
     int m_level;
     int m_degat;
     int m_posX;
     int m_posY;
-    const char* m_image;
-    sf::Sprite m_sprite;
   };
 
 }

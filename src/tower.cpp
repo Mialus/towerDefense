@@ -3,55 +3,46 @@
 
 namespace towerdefense {
 
-  void Tower::setLevel(int level){
+  void tower::setLevel(int level){
     m_level=level;
   }
 
-  void Tower::setDegat(int degat,int level){
+  void tower::setDegat(int degat,int level){
     m_degat=degat*level;
   }
 
-  void Tower::setPosX(int posX){
+  void tower::setPosX(int posX){
     m_posX=posX;
   }
 
-  void Tower::setPosY(int posY){
+  void tower::setPosY(int posY){
     m_posY=posY;
   }
 
-  void Tower::setImage(const char* image){
-    m_image=image;
-  }
-
-  int Tower::getLevel(){
+  int tower::getLevel(){
     return m_level;
   }
 
-  int Tower::getDegat(){
+  int tower::getDegat(){
     return m_degat;
   }
 
-  int Tower::getPosX(){
+  int tower::getPosX(){
     return m_posX;
   }
 
-  int Tower::getPosY(){
+  int tower::getPosY(){
     return m_posY;
   }
 
-  const char* Tower::getImage(){
-    return m_image;
-  }
-
-  Tower::Tower(int level,int degat, int posX, int posY, const char* image){
+  tower::tower(int level,int degat, int posX, int posY){
     setLevel(level);
     setDegat(degat,level);
     setPosX(posX);
     setPosY(posY);
-    setImage(image);
   }
 
-  void Tower::giveSprite(){
+  /*void tower::giveSprite(){
     sf::Texture tower;
     sf::Sprite spriteTower;
     int m_tileWidth=500/10;
@@ -66,16 +57,9 @@ namespace towerdefense {
     spriteTower.setTexture(tower);
 
     m_sprite= spriteTower;
-  }
+  }*/
 
-  sf::Sprite Tower::Show(){
-    return m_sprite;
-  }
 
-  void Tower::update(float dt){
+  void tower::update(float dt){
   }
-
-  void Tower::render(sf::RenderWindow& window){
-  }
-
 }
