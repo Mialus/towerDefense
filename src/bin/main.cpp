@@ -72,6 +72,9 @@ int main(int argc, char *argv[]) {
           default:
             break;
         }
+        if (sf::Mouse::isButtonPressed(sf::Mouse::Left)){
+
+        }
 
       }
     }

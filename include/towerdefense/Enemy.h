@@ -12,13 +12,6 @@
 
 namespace towerdefense {
 
-/*  enum class MapIdentifier {
-        PATH,
-        FIELD,
-        START,
-        END,
-  };*/
-
   class Enemy : public Entity {
   public:
     Enemy(int speed,int life,int level,int coin,int defense);
@@ -51,8 +44,8 @@ namespace towerdefense {
     int m_coin;
     int m_posX;
     int m_posY;
-    int m_posXb=0;
-    int m_posYb=0;
+    int m_posXb=-5;
+    int m_posYb=-5;
   };
 
 }
