@@ -3,8 +3,9 @@
 
 namespace towerdefense {
 
-EnemyManager::EnemyManager(int nombreEnemy,unsigned int tileW, unsigned int tileH)
+EnemyManager::EnemyManager(int nombreEnemy,unsigned int tileW, unsigned int tileH, std::vector<std::vector<MapIdentifier>> level)
 {
+    m_level=level;
     m_tileWidth=tileW;
     m_tileHeight=tileH;
     m_nbrEnnemy=nombreEnemy;
@@ -18,7 +19,7 @@ EnemyManager::EnemyManager(int nombreEnemy,unsigned int tileW, unsigned int tile
     int nombreEnemy=m_nbrEnnemy;
 
     while(nombreEnemy>0){
-        allEnemy.at(nombreEnemy).update(dt);
+        allEnemy.at(nombreEnemy).update(dt, m_level);
         nombreEnemy--;
     }
 }

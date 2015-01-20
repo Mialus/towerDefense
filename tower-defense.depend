@@ -11547,7 +11547,7 @@
 	<iostream>
 	<boost/filesystem.hpp>
 
-1421632565 source:d:\travail\informatique\licence l3\towerdefense\towerdefense\src\tower.cpp
+1421633234 source:d:\travail\informatique\licence l3\towerdefense\towerdefense\src\tower.cpp
 	<towerdefense/Tower.h>
 	<SFML/Graphics.hpp>
 
@@ -11561,28 +11561,30 @@
 	<algorithm>
 	<memory>
 
-1421219476 d:\travail\informatique\licence l3\towerdefense\towerdefense\include\towerdefense\map.h
+1421711346 d:\travail\informatique\licence l3\towerdefense\towerdefense\include\towerdefense\map.h
 	<vector>
 	<iostream>
 	<fstream>
 	<SFML/Graphics.hpp>
 	<towerdefense/Entity.h>
 	<towerdefense/ImageHandler.h>
+	<towerdefense/MapIdentifier.h>
 
 1421627820 d:\travail\informatique\licence l3\towerdefense\towerdefense\include\towerdefense\imagehandler.h
 	<iostream>
 	<vector>
 	<SFML/graphics.hpp>
 
-1421631354 source:d:\travail\informatique\licence l3\towerdefense\towerdefense\src\enemy.cpp
+1421709924 source:d:\travail\informatique\licence l3\towerdefense\towerdefense\src\enemy.cpp
 	<towerdefense/Enemy.h>
 
-1421630365 d:\travail\informatique\licence l3\towerdefense\towerdefense\include\towerdefense\enemy.h
+1421711305 d:\travail\informatique\licence l3\towerdefense\towerdefense\include\towerdefense\enemy.h
 	<boost/filesystem.hpp>
 	<SFML/Graphics.hpp>
 	<SFML/Window/Window.hpp>
 	<towerdefense/World.h>
 	<towerdefense/Entity.h>
+	<towerdefense/MapIdentifier.h>
 
 1421629864 source:d:\travail\informatique\licence l3\towerdefense\towerdefense\src\entity.cpp
 	<towerdefense/Entity.h>
@@ -11593,10 +11595,10 @@
 1421219476 source:d:\travail\informatique\licence l3\towerdefense\towerdefense\src\map.cpp
 	<towerdefense/Map.h>
 
-1421629861 source:d:\travail\informatique\licence l3\towerdefense\towerdefense\src\enemymanager.cpp
+1421709435 source:d:\travail\informatique\licence l3\towerdefense\towerdefense\src\enemymanager.cpp
 	"towerdefense/EnemyManager.h"
 
-1421326211 d:\travail\informatique\licence l3\towerdefense\towerdefense\include\towerdefense\enemymanager.h
+1421709379 d:\travail\informatique\licence l3\towerdefense\towerdefense\include\towerdefense\enemymanager.h
 	<iostream>
 	<vector>
 	<SFML/graphics.hpp>
@@ -11643,4 +11645,9 @@
 
 1421633221 d:\travail\informatique\licence l3\towerdefense\towerdefense\include\towerdefense\antichar.h
 	"tower.h"
+
+1421711263 d:\travail\informatique\licence l3\towerdefense\towerdefense\include\towerdefense\mapidentifier.h
+
+1421711272 source:d:\travail\informatique\licence l3\towerdefense\towerdefense\src\mapidentifier.cpp
+	"MapIdentifier.h"
 

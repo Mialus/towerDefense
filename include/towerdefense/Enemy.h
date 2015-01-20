@@ -8,15 +8,23 @@
 
 #include <towerdefense/World.h>
 #include <towerdefense/Entity.h>
+#include <towerdefense/MapIdentifier.h>
 
 namespace towerdefense {
+
+/*  enum class MapIdentifier {
+        PATH,
+        FIELD,
+        START,
+        END,
+  };*/
 
   class Enemy : public Entity {
   public:
     Enemy(int speed,int life,int level,int coin,int defense);
     ~Enemy();
     void SetDefense(int defense,int level);
-    void update(float dt);
+    void update(float dt, std::vector<std::vector<MapIdentifier>> level);
     void SetSpeed(int speed);
     void SetLife(int life);
     void SetLevel(int level);
@@ -43,8 +51,8 @@ namespace towerdefense {
     int m_coin;
     int m_posX;
     int m_posY;
-    int m_posXb;
-    int m_posYb;
+    int m_posXb=0;
+    int m_posYb=0;
   };
 
 }

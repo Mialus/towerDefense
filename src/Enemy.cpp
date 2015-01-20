@@ -86,11 +86,28 @@ namespace towerdefense {
     Enemy::~Enemy() {
   }
 
-    void Enemy::update(float dt){
+    void Enemy::update(float dt, std::vector<std::vector<MapIdentifier>> level){
       if(dt){
+            for(int i=-1; i<1; ++i){
+            std::vector<MapIdentifier> line = level[i+m_posX];
+            for(int j=-1; j<1; ++j){
+                if(line[j+m_posY]==MapIdentifier::PATH){ // Si c'est un chemin
+                    if((j+m_posY!=m_posYb)||(i+m_posX!=m_posXb)){ // si ce n'est pas la derniére case
+                        if((j+m_posY!=m_posY)||(i+m_posX!=m_posX)){ // si ce n'est pas la case actuel
+                            m_posXb=m_posX;
+                            m_posYb=m_posY;
+
+                            m_posX+=i;
+                            m_posY+=j;
+                        }
+
+                    }
+                }
 
 
 
+            }
+            }
       }
 
   }

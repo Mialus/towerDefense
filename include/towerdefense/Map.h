@@ -9,15 +9,16 @@
 
 #include <towerdefense/Entity.h>
 #include <towerdefense/ImageHandler.h>
+#include <towerdefense/MapIdentifier.h>
 
 namespace towerdefense{
 
-  enum class MapIdentifier {
+/*  enum class MapIdentifier {
         PATH,
         FIELD,
         START,
         END,
-  };
+  };*/
 
   class Map : public Entity {
   public:

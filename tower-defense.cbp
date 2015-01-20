@@ -80,6 +80,7 @@
 		<Unit filename="include/towerdefense/Event.h" />
 		<Unit filename="include/towerdefense/ImageHandler.h" />
 		<Unit filename="include/towerdefense/Map.h" />
+		<Unit filename="include/towerdefense/MapIdentifier.h" />
 		<Unit filename="include/towerdefense/Random.h" />
 		<Unit filename="include/towerdefense/Resource.h" />
 		<Unit filename="include/towerdefense/Tank.h" />
@@ -94,6 +95,7 @@
 		<Unit filename="src/Entity.cpp" />
 		<Unit filename="src/ImageHandler.cpp" />
 		<Unit filename="src/Map.cpp" />
+		<Unit filename="src/MapIdentifier.cpp" />
 		<Unit filename="src/Random.cpp" />
 		<Unit filename="src/Resource.cpp" />
 		<Unit filename="src/Tank.cpp" />
