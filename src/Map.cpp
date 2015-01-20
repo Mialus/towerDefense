@@ -45,6 +45,10 @@ namespace towerdefense {
     }
   }
 
+  std::vector<std::vector<MapIdentifier>> Map::getLevel(){
+      return m_level;
+  }
+
   void Map::setWidth(int width){
     if(width > 0) {
       m_width = width;

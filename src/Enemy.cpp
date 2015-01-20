@@ -86,6 +86,15 @@ namespace towerdefense {
     Enemy::~Enemy() {
   }
 
+   void Enemy::render(sf::RenderWindow& window){
+       sf::Sprite sprite;
+    sf::Texture texture = ImageHandler::getTexture(SpriteList::ENEMY);
+
+    sprite.setTexture(texture);
+    sprite.setPosition(m_posX, m_posY);
+    window.draw(sprite);
+  }
+
     void Enemy::update(float dt, std::vector<std::vector<MapIdentifier>> level){
       if(dt){
             for(int i=-1; i<1; ++i){

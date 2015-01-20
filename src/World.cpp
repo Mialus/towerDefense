@@ -21,49 +21,28 @@
 
 namespace towerdefense {
 
-  namespace {
-
-    template<typename T>
-    class null_delete {
-    public:
-      void operator()(T*) const {
-        // nothing to do
-      }
-    };
-
-  }
-
   void World::update(float dt) {
-    std::sort(m_entities.begin(), m_entities.end(), [](const EntityPtr& e1, const EntityPtr& e2) {
+    std::sort(m_entities.begin(), m_entities.end(), [](const Entity* e1, const Entity* e2) {
       return e1->priority() < e2->priority();
     });
 
-    for (auto& entity : m_entities) {
+    for (auto entity : m_entities) {
       entity->update(dt);
     }
   }
 
   void World::render(sf::RenderWindow& window) {
-    for (auto& entity : m_entities) {
+    for (auto entity : m_entities) {
       entity->render(window);
     }
   }
 
   void World::addEntity(Entity *e, Memory from) {
-    switch (from) {
-      case Memory::FROM_HEAP:
-        m_entities.emplace_back(e, std::default_delete<Entity>());
-        break;
-      case Memory::FROM_STACK:
-        m_entities.emplace_back(e, null_delete<Entity>());
-        break;
-    }
+    m_entities.push_back(e);
   }
 
   void World::removeEntity(Entity *e) {
-    std::remove_if(m_entities.begin(), m_entities.end(), [=](const EntityPtr& ptr) {
-      return e == ptr.get();
-    });
+    //std::remove_if(m_entities.begin(), m_entities.end(), e);
   }
 
   void World::registerHandler(EventType type, EventHandler handler) {

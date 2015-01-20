@@ -22,17 +22,17 @@ EnemyManager::EnemyManager(int nombreEnemy,unsigned int tileW, unsigned int tile
             }
     }
 }
- void EnemyManager::updateE(float dt){
+ void EnemyManager::update(float dt){
     int nombreEnemy=m_nbrEnnemy;
 
     while(nombreEnemy>0){
-        allEnemy.at(nombreEnemy).update(dt, m_level);
+        allEnemy.at(nombreEnemy-1).update(dt, m_level);
         nombreEnemy--;
     }
 }
 
   void EnemyManager::render(sf::RenderWindow& window){
-    int nombreEnemy=m_nbrEnnemy;
+/*    int nombreEnemy=m_nbrEnnemy;
     sf::Sprite sprite;
     sf::Texture texture = ImageHandler::getTexture(SpriteList::ENEMY);
 
@@ -43,7 +43,10 @@ EnemyManager::EnemyManager(int nombreEnemy,unsigned int tileW, unsigned int tile
                                     en.GetPosX()*m_tileHeight);
                 window.draw(sprite);
             }
-            nombreEnemy--;
+            nombreEnemy--;*/
+        for(int i=0;i<m_nbrEnnemy;i++){
+            allEnemy.at(i).render(window);
+        }
 }
 
 

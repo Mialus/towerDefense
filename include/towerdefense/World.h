@@ -68,63 +68,7 @@ namespace towerdefense {
 
   private:
 
-    class EntityPtr {
-    public:
-      EntityPtr(Entity *entity, std::function<void(Entity*)> deleter)
-      : m_entity(entity)
-      , m_deleter(deleter)
-      {
-      }
-
-      EntityPtr(const EntityPtr&) = delete;
-      EntityPtr& operator=(const EntityPtr&) = delete;
-
-      EntityPtr(EntityPtr&& other)
-      : m_entity(other.m_entity)
-      , m_deleter(std::move(other.m_deleter)) {
-      }
-
-      EntityPtr& operator=(EntityPtr&& other) {
-        m_deleter(m_entity);
-        m_entity = other.m_entity;
-        m_deleter = std::move(other.m_deleter);
-        return *this;
-      }
-
-      ~EntityPtr() {
-        m_deleter(m_entity);
-      }
-
-      Entity *get() {
-        return m_entity;
-      }
-
-      const Entity *get() const {
-        return m_entity;
-      }
-
-      Entity *operator->() {
-        return get();
-      }
-
-      const Entity *operator->() const {
-        return get();
-      }
-
-      Entity& operator*() {
-        return *get();
-      }
-
-      const Entity& operator*() const {
-        return *get();
-      }
-
-    private:
-      Entity *m_entity;
-      std::function<void(Entity*)> m_deleter;
-    };
-
-    std::vector<EntityPtr> m_entities;
+    std::vector<Entity*> m_entities;
     std::map<EventType, std::vector<EventHandler>> m_handlers;
   };
 

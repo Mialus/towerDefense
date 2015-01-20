@@ -22,6 +22,7 @@
 #include <towerdefense/Resource.h>
 #include <towerdefense/World.h>
 #include <towerdefense/TowerManager.h>
+#include <towerdefense/EnemyManager.h>
 
 namespace td = towerdefense;
 namespace fs = boost::filesystem;
@@ -37,6 +38,7 @@ int main(int argc, char *argv[]) {
   td::ImageHandler::initialize();
   td::Map mapLevel("res/maps/level1.txt", tileWidth, tileHeight);
  // td::TowerManager towMan= new TowerManager(tileWidth,tileHeight);
+  td::EnemyManager eman(2,tileWidth,tileHeight,mapLevel.getLevel());
 
   // load resources
   fs::path bindir_path(argv[0]);
@@ -52,6 +54,7 @@ int main(int argc, char *argv[]) {
 
   // add entities
   world.addEntity(&mapLevel, td::Memory::FROM_STACK);
+  world.addEntity(&eman,td::Memory::FROM_STACK);
 
   // main loop
   sf::Clock clock;
@@ -76,10 +79,12 @@ int main(int argc, char *argv[]) {
           default:
             break;
         }
-        if (sf::Mouse::isButtonPressed(sf::Mouse::Left)){
+        /*if (sf::Mouse::isButtonPressed(sf::Mouse::Left)){
             sf::Vector2i localPosition = sf::Mouse::getPosition(window);
+            localPosition.x;
+            localPosition.y;
 
-        }
+        }*/
 
       }
     }

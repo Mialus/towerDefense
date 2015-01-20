@@ -4476,7 +4476,7 @@
 	<algorithm>
 	<memory>
 
-1420431885 d:\travail\informatique\licence l3\towerdefense\towerdefense\include\towerdefense\world.h
+1421766357 d:\travail\informatique\licence l3\towerdefense\towerdefense\include\towerdefense\world.h
 	<functional>
 	<map>
 	<type_traits>
@@ -4503,13 +4503,15 @@
 
 1416754762 d:\travail\informatique\licence l3\towerdefense\towerdefense\src\bin\config.h.in
 
-1421748917 source:d:\travail\informatique\licence l3\towerdefense\towerdefense\src\bin\main.cpp
+1421764487 source:d:\travail\informatique\licence l3\towerdefense\towerdefense\src\bin\main.cpp
 	<boost/filesystem.hpp>
 	<SFML/Graphics.hpp>
 	"../src/bin/config.h.in"
 	<towerdefense/Map.h>
 	<towerdefense/Resource.h>
 	<towerdefense/World.h>
+	<towerdefense/TowerManager.h>
+	<towerdefense/EnemyManager.h>
 
 1416422606 d:\boost_1_57_0\boost\filesystem.hpp
 	<boost/filesystem/config.hpp>
@@ -11555,36 +11557,35 @@
 	<SFML/Graphics.hpp>
 	<towerdefense/Entity.h>
 
-1421284977 source:d:\travail\informatique\licence l3\towerdefense\towerdefense\src\world.cpp
+1421766551 source:d:\travail\informatique\licence l3\towerdefense\towerdefense\src\world.cpp
 	<towerdefense/World.h>
 	<cassert>
 	<algorithm>
 	<memory>
 
-1421711346 d:\travail\informatique\licence l3\towerdefense\towerdefense\include\towerdefense\map.h
+1421764238 d:\travail\informatique\licence l3\towerdefense\towerdefense\include\towerdefense\map.h
 	<vector>
 	<iostream>
 	<fstream>
 	<SFML/Graphics.hpp>
 	<towerdefense/Entity.h>
 	<towerdefense/ImageHandler.h>
-	<towerdefense/MapIdentifier.h>
 
 1421627820 d:\travail\informatique\licence l3\towerdefense\towerdefense\include\towerdefense\imagehandler.h
 	<iostream>
 	<vector>
 	<SFML/graphics.hpp>
 
-1421749790 source:d:\travail\informatique\licence l3\towerdefense\towerdefense\src\enemy.cpp
+1421765198 source:d:\travail\informatique\licence l3\towerdefense\towerdefense\src\enemy.cpp
 	<towerdefense/Enemy.h>
 
-1421749818 d:\travail\informatique\licence l3\towerdefense\towerdefense\include\towerdefense\enemy.h
+1421764842 d:\travail\informatique\licence l3\towerdefense\towerdefense\include\towerdefense\enemy.h
 	<boost/filesystem.hpp>
 	<SFML/Graphics.hpp>
 	<SFML/Window/Window.hpp>
 	<towerdefense/World.h>
 	<towerdefense/Entity.h>
-	<towerdefense/MapIdentifier.h>
+	<towerdefense/Map.h>
 
 1421629864 source:d:\travail\informatique\licence l3\towerdefense\towerdefense\src\entity.cpp
 	<towerdefense/Entity.h>
@@ -11592,13 +11593,13 @@
 1421627820 source:d:\travail\informatique\licence l3\towerdefense\towerdefense\src\imagehandler.cpp
 	<towerdefense/ImageHandler.h>
 
-1421219476 source:d:\travail\informatique\licence l3\towerdefense\towerdefense\src\map.cpp
+1421763923 source:d:\travail\informatique\licence l3\towerdefense\towerdefense\src\map.cpp
 	<towerdefense/Map.h>
 
-1421750511 source:d:\travail\informatique\licence l3\towerdefense\towerdefense\src\enemymanager.cpp
+1421765007 source:d:\travail\informatique\licence l3\towerdefense\towerdefense\src\enemymanager.cpp
 	"towerdefense/EnemyManager.h"
 
-1421709379 d:\travail\informatique\licence l3\towerdefense\towerdefense\include\towerdefense\enemymanager.h
+1421764621 d:\travail\informatique\licence l3\towerdefense\towerdefense\include\towerdefense\enemymanager.h
 	<iostream>
 	<vector>
 	<SFML/graphics.hpp>
@@ -11646,7 +11647,7 @@
 1421633221 d:\travail\informatique\licence l3\towerdefense\towerdefense\include\towerdefense\antichar.h
 	"tower.h"
 
-1421711263 d:\travail\informatique\licence l3\towerdefense\towerdefense\include\towerdefense\mapidentifier.h
+1421763995 d:\travail\informatique\licence l3\towerdefense\towerdefense\include\towerdefense\mapidentifier.h
 
 1421711272 source:d:\travail\informatique\licence l3\towerdefense\towerdefense\src\mapidentifier.cpp
 	"MapIdentifier.h"

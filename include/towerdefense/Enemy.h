@@ -8,7 +8,7 @@
 
 #include <towerdefense/World.h>
 #include <towerdefense/Entity.h>
-#include <towerdefense/MapIdentifier.h>
+#include <towerdefense/Map.h>
 
 namespace towerdefense {
 
@@ -18,6 +18,7 @@ namespace towerdefense {
     ~Enemy();
     void SetDefense(int defense,int level);
     void update(float dt, std::vector<std::vector<MapIdentifier>> level);
+    void render(sf::RenderWindow& window);
     void SetSpeed(int speed);
     void SetLife(int life);
     void SetLevel(int level);
