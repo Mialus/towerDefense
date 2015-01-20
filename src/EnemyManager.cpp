@@ -9,11 +9,18 @@ EnemyManager::EnemyManager(int nombreEnemy,unsigned int tileW, unsigned int tile
     m_tileWidth=tileW;
     m_tileHeight=tileH;
     m_nbrEnnemy=nombreEnemy;
-    while(nombreEnemy>0){
+    for(int it = 0; it<nombreEnemy;it++){
         allEnemy.push_back(Tank());
-        nombreEnemy--;
+            for(unsigned int i=0; i<level.size(); ++i){
+            std::vector<MapIdentifier> line = level[i];
+            for(unsigned int j=0; j<level.size(); ++j){
+                if(line[j]==MapIdentifier::START){
+                            allEnemy.at(it).SetPosX(i);
+                            allEnemy.at(it).SetPosY(j);
+                }
+            }
+            }
     }
-
 }
  void EnemyManager::updateE(float dt){
     int nombreEnemy=m_nbrEnnemy;

@@ -42,8 +42,8 @@ namespace towerdefense {
     int m_life;
     int m_speed;
     int m_coin;
-    int m_posX;
-    int m_posY;
+    int m_posX=-5;
+    int m_posY=-5;
     int m_posXb=-5;
     int m_posYb=-5;
   };
