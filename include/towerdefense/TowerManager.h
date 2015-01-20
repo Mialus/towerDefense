@@ -16,7 +16,7 @@ namespace towerdefense{
 class TowerManager
 {
     public:
-        TowerManager();
+        TowerManager(unsigned int tileWidth, unsigned int tileHeight);
         virtual ~TowerManager();
         void updateT(float dt);
         void render(sf::RenderWindow& window);

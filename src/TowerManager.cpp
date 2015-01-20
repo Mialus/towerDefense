@@ -2,9 +2,10 @@
 
 namespace towerdefense{
 
-TowerManager::TowerManager()
+TowerManager::TowerManager(unsigned int tileWidth, unsigned int tileHeight)
 {
-    //ctor
+    m_tileWidth=tileWidth;
+    m_tileHeight=tileHeight;
 }
 
 TowerManager::~TowerManager()

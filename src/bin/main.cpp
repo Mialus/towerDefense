@@ -21,18 +21,22 @@
 #include <towerdefense/Map.h>
 #include <towerdefense/Resource.h>
 #include <towerdefense/World.h>
+#include <towerdefense/TowerManager.h>
 
 namespace td = towerdefense;
 namespace fs = boost::filesystem;
+const int tileWidth=500;
+const int tileHeight=500;
 //*
 int main(int argc, char *argv[]) {
 
   // initialize
   td::World world;
-  sf::RenderWindow window(sf::VideoMode(500, 500), "Tower Defense (version " GAME_VERSION ")");
+  sf::RenderWindow window(sf::VideoMode(tileWidth, tileHeight), "Tower Defense (version " GAME_VERSION ")");
   window.setKeyRepeatEnabled(false);
   td::ImageHandler::initialize();
-  td::Map mapLevel("res/maps/level1.txt", 500, 500);
+  td::Map mapLevel("res/maps/level1.txt", tileWidth, tileHeight);
+ // td::TowerManager towMan= new TowerManager(tileWidth,tileHeight);
 
   // load resources
   fs::path bindir_path(argv[0]);
@@ -73,6 +77,7 @@ int main(int argc, char *argv[]) {
             break;
         }
         if (sf::Mouse::isButtonPressed(sf::Mouse::Left)){
+            sf::Vector2i localPosition = sf::Mouse::getPosition(window);
 
         }
 
