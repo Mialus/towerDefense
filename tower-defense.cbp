@@ -15,8 +15,6 @@
 				<Compiler>
 					<Add option="-std=c++11" />
 					<Add option="-g" />
-					<Add directory="include/towerdefense" />
-					<Add directory="include" />
 				</Compiler>
 				<Linker>
 					<Add library="sfml-graphics-d" />
@@ -41,8 +39,6 @@
 				<Compiler>
 					<Add option="-O2" />
 					<Add option="-std=c++11" />
-					<Add directory="include/towerdefense" />
-					<Add directory="include" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
