@@ -27,10 +27,6 @@
 #include <towerdefense/Event.h>
 
 namespace towerdefense {
-  enum class Memory {
-    FROM_HEAP,
-    FROM_STACK,
-  };
 
   class World {
   public:
@@ -38,7 +34,7 @@ namespace towerdefense {
     void update(float dt);
     void render(sf::RenderWindow& window);
 
-    void addEntity(Entity *e, Memory from = Memory::FROM_HEAP);
+    void addEntity(Entity *e);
     void removeEntity(Entity *e);
 
     void registerHandler(EventType type, EventHandler handler);

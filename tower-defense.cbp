@@ -63,13 +63,13 @@
 		<Compiler>
 			<Add option="-std=c++11" />
 			<Add option="-Wall" />
-			<Add directory="D:/boost_1_57_0" />
-			<Add directory="D:/SFML-2.1/include" />
+			<Add directory="C:/boost_1_57_0" />
+			<Add directory="C:/SFML-2.1/include" />
 			<Add directory="include" />
 		</Compiler>
 		<Linker>
-			<Add directory="D:/boost_1_57_0/stage/lib" />
-			<Add directory="D:/SFML-2.1/lib" />
+			<Add directory="C:/boost_1_57_0/stage/lib" />
+			<Add directory="C:/SFML-2.1/lib" />
 		</Linker>
 		<Unit filename="include/towerdefense/Animation.h" />
 		<Unit filename="include/towerdefense/AntiChar.h" />
@@ -80,7 +80,6 @@
 		<Unit filename="include/towerdefense/Event.h" />
 		<Unit filename="include/towerdefense/ImageHandler.h" />
 		<Unit filename="include/towerdefense/Map.h" />
-		<Unit filename="include/towerdefense/MapIdentifier.h" />
 		<Unit filename="include/towerdefense/Random.h" />
 		<Unit filename="include/towerdefense/Resource.h" />
 		<Unit filename="include/towerdefense/Tank.h" />
@@ -95,7 +94,6 @@
 		<Unit filename="src/Entity.cpp" />
 		<Unit filename="src/ImageHandler.cpp" />
 		<Unit filename="src/Map.cpp" />
-		<Unit filename="src/MapIdentifier.cpp" />
 		<Unit filename="src/Random.cpp" />
 		<Unit filename="src/Resource.cpp" />
 		<Unit filename="src/Tank.cpp" />

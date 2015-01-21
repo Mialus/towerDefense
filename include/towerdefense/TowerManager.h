@@ -4,27 +4,22 @@
 #include <iostream>
 #include <vector>
 
-#include <SFML/graphics.hpp>
-
+#include <towerdefense/Entity.h>
 #include <towerdefense/tower.h>
-#include <towerdefense/ImageHandler.h>
-#include "towerdefense/Tank.h"
-#include <towerdefense/Map.h>
 
 namespace towerdefense{
 
-class TowerManager
-{
+  class TowerManager: public Entity {
     public:
-        TowerManager(unsigned int tileWidth, unsigned int tileHeight);
-        virtual ~TowerManager();
-        void updateT(float dt);
+        TowerManager();
+        ~TowerManager();
+
+        void update(float dt);
         void render(sf::RenderWindow& window);
-        void creatTower(tower t);
+
+        void addTower(float x, float y);
     private:
         std::vector<tower> allTower;
-        unsigned int m_tileWidth;
-        unsigned int m_tileHeight;
-};
+  };
 }
 #endif // TOWERMANAGER_H

@@ -1,17 +1,25 @@
-#include "TowerManager.h"
+#include <towerdefense/TowerManager.h>
 
 namespace towerdefense{
 
-TowerManager::TowerManager(unsigned int tileWidth, unsigned int tileHeight)
-{
-    m_tileWidth=tileWidth;
-    m_tileHeight=tileHeight;
-}
+  TowerManager::TowerManager(){}
 
-TowerManager::~TowerManager()
-{
-}
+  TowerManager::~TowerManager(){}
 
-void TowerManager::creatTower(tower t){
-}
+  void TowerManager::addTower(float x, float y){
+    tower t(1, 50, x, y);
+    allTower.push_back(t);
+  }
+
+  void TowerManager::update(float dt){
+    for(auto t : allTower){
+      t.update(dt);
+    }
+  }
+
+  void TowerManager::render(sf::RenderWindow& window){
+    for(auto t : allTower){
+      t.render(window);
+    }
+  }
 }

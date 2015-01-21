@@ -37,7 +37,7 @@ namespace towerdefense {
     }
   }
 
-  void World::addEntity(Entity *e, Memory from) {
+  void World::addEntity(Entity *e) {
     m_entities.push_back(e);
   }
 

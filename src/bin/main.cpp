@@ -37,8 +37,8 @@ int main(int argc, char *argv[]) {
   window.setKeyRepeatEnabled(false);
   td::ImageHandler::initialize();
   td::Map mapLevel("res/maps/level1.txt", tileWidth, tileHeight);
- // td::TowerManager towMan= new TowerManager(tileWidth,tileHeight);
-  td::EnemyManager eman(2,tileWidth,tileHeight,mapLevel.getLevel());
+  td::TowerManager tMan;
+  td::EnemyManager eman(2,mapLevel.getLevel());
 
   // load resources
   fs::path bindir_path(argv[0]);
@@ -53,8 +53,9 @@ int main(int argc, char *argv[]) {
   manager.addSearchDir(GAME_DATADIR);
 
   // add entities
-  world.addEntity(&mapLevel, td::Memory::FROM_STACK);
-  world.addEntity(&eman,td::Memory::FROM_STACK);
+  world.addEntity(&mapLevel);
+  world.addEntity(&tMan);
+  world.addEntity(&eman);
 
   // main loop
   sf::Clock clock;
@@ -79,13 +80,10 @@ int main(int argc, char *argv[]) {
           default:
             break;
         }
-        /*if (sf::Mouse::isButtonPressed(sf::Mouse::Left)){
-            sf::Vector2i localPosition = sf::Mouse::getPosition(window);
-            localPosition.x;
-            localPosition.y;
-
-        }*/
-
+      } else if (sf::Mouse::isButtonPressed(sf::Mouse::Left)){
+        sf::Vector2i localPosition = sf::Mouse::getPosition(window);
+        std::cout << "Mouse position : " << localPosition.x << "," << localPosition.y << std::endl;
+        tMan.addTower(localPosition.x, localPosition.y);
       }
     }
 

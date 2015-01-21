@@ -1,4 +1,4 @@
-#include "AntiChar.h"
+#include <towerdefense/AntiChar.h>
 
 namespace towerdefense{
 
