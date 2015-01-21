@@ -11647,11 +11647,6 @@
 1421633221 d:\travail\informatique\licence l3\towerdefense\towerdefense\include\towerdefense\antichar.h
 	"tower.h"
 
-1421763995 d:\travail\informatique\licence l3\towerdefense\towerdefense\include\towerdefense\mapidentifier.h
-
-1421711272 source:d:\travail\informatique\licence l3\towerdefense\towerdefense\src\mapidentifier.cpp
-	"MapIdentifier.h"
-
 1421776809 source:c:\users\erizino\documents\github\towerdefense\src\animation.cpp
 	<towerdefense/Animation.h>
 	<iostream>
