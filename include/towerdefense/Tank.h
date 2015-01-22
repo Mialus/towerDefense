@@ -7,7 +7,7 @@ namespace towerdefense {
 class Tank : public Enemy
 {
     public:
-        Tank() : Enemy(1,150,1,10,2){}
+        Tank(int posX, int posY) : Enemy(1,150,1,10,2,posX,posY){}
         virtual ~Tank();
     private:
 };

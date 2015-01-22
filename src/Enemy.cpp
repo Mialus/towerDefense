@@ -74,11 +74,13 @@ namespace towerdefense {
     return m_defense;
   }
 
-  Enemy::Enemy(int speed,int life,int level,int coin, int defense)
+  Enemy::Enemy(int speed,int life,int level,int coin, int defense, int posX, int posY)
   {
     m_life = life;
     m_speed = speed;
     m_level = level;
+    m_posX = posX;
+    m_posY = posY;
     m_coin = coin;
     m_defense = defense*level;
   }

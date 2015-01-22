@@ -14,7 +14,7 @@ namespace towerdefense {
 
   class Enemy : public Entity {
   public:
-    Enemy(int speed,int life,int level,int coin,int defense);
+    Enemy(int speed,int life,int level,int coin,int defense, int posX, int posY);
     ~Enemy();
     void SetDefense(int defense,int level);
     void update(float dt, std::vector<std::vector<MapIdentifier>> level);
