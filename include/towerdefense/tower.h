@@ -7,9 +7,9 @@
 
 namespace towerdefense{
 
-  class tower : public Entity {
+  class Tower : public Entity {
   public :
-    tower(int level,int degat, int posX, int posY);
+    Tower(int level,int degat, int posX, int posY);
     void setLevel(int level);
     void setDegat(int degat,int level);
     void setPosX(int posX);

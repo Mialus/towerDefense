@@ -5,7 +5,7 @@
 #include <vector>
 
 #include <towerdefense/Entity.h>
-#include <towerdefense/tower.h>
+#include <towerdefense/Tower.h>
 
 namespace towerdefense{
 
@@ -19,7 +19,7 @@ namespace towerdefense{
 
         void addTower(float x, float y);
     private:
-        std::vector<tower> allTower;
+        std::vector<Tower> allTower;
   };
 }
 #endif // TOWERMANAGER_H

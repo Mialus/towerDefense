@@ -11549,11 +11549,11 @@
 	<iostream>
 	<boost/filesystem.hpp>
 
-1421633234 source:d:\travail\informatique\licence l3\towerdefense\towerdefense\src\tower.cpp
+1421890761 source:d:\travail\informatique\licence l3\towerdefense\towerdefense\src\tower.cpp
 	<towerdefense/Tower.h>
 	<SFML/Graphics.hpp>
 
-1421633042 d:\travail\informatique\licence l3\towerdefense\towerdefense\include\towerdefense\tower.h
+1421890768 d:\travail\informatique\licence l3\towerdefense\towerdefense\include\towerdefense\tower.h
 	<SFML/Graphics.hpp>
 	<towerdefense/Entity.h>
 
@@ -11629,20 +11629,20 @@
 1421340886 e:\dev\github\towerdefense\include\towerdefense\tank.h
 	"Enemy.h"
 
-1421889057 source:d:\travail\informatique\licence l3\towerdefense\towerdefense\src\towermanager.cpp
+1421890819 source:d:\travail\informatique\licence l3\towerdefense\towerdefense\src\towermanager.cpp
 	<towerdefense/TowerManager.h>
 
-1421889057 d:\travail\informatique\licence l3\towerdefense\towerdefense\include\towerdefense\towermanager.h
+1421890861 d:\travail\informatique\licence l3\towerdefense\towerdefense\include\towerdefense\towermanager.h
 	<iostream>
 	<vector>
 	<towerdefense/Entity.h>
-	<towerdefense/tower.h>
+	<towerdefense/Tower.h>
 
 1421889057 source:d:\travail\informatique\licence l3\towerdefense\towerdefense\src\antichar.cpp
 	<towerdefense/AntiChar.h>
 
-1421633221 d:\travail\informatique\licence l3\towerdefense\towerdefense\include\towerdefense\antichar.h
-	"tower.h"
+1421890836 d:\travail\informatique\licence l3\towerdefense\towerdefense\include\towerdefense\antichar.h
+	"Tower.h"
 
 1421776809 source:c:\users\erizino\documents\github\towerdefense\src\animation.cpp
 	<towerdefense/Animation.h>
