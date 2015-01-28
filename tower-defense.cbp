@@ -15,6 +15,7 @@
 				<Compiler>
 					<Add option="-std=c++11" />
 					<Add option="-g" />
+					<Add directory="include/towerdefense" />
 				</Compiler>
 				<Linker>
 					<Add library="sfml-graphics-d" />
@@ -39,6 +40,7 @@
 				<Compiler>
 					<Add option="-O2" />
 					<Add option="-std=c++11" />
+					<Add directory="include/towerdefense" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -75,6 +77,7 @@
 		<Unit filename="include/towerdefense/Entity.h" />
 		<Unit filename="include/towerdefense/Event.h" />
 		<Unit filename="include/towerdefense/ImageHandler.h" />
+		<Unit filename="include/towerdefense/Levels.h" />
 		<Unit filename="include/towerdefense/Map.h" />
 		<Unit filename="include/towerdefense/Random.h" />
 		<Unit filename="include/towerdefense/Resource.h" />
@@ -89,6 +92,7 @@
 		<Unit filename="src/EnemyManager.cpp" />
 		<Unit filename="src/Entity.cpp" />
 		<Unit filename="src/ImageHandler.cpp" />
+		<Unit filename="src/Levels.cpp" />
 		<Unit filename="src/Map.cpp" />
 		<Unit filename="src/Random.cpp" />
 		<Unit filename="src/Resource.cpp" />
