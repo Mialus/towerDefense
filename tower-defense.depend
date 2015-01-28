@@ -11634,11 +11634,12 @@
 1422440181 source:d:\travail\informatique\licence l3\towerdefense\towerdefense\src\towermanager.cpp
 	<towerdefense/TowerManager.h>
 
-1421890861 d:\travail\informatique\licence l3\towerdefense\towerdefense\include\towerdefense\towermanager.h
+1422445591 d:\travail\informatique\licence l3\towerdefense\towerdefense\include\towerdefense\towermanager.h
 	<iostream>
 	<vector>
 	<towerdefense/Entity.h>
 	<towerdefense/Tower.h>
+	<towerdefense/Map.h>
 
 1421889057 source:d:\travail\informatique\licence l3\towerdefense\towerdefense\src\antichar.cpp
 	<towerdefense/AntiChar.h>

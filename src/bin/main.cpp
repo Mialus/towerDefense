@@ -83,7 +83,7 @@ int main(int argc, char *argv[]) {
       } else if (sf::Mouse::isButtonPressed(sf::Mouse::Left)){
         sf::Vector2i localPosition = sf::Mouse::getPosition(window);
         std::cout << "Mouse position : " << localPosition.x << "," << localPosition.y << std::endl;
-        tMan.addTower(localPosition.x, localPosition.y);
+        tMan.addTower(localPosition.x, localPosition.y,mapLevel.getLevel());
         eman.update(true);
       }
     }
