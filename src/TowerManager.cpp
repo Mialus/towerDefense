@@ -7,6 +7,7 @@ namespace towerdefense{
   TowerManager::~TowerManager(){}
 
   void TowerManager::addTower(float x, float y){
+
     Tower t(1, 50, x, y);
     allTower.push_back(t);
   }

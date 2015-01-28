@@ -35,31 +35,23 @@ namespace towerdefense {
     return m_posY;
   }
 
-  Tower::Tower(int level,int degat, int posX, int posY){
+  Tower::Tower(int level,int degat, float posX, float posY){
     setLevel(level);
     setDegat(degat,level);
     setPosX(posX);
     setPosY(posY);
   }
 
-  /*void Tower::giveSprite(){
-    sf::Texture tower;
-    sf::Sprite spriteTower;
-    int m_tileWidth=500/10;
-    int m_tileHeight=500/5;
-
-    if(!tower.loadFromFile(getImage(), sf::IntRect(10,10,m_tileWidth,m_tileHeight)))
-    {
-      printf("Enemy's Texture don't be load ! Error !");
-      exit(1);
-    }
-
-    spriteTower.setTexture(tower);
-
-    m_sprite= spriteTower;
-  }*/
-
-
   void Tower::update(float dt){
+
+  }
+
+  void Tower::render(sf::RenderWindow& window){
+    sf::Sprite sprite;
+    sf::Texture texture = ImageHandler::getTexture(SpriteList::TOWER);
+
+    sprite.setTexture(texture);
+    sprite.setPosition(m_posX, m_posY);
+    window.draw(sprite);
   }
 }

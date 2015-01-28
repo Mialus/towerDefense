@@ -14,7 +14,7 @@ namespace towerdefense {
 
   class Enemy : public Entity {
   public:
-    Enemy(int speed,int life,int level,int coin,int defense, int posX, int posY);
+    Enemy(int speed,int life,int level,int coin,int defense, float posX, float posY);
     ~Enemy();
     void SetDefense(int defense,int level);
     void update(float dt, std::vector<std::vector<MapIdentifier>> level);
@@ -43,10 +43,10 @@ namespace towerdefense {
     int m_life;
     int m_speed;
     int m_coin;
-    int m_posX=-5;
-    int m_posY=-5;
-    int m_posXb=-5;
-    int m_posYb=-5;
+    float m_posX=-5;
+    float m_posY=-5;
+    float m_posXb=-5;
+    float m_posYb=-5;
   };
 
 }

@@ -3,17 +3,20 @@
 
 #include <SFML/Graphics.hpp>
 
+#include <towerdefense/World.h>
 #include <towerdefense/Entity.h>
+#include <towerdefense/Map.h>
 
 namespace towerdefense{
 
   class Tower : public Entity {
   public :
-    Tower(int level,int degat, int posX, int posY);
+    Tower(int level,int degat, float posX, float posY);
     void setLevel(int level);
     void setDegat(int degat,int level);
     void setPosX(int posX);
     void setPosY(int posY);
+    void render(sf::RenderWindow& window);
     int getLevel();
     int getDegat();
     int getPosX();

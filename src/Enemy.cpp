@@ -74,12 +74,12 @@ namespace towerdefense {
     return m_defense;
   }
 
-  Enemy::Enemy(int speed,int life,int level,int coin, int defense, int posX, int posY)
+  Enemy::Enemy(int speed,int life,int level,int coin, int defense, float posY, float posX)
   {
     m_life = life;
     m_speed = speed;
     m_level = level;
-    m_posX = posX;
+    m_posX = posX+0.001;
     m_posY = posY;
     m_coin = coin;
     m_defense = defense*level;
@@ -93,7 +93,8 @@ namespace towerdefense {
     sf::Texture texture = ImageHandler::getTexture(SpriteList::ENEMY);
 
     sprite.setTexture(texture);
-    sprite.setPosition(m_posX, m_posY);
+   // std::cout << "position Ennemy: " << m_posX << "," << m_posY << std::endl;
+    sprite.setPosition(m_posX*50, m_posY*100);
     window.draw(sprite);
   }
 
@@ -107,9 +108,9 @@ namespace towerdefense {
                         if((j+m_posY!=m_posY)||(i+m_posX!=m_posX)){ // si ce n'est pas la case actuel
                             m_posXb=m_posX;
                             m_posYb=m_posY;
-
-                            m_posX+=i;
-                            m_posY+=j;
+   std::cout << "position Ennemy: " << m_posX << "," << m_posY << std::endl;
+                            m_posX=m_posX+2;
+                            m_posY=m_posY+2;
                         }
 
                     }

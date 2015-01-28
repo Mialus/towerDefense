@@ -84,6 +84,7 @@ int main(int argc, char *argv[]) {
         sf::Vector2i localPosition = sf::Mouse::getPosition(window);
         std::cout << "Mouse position : " << localPosition.x << "," << localPosition.y << std::endl;
         tMan.addTower(localPosition.x, localPosition.y);
+        eman.update(true);
       }
     }
 
