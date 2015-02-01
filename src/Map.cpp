@@ -2,6 +2,8 @@
 
 namespace towerdefense {
 
+  Map::Map(){}
+
   Map::Map(std::string levelpath, int width, int height){
     setWidth(width);
     setHeight(height);

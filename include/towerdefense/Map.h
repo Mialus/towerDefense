@@ -21,6 +21,7 @@ namespace towerdefense{
 
   class Map : public Entity {
   public:
+    Map();
     Map(std::string levelpath, int width, int height);
     ~Map();
 

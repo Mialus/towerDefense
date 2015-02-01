@@ -2,6 +2,8 @@
 
 namespace towerdefense {
 
+  EnemyManager::EnemyManager(){}
+
   EnemyManager::EnemyManager(int nombreEnemy,std::vector<std::vector<MapIdentifier>> level){
     m_level=level;
 
@@ -28,6 +30,14 @@ namespace towerdefense {
     for(auto enemy : allEnemy){
       enemy.render(window);
     }
+  }
+
+  void EnemyManager::clearEnemies(){
+    allEnemy.clear();
+  }
+
+  std::vector<Enemy> EnemyManager::getAllEnemies(){
+    return allEnemy;
   }
 
   EnemyManager::~EnemyManager(){}

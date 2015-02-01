@@ -16,10 +16,13 @@ namespace towerdefense {
   class EnemyManager: public Entity
   {
   public :
+    EnemyManager();
     EnemyManager(int nombreEnemy,std::vector<std::vector<MapIdentifier>> level);
     virtual ~EnemyManager();
     void update(float dt);
     void render(sf::RenderWindow& window);
+    void clearEnemies();
+    std::vector<Enemy> getAllEnemies();
 
   private :
     std::vector<Enemy> allEnemy;

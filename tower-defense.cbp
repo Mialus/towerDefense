@@ -15,7 +15,6 @@
 				<Compiler>
 					<Add option="-std=c++11" />
 					<Add option="-g" />
-					<Add directory="include/towerdefense" />
 				</Compiler>
 				<Linker>
 					<Add library="sfml-graphics-d" />
@@ -40,7 +39,6 @@
 				<Compiler>
 					<Add option="-O2" />
 					<Add option="-std=c++11" />
-					<Add directory="include/towerdefense" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -82,9 +80,9 @@
 		<Unit filename="include/towerdefense/Random.h" />
 		<Unit filename="include/towerdefense/Resource.h" />
 		<Unit filename="include/towerdefense/Tank.h" />
-		<Unit filename="include/towerdefense/Tower.h" />
 		<Unit filename="include/towerdefense/TowerManager.h" />
 		<Unit filename="include/towerdefense/World.h" />
+		<Unit filename="include/towerdefense/tower.h" />
 		<Unit filename="src/Animation.cpp" />
 		<Unit filename="src/AntiChar.cpp" />
 		<Unit filename="src/Bullet.cpp" />
@@ -97,12 +95,12 @@
 		<Unit filename="src/Random.cpp" />
 		<Unit filename="src/Resource.cpp" />
 		<Unit filename="src/Tank.cpp" />
-		<Unit filename="src/Tower.cpp" />
 		<Unit filename="src/TowerManager.cpp" />
 		<Unit filename="src/World.cpp" />
 		<Unit filename="src/bin/config.h.in" />
 		<Unit filename="src/bin/example_animation.cpp" />
 		<Unit filename="src/bin/main.cpp" />
+		<Unit filename="src/tower.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

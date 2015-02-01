@@ -23,22 +23,24 @@
 #include <towerdefense/World.h>
 #include <towerdefense/TowerManager.h>
 #include <towerdefense/EnemyManager.h>
+#include <towerdefense/Levels.h>
 
 namespace td = towerdefense;
 namespace fs = boost::filesystem;
-const int tileWidth=500;
-const int tileHeight=500;
-//*
+const int windowWidth=500;
+const int windowHeight=500;
+
 int main(int argc, char *argv[]) {
 
   // initialize
   td::World world;
-  sf::RenderWindow window(sf::VideoMode(tileWidth, tileHeight), "Tower Defense (version " GAME_VERSION ")");
+  sf::RenderWindow window(sf::VideoMode(windowWidth, windowHeight), "Tower Defense (version " GAME_VERSION ")");
   window.setKeyRepeatEnabled(false);
   td::ImageHandler::initialize();
-  td::Map mapLevel("res/maps/level1.txt", tileWidth, tileHeight);
+  td::Map mapLevel("res/maps/level1.txt", windowWidth, windowHeight);
   td::TowerManager tMan;
-  td::EnemyManager eman(2,mapLevel.getLevel());
+  td::EnemyManager eMan(2,mapLevel.getLevel());
+  td::Levels level(5, &tMan, &eMan, &mapLevel);
 
   // load resources
   fs::path bindir_path(argv[0]);
@@ -55,7 +57,8 @@ int main(int argc, char *argv[]) {
   // add entities
   world.addEntity(&mapLevel);
   world.addEntity(&tMan);
-  world.addEntity(&eman);
+  world.addEntity(&eMan);
+  world.addEntity(&level);
 
   // main loop
   sf::Clock clock;
@@ -75,6 +78,7 @@ int main(int argc, char *argv[]) {
 
           case sf::Keyboard::Space:
             mapLevel.changeLevel("res/maps/level2.txt");
+            level.changeLevel(10);
             break;
 
           default:
@@ -82,9 +86,8 @@ int main(int argc, char *argv[]) {
         }
       } else if (sf::Mouse::isButtonPressed(sf::Mouse::Left)){
         sf::Vector2i localPosition = sf::Mouse::getPosition(window);
-        std::cout << "Mouse position : " << localPosition.x << "," << localPosition.y << std::endl;
         tMan.addTower(localPosition.x, localPosition.y,mapLevel.getLevel());
-        eman.update(true);
+        eMan.update(true);
       }
     }
 
@@ -101,4 +104,3 @@ int main(int argc, char *argv[]) {
   td::ImageHandler::freedisk();
   return 0;
 }
-//*/

@@ -19,6 +19,8 @@ namespace towerdefense{
         void render(sf::RenderWindow& window);
 
         void addTower(float x, float y, std::vector<std::vector<MapIdentifier>> level);
+        void clearTowers();
+        int nbTowers();
     private:
         std::vector<Tower> allTower;
   };

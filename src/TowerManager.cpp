@@ -26,4 +26,12 @@ namespace towerdefense{
       t.render(window);
     }
   }
+
+  void TowerManager::clearTowers(){
+    allTower.clear();
+  }
+
+  int TowerManager::nbTowers(){
+    return allTower.size();
+  }
 }
