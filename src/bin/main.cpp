@@ -39,7 +39,7 @@ int main(int argc, char *argv[]) {
   td::ImageHandler::initialize();
   td::Map mapLevel("res/maps/level1.txt", windowWidth, windowHeight);
   td::TowerManager tMan;
-  td::EnemyManager eMan(1,mapLevel.getLevel());
+  td::EnemyManager eMan(1, &mapLevel);
   td::Levels level(5, &tMan, &eMan, &mapLevel);
 
   // load resources
@@ -87,7 +87,6 @@ int main(int argc, char *argv[]) {
       } else if (sf::Mouse::isButtonPressed(sf::Mouse::Left)){
         sf::Vector2i localPosition = sf::Mouse::getPosition(window);
         tMan.addTower(localPosition.x, localPosition.y,mapLevel.getLevel());
-        eMan.update(true);
       }
     }
 

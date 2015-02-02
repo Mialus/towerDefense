@@ -88,15 +88,17 @@ namespace towerdefense {
     m_level = level;
     m_posX = posX+0.001;
     m_posY = posY;
+    m_posXb = -5;
+    m_posYb = -5;
     m_coin = coin;
     m_defense = defense*level;
     m_current_id++;
   }
 
-    Enemy::~Enemy() {
+  Enemy::~Enemy() {
   }
 
-   void Enemy::render(sf::RenderWindow& window){
+  void Enemy::render(sf::RenderWindow& window){
        sf::Sprite sprite;
     sf::Texture texture = ImageHandler::getTexture(SpriteList::ENEMY);
 
@@ -106,23 +108,23 @@ namespace towerdefense {
     window.draw(sprite);
   }
 
-  void Enemy::update(float dt, std::vector<std::vector<MapIdentifier>> level){
-    if(dt){
-      for(int i=-1; i<2; i++){
-        if(((int)(i+m_posX))!=-1){
-          std::vector<MapIdentifier> line = level[(int)(i+m_posX)];
-          for(int j=-1; j<2; j++){
-            if(((int)(j+m_posY)!=-1)){
-              std::cout << "position Ennemy: " << (int)(i+m_posX) << "," << (int)(j+m_posY) << std::endl;
-              if(line[(int)(j+m_posY)]==MapIdentifier::PATH){ // Si c'est un chemin PROBLEM HERE
-                if(((int)(j+m_posY)!=m_posYb)||((int)(i+m_posX)!=m_posXb)){ // si ce n'est pas la derniére case
-                  if(((int)(j+m_posY)!=m_posY)||((int)(i+m_posX)!=m_posX)){ // si ce n'est pas la case actuel
-                    m_posXb=m_posX;
-                    m_posYb=m_posY;
-   std::cout << "position Ennemy: " << m_posX << "," << m_posY << std::endl;
-                    m_posX=m_posX+(i/2.0);
-                    m_posY=m_posY+(j/2.0);
-                  }
+  void Enemy::update(float dt, Map* iMap){
+    std::vector<std::vector<MapIdentifier>> level = iMap->getLevel();
+    for(int i=-1; i<2; i++){ // boucle initialize for enemy position Y
+      if(i+(int)m_posY>=0){ // excluding outbounds
+        std::vector<MapIdentifier> line = level[(int)(i+m_posY)]; // Getting line
+        for(int j=-1; j<2; j++){ // boucle initialize for enemy position X
+          if(j+(int)m_posX>=0){ // Excluding outbounds
+            // std::cout << "position Ennemy: " << (int)(i+m_posX) << "," << (int)(j+m_posY) << std::endl;
+            if(line[j+(int)m_posX]==MapIdentifier::PATH){ // Si c'est un chemin
+              if((j+(int)m_posX!=m_posXb)||(i+(int)m_posY!=m_posYb)){ // si ce n'est pas la case précédente
+                if((j+(int)m_posX!=j+m_posX)||(i+(int)m_posY!=i+m_posY)){ // si ce n'est pas la case actuel
+                  m_posXb=m_posX;
+                  m_posYb=m_posY;
+                  // std::cout << "position Ennemy: " << m_posX << "," << m_posY << std::endl;
+                  m_posX=m_posX+(j*dt);
+                  m_posY=m_posY+(i*dt);
+                  // std::cout << "position Ennemy: " << m_posX << "," << m_posY << std::endl;
                 }
               }
             }

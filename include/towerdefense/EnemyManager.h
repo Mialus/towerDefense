@@ -17,17 +17,19 @@ namespace towerdefense {
   {
   public :
     EnemyManager();
-    EnemyManager(int nombreEnemy,std::vector<std::vector<MapIdentifier>> level);
+    EnemyManager(int nombreEnemy, Map* iMap);
     virtual ~EnemyManager();
     void update(float dt);
     void render(sf::RenderWindow& window);
     void clearEnemies();
-    std::vector<Enemy> getAllEnemies();
-    void removeEnemy(Enemy e);
+    std::vector<Enemy*> getAllEnemies();
+    void removeEnemy(Enemy* e);
 
   private :
-    std::vector<Enemy> allEnemy;
-    std::vector<std::vector<MapIdentifier>> m_level;
+    static Tank* createPTank(unsigned int i, unsigned int j);
+
+    std::vector<Enemy*> allEnemy;
+    Map* m_map;
   };
 }
 #endif

@@ -17,7 +17,7 @@ namespace towerdefense {
     Enemy(int speed,int life,int level,int coin,int defense, float posX, float posY);
     ~Enemy();
     void SetDefense(int defense,int level);
-    void update(float dt, std::vector<std::vector<MapIdentifier>> level);
+    void update(float dt, Map* iMap);
     void render(sf::RenderWindow& window);
     void SetSpeed(int speed);
     void SetLife(int life);
@@ -39,7 +39,7 @@ namespace towerdefense {
     int GetId();
     static void resetIds();
 
-  private:
+  protected:
     static int m_current_id;
     int m_id;
     int m_defense;
@@ -47,10 +47,10 @@ namespace towerdefense {
     int m_life;
     int m_speed;
     int m_coin;
-    float m_posX=-5;
-    float m_posY=-5;
-    float m_posXb=-5;
-    float m_posYb=-5;
+    float m_posX;
+    float m_posY;
+    float m_posXb;
+    float m_posYb;
   };
 
 }

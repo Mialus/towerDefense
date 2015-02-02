@@ -18,10 +18,10 @@ namespace towerdefense {
 
   void Levels::update(float dt){
     // TODO CHECK ENEMIES POSITION
-    std::vector<Enemy> enemies = m_eMan->getAllEnemies();
-    for(auto enemy : enemies){
-      std::cout << "Pos Enemies : " << enemy.GetPosX() << "," << enemy.GetPosY() << std::endl;
-      if(enemy.GetPosX() == m_map->GetEndX() && enemy.GetPosY() == m_map->GetEndY()){
+    std::vector<Enemy*> enemies = m_eMan->getAllEnemies();
+    for(Enemy* enemy : enemies){
+      // std::cout << "Pos Enemies : " << enemy->GetPosX() << "," << enemy->GetPosY() << std::endl;
+      if(enemy->GetPosX() == m_map->GetEndX() && enemy->GetPosY() == m_map->GetEndY()){
         m_life--;
         m_eMan->removeEnemy(enemy);
       }
