@@ -2,6 +2,8 @@
 
 namespace towerdefense {
 
+  int Enemy::m_current_id = 0;
+
   void Enemy::SetCoin(int coin){
     m_coin=coin;
   }
@@ -74,8 +76,13 @@ namespace towerdefense {
     return m_defense;
   }
 
+  int Enemy::GetId(){
+    return m_id;
+  }
+
   Enemy::Enemy(int speed,int life,int level,int coin, int defense, float posY, float posX)
   {
+    m_id = m_current_id;
     m_life = life;
     m_speed = speed;
     m_level = level;
@@ -83,6 +90,7 @@ namespace towerdefense {
     m_posY = posY;
     m_coin = coin;
     m_defense = defense*level;
+    m_current_id++;
   }
 
     Enemy::~Enemy() {
@@ -98,33 +106,33 @@ namespace towerdefense {
     window.draw(sprite);
   }
 
-    void Enemy::update(float dt, std::vector<std::vector<MapIdentifier>> level){
-      if(dt){
-            for(int i=-1; i<2; i++){
-                if(((int)(i+m_posX))!=-1){
-            std::vector<MapIdentifier> line = level[(int)(i+m_posX)];
-            for(int j=-1; j<2; j++){
-                if(((int)(j+m_posY)!=-1)){
-                    std::cout << "position Ennemy: " << (int)(i+m_posX) << "," << (int)(j+m_posY) << std::endl;
-                if(line[(int)(j+m_posY)]==MapIdentifier::PATH){ // Si c'est un chemin
-                    if(((int)(j+m_posY)!=m_posYb)||((int)(i+m_posX)!=m_posXb)){ // si ce n'est pas la derniére case
-                        if(((int)(j+m_posY)!=m_posY)||((int)(i+m_posX)!=m_posX)){ // si ce n'est pas la case actuel
-                            m_posXb=m_posX;
-                            m_posYb=m_posY;
+  void Enemy::update(float dt, std::vector<std::vector<MapIdentifier>> level){
+    if(dt){
+      for(int i=-1; i<2; i++){
+        if(((int)(i+m_posX))!=-1){
+          std::vector<MapIdentifier> line = level[(int)(i+m_posX)];
+          for(int j=-1; j<2; j++){
+            if(((int)(j+m_posY)!=-1)){
+              std::cout << "position Ennemy: " << (int)(i+m_posX) << "," << (int)(j+m_posY) << std::endl;
+              if(line[(int)(j+m_posY)]==MapIdentifier::PATH){ // Si c'est un chemin PROBLEM HERE
+                if(((int)(j+m_posY)!=m_posYb)||((int)(i+m_posX)!=m_posXb)){ // si ce n'est pas la derniére case
+                  if(((int)(j+m_posY)!=m_posY)||((int)(i+m_posX)!=m_posX)){ // si ce n'est pas la case actuel
+                    m_posXb=m_posX;
+                    m_posYb=m_posY;
    std::cout << "position Ennemy: " << m_posX << "," << m_posY << std::endl;
-                            m_posX=m_posX+(i/2.0);
-                            m_posY=m_posY+(j/2.0);
-                        }
-
-                    }
+                    m_posX=m_posX+(i/2.0);
+                    m_posY=m_posY+(j/2.0);
+                  }
                 }
-
-
+              }
             }
-            }
-            }
-            }
+          }
+        }
       }
+    }
+  }
 
+  void Enemy::resetIds(){
+    m_current_id = 0;
   }
 }

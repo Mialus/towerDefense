@@ -18,11 +18,22 @@ namespace towerdefense {
 
   void Levels::update(float dt){
     // TODO CHECK ENEMIES POSITION
-    std::cout << "Nb Towers : " << m_tMan->nbTowers() << std::endl;
     std::vector<Enemy> enemies = m_eMan->getAllEnemies();
     for(auto enemy : enemies){
       std::cout << "Pos Enemies : " << enemy.GetPosX() << "," << enemy.GetPosY() << std::endl;
+      if(enemy.GetPosX() == m_map->GetEndX() && enemy.GetPosY() == m_map->GetEndY()){
+        m_life--;
+        m_eMan->removeEnemy(enemy);
+      }
     }
+  }
+
+  bool Levels::goodEnd(){
+    return m_eMan->getAllEnemies().size() == 0;
+  }
+
+  bool Levels::badEnd(){
+    return m_gameOver;
   }
 
   void Levels::render(sf::RenderWindow& window){}

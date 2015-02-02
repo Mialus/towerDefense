@@ -94,6 +94,8 @@ namespace towerdefense {
             break;
           case 'A':
             m_level.at(j).push_back(MapIdentifier::END);
+            m_endX=i;
+            m_endY=j;
             break;
           case '.':
             m_level.at(j).push_back(MapIdentifier::PATH);
@@ -112,5 +114,13 @@ namespace towerdefense {
     else {
       std::cout << "Unable to open level file";
     }
+  }
+
+  int Map::GetEndX(){
+    return m_endX;
+  }
+
+  int Map::GetEndY(){
+    return m_endY;
   }
 }

@@ -36,8 +36,12 @@ namespace towerdefense {
     int GetPosYb();
     int GetLevel();
     int GetCoin();
+    int GetId();
+    static void resetIds();
 
   private:
+    static int m_current_id;
+    int m_id;
     int m_defense;
     int m_level;
     int m_life;

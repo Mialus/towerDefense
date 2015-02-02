@@ -23,6 +23,7 @@ namespace towerdefense {
     void render(sf::RenderWindow& window);
     void clearEnemies();
     std::vector<Enemy> getAllEnemies();
+    void removeEnemy(Enemy e);
 
   private :
     std::vector<Enemy> allEnemy;

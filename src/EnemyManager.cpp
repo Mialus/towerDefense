@@ -34,10 +34,20 @@ namespace towerdefense {
 
   void EnemyManager::clearEnemies(){
     allEnemy.clear();
+    Enemy::resetIds();
   }
 
   std::vector<Enemy> EnemyManager::getAllEnemies(){
     return allEnemy;
+  }
+
+  void EnemyManager::removeEnemy(Enemy e){
+    std::vector<Enemy>::iterator it = allEnemy.begin();
+    while(it < allEnemy.size()){
+      if(allEnemy.at(it).GetId() == e.GetId()){
+        allEnemy.erase(it);
+      }
+    }
   }
 
   EnemyManager::~EnemyManager(){}

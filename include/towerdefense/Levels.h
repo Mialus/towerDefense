@@ -17,6 +17,8 @@ namespace towerdefense {
           virtual void render(sf::RenderWindow& window);
 
           void changeLevel(int life);
+          bool goodEnd();
+          bool badEnd();
 
       private:
           bool m_gameOver;

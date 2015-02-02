@@ -35,6 +35,8 @@ namespace towerdefense{
     void setTileWidth(int nTile);
     void setTileHeight(int nTile);
     void changeLevel(std::string levelpath);
+    int GetEndX();
+    int GetEndY();
 
   private:
     unsigned int m_tileWidth;
@@ -42,6 +44,7 @@ namespace towerdefense{
     unsigned int m_width;
     unsigned int m_height;
     std::vector<std::vector<MapIdentifier>> m_level;
+    int m_endX, m_endY;
   };
 
 }
