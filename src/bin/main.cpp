@@ -38,7 +38,7 @@ int main(int argc, char *argv[]) {
   td::ImageHandler::initialize();
   td::Map mapLevel("res/maps/level1.txt", tileWidth, tileHeight);
   td::TowerManager tMan;
-  td::EnemyManager eman(2,mapLevel.getLevel());
+  td::EnemyManager eman(1,mapLevel.getLevel());
 
   // load resources
   fs::path bindir_path(argv[0]);

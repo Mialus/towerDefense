@@ -93,30 +93,35 @@ namespace towerdefense {
     sf::Texture texture = ImageHandler::getTexture(SpriteList::ENEMY);
 
     sprite.setTexture(texture);
-   // std::cout << "position Ennemy: " << m_posX << "," << m_posY << std::endl;
+   //std::cout << "position Ennemy: " << m_posX << "," << m_posY << std::endl;
     sprite.setPosition(m_posX*50, m_posY*100);
     window.draw(sprite);
   }
 
     void Enemy::update(float dt, std::vector<std::vector<MapIdentifier>> level){
       if(dt){
-            for(int i=-1; i<1; ++i){
-            std::vector<MapIdentifier> line = level[i+m_posX];
-            for(int j=-1; j<1; ++j){
-                if(line[j+m_posY]==MapIdentifier::PATH){ // Si c'est un chemin
-                    if((j+m_posY!=m_posYb)||(i+m_posX!=m_posXb)){ // si ce n'est pas la derniére case
-                        if((j+m_posY!=m_posY)||(i+m_posX!=m_posX)){ // si ce n'est pas la case actuel
+            for(int i=-1; i<2; i++){
+                if(((int)(i+m_posX))!=-1){
+            std::vector<MapIdentifier> line = level[(int)(i+m_posX)];
+            for(int j=-1; j<2; j++){
+                if(((int)(j+m_posY)!=-1)){
+                    std::cout << "position Ennemy: " << (int)(i+m_posX) << "," << (int)(j+m_posY) << std::endl;
+                if(line[(int)(j+m_posY)]==MapIdentifier::PATH){ // Si c'est un chemin
+                    if(((int)(j+m_posY)!=m_posYb)||((int)(i+m_posX)!=m_posXb)){ // si ce n'est pas la derniére case
+                        if(((int)(j+m_posY)!=m_posY)||((int)(i+m_posX)!=m_posX)){ // si ce n'est pas la case actuel
                             m_posXb=m_posX;
                             m_posYb=m_posY;
    std::cout << "position Ennemy: " << m_posX << "," << m_posY << std::endl;
-                            m_posX=m_posX+2;
-                            m_posY=m_posY+2;
+                            m_posX=m_posX+(i/2.0);
+                            m_posY=m_posY+(j/2.0);
                         }
 
                     }
                 }
 
 
+            }
+            }
             }
             }
       }
