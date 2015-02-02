@@ -39,7 +39,7 @@ int main(int argc, char *argv[]) {
   td::ImageHandler::initialize();
   td::Map mapLevel("res/maps/level1.txt", windowWidth, windowHeight);
   td::TowerManager tMan;
-  td::EnemyManager eMan(2,mapLevel.getLevel());
+  td::EnemyManager eMan(1,mapLevel.getLevel());
   td::Levels level(5, &tMan, &eMan, &mapLevel);
 
   // load resources

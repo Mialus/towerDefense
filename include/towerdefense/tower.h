@@ -6,6 +6,7 @@
 #include <towerdefense/World.h>
 #include <towerdefense/Entity.h>
 #include <towerdefense/Map.h>
+#include <towerdefense/Bullet.h>
 
 namespace towerdefense{
 
@@ -28,6 +29,7 @@ namespace towerdefense{
     int m_degat;
     int m_posX;
     int m_posY;
+    std::vector<Bullet> bul;
   };
 
 }
