@@ -99,42 +99,38 @@ namespace towerdefense {
   }
 
   void Enemy::render(sf::RenderWindow& window){
-       sf::Sprite sprite;
+    sf::Sprite sprite;
     sf::Texture texture = ImageHandler::getTexture(SpriteList::ENEMY);
 
     sprite.setTexture(texture);
-   //std::cout << "position Ennemy: " << m_posX << "," << m_posY << std::endl;
+    //std::cout << "position Ennemy: " << m_posX << "," << m_posY << std::endl;
     sprite.setPosition(m_posX*50, m_posY*100);
     window.draw(sprite);
   }
 
-  void Enemy::update(float dt, Map* iMap){
-    std::vector<std::vector<MapIdentifier>> level = iMap->getLevel();
-    for(int i=-1; i<2; i++){ // boucle initialize for enemy position Y
-      if(i+(int)m_posY>=0){ // excluding outbounds
-        std::vector<MapIdentifier> line = level[(int)(i+m_posY)]; // Getting line
-        for(int j=-1; j<2; j++){ // boucle initialize for enemy position X
-          if(j+(int)m_posX>=0){ // Excluding outbounds
-            // std::cout << "position Ennemy: " << (int)(i+m_posX) << "," << (int)(j+m_posY) << std::endl;
-            if(line[j+(int)m_posX]==MapIdentifier::PATH){ // Si c'est un chemin
-              if((j+(int)m_posX!=m_posXb)||(i+(int)m_posY!=m_posYb)){ // si ce n'est pas la case précédente
-                if((j+(int)m_posX!=j+m_posX)||(i+(int)m_posY!=i+m_posY)){ // si ce n'est pas la case actuel
-                  m_posXb=m_posX;
-                  m_posYb=m_posY;
-                  std::cout << "position Ennemy: " << m_posX << "," << m_posY << std::endl;
-                  m_posX=m_posX+(j*dt);
-                  m_posY=m_posY+(i*dt);
-                   std::cout << "position Ennemy: " << m_posX << "," << m_posY << std::endl;
-                }
-              }
-            }
-          }
-        }
-      }
+  void Enemy::update(float dt){
+    // TO DO Remake function!
+    // m_posX=m_posX+(j*dt*0.5);
+    // m_posY=m_posY+(i*dt*0.5);
+    CrossingPoint* cp = m_crossingPoints.at(0);
+    if ((m_posX >= cp->getX()-10 || m_posX <= cp->getX()+10)
+        && (m_posY >= cp->getY()+10 || m_posY <= cp->getY()-10)){
+            m_crossingPoints.erase(m_crossingPoints.begin());
+            cp = m_crossingPoints.at(0);
+    }
+    if (!(m_posX >= cp->getX()-10 || m_posX <= cp->getX()+10)){
+      m_posX = m_posX+(m_posX - cp->getX())*dt*0.5;
+    }
+    if(!(m_posY >= cp->getY()+10 || m_posY <= cp->getY()-10)){
+      m_posY = m_posY+(m_posY - cp->getY())*dt*0.5;
     }
   }
 
   void Enemy::resetIds(){
     m_current_id = 0;
+  }
+
+  void Enemy::setCrossingPoints(const std::vector<CrossingPoint*> crossingPoints){
+    m_crossingPoints = crossingPoints;
   }
 }

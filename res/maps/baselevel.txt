@@ -7,3 +7,4 @@
 . = !#
 D = départ monstre
 A = arrivée monstre
+G = point de passage

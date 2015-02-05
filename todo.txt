@@ -1,0 +1,5 @@
+- Prendre en charge les points de passage
+- Résoudre problème perte de vie
+- Résoudre positions tower
+- Résoudre affichage des cases
+- Gérer tire

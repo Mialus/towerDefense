@@ -70,6 +70,7 @@
 		<Unit filename="include/towerdefense/Animation.h" />
 		<Unit filename="include/towerdefense/AntiChar.h" />
 		<Unit filename="include/towerdefense/Bullet.h" />
+		<Unit filename="include/towerdefense/CrossingPoint.h" />
 		<Unit filename="include/towerdefense/Enemy.h" />
 		<Unit filename="include/towerdefense/EnemyManager.h" />
 		<Unit filename="include/towerdefense/Entity.h" />
@@ -86,6 +87,7 @@
 		<Unit filename="src/Animation.cpp" />
 		<Unit filename="src/AntiChar.cpp" />
 		<Unit filename="src/Bullet.cpp" />
+		<Unit filename="src/CrossingPoint.cpp" />
 		<Unit filename="src/Enemy.cpp" />
 		<Unit filename="src/EnemyManager.cpp" />
 		<Unit filename="src/Entity.cpp" />

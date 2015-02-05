@@ -20,8 +20,7 @@ namespace towerdefense {
     // TODO CHECK ENEMIES POSITION
     std::vector<Enemy*> enemies = m_eMan->getAllEnemies();
     for(Enemy* enemy : enemies){
-      // std::cout << "Pos Enemies : " << enemy->GetPosX() << "," << enemy->GetPosY() << std::endl;
-      if(enemy->GetPosX() == m_map->GetEndX() && enemy->GetPosY() == m_map->GetEndY()){
+      if(enemy->GetPosX() == m_map->getEnd()->getX() && enemy->GetPosY() == m_map->getEnd()->getY()){
         m_life--;
         m_eMan->removeEnemy(enemy);
       }

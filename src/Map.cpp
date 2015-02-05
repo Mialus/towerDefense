@@ -33,6 +33,7 @@ namespace towerdefense {
         case MapIdentifier::END:
           texture = ImageHandler::getTexture(SpriteList::END);
           break;
+        case MapIdentifier::CROSSINGPOINT:
         case MapIdentifier::PATH:
           texture = ImageHandler::getTexture(SpriteList::PATH);
           break;
@@ -94,8 +95,11 @@ namespace towerdefense {
             break;
           case 'A':
             m_level.at(j).push_back(MapIdentifier::END);
-            m_endX=i;
-            m_endY=j;
+            m_crossingPoints.push_back(CrossingPoint(i, j));
+            break;
+          case 'C':
+            m_level.at(j).push_back(MapIdentifier::CROSSINGPOINT);
+            m_crossingPoints.push_back(CrossingPoint(i, j));
             break;
           case '.':
             m_level.at(j).push_back(MapIdentifier::PATH);
@@ -116,11 +120,7 @@ namespace towerdefense {
     }
   }
 
-  int Map::GetEndX(){
-    return m_endX;
-  }
-
-  int Map::GetEndY(){
-    return m_endY;
+  CrossingPoint* Map::getEnd(){
+    return &m_crossingPoints.back();
   }
 }

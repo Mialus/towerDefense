@@ -29,7 +29,6 @@ namespace towerdefense {
     static Tank* createPTank(unsigned int i, unsigned int j);
 
     std::vector<Enemy*> allEnemy;
-    Map* m_map;
   };
 }
 #endif

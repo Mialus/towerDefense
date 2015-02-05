@@ -17,7 +17,7 @@ namespace towerdefense {
     Enemy(int speed,int life,int level,int coin,int defense, float posX, float posY);
     ~Enemy();
     void SetDefense(int defense,int level);
-    void update(float dt, Map* iMap);
+    void update(float dt);
     void render(sf::RenderWindow& window);
     void SetSpeed(int speed);
     void SetLife(int life);
@@ -27,6 +27,7 @@ namespace towerdefense {
     void SetPosXb(int pos);
     void SetPosYb(int posY);
     void SetCoin(int coin);
+    void setCrossingPoints(const std::vector<CrossingPoint*> crossingPoints);
     int GetDefense();
     int GetSpeed();
     int GetLife();
@@ -51,6 +52,7 @@ namespace towerdefense {
     float m_posY;
     float m_posXb;
     float m_posYb;
+    std::vector<CrossingPoint*> m_crossingPoints;
   };
 
 }

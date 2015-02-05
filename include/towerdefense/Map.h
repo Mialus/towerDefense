@@ -9,6 +9,7 @@
 
 #include <towerdefense/Entity.h>
 #include <towerdefense/ImageHandler.h>
+#include <towerdefense/CrossingPoint.h>
 
 namespace towerdefense{
 
@@ -17,6 +18,7 @@ namespace towerdefense{
         FIELD,
         START,
         END,
+        CROSSINGPOINT,
   };
 
   class Map : public Entity {
@@ -35,8 +37,7 @@ namespace towerdefense{
     void setTileWidth(int nTile);
     void setTileHeight(int nTile);
     void changeLevel(std::string levelpath);
-    int GetEndX();
-    int GetEndY();
+    CrossingPoint* getEnd();
 
   private:
     unsigned int m_tileWidth;
@@ -44,7 +45,7 @@ namespace towerdefense{
     unsigned int m_width;
     unsigned int m_height;
     std::vector<std::vector<MapIdentifier>> m_level;
-    int m_endX, m_endY;
+    std::vector<CrossingPoint> m_crossingPoints;
   };
 
 }

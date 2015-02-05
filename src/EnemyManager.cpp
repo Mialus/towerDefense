@@ -10,8 +10,6 @@ namespace towerdefense {
   }
 
   EnemyManager::EnemyManager(int nombreEnemy, Map* iMap){
-    m_map = iMap;
-
     // Ajout des ennemies
     for(unsigned int i=0; i<iMap->getLevel().size(); ++i){
       std::vector<MapIdentifier> line = iMap->getLevel()[i];
@@ -27,7 +25,7 @@ namespace towerdefense {
 
   void EnemyManager::update(float dt){
     for(Enemy* enemy : allEnemy){
-      enemy->update(dt, m_map);
+      enemy->update(dt);
       std::cout << "Pos enemy (" << enemy->GetId() << ") : " << enemy->GetPosX() << "," << enemy->GetPosY() << std::endl;
     }
   }
@@ -48,12 +46,7 @@ namespace towerdefense {
   }
 
   void EnemyManager::removeEnemy(Enemy* e){
-    // remove-erase idiom
-    for (std::vector<Enemy*>::iterator it = allEnemy.begin() ; it != allEnemy.end(); ++it){
-      if((*it)->GetId() == e->GetId()){
-        allEnemy.erase(it);
-      }
-    }
+    allEnemy.erase(remove(allEnemy.begin(), allEnemy.end(), e), allEnemy.end());
   }
 
   EnemyManager::~EnemyManager(){}
