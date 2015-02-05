@@ -121,10 +121,10 @@ namespace towerdefense {
                 if((j+(int)m_posX!=j+m_posX)||(i+(int)m_posY!=i+m_posY)){ // si ce n'est pas la case actuel
                   m_posXb=m_posX;
                   m_posYb=m_posY;
-                  // std::cout << "position Ennemy: " << m_posX << "," << m_posY << std::endl;
+                  std::cout << "position Ennemy: " << m_posX << "," << m_posY << std::endl;
                   m_posX=m_posX+(j*dt);
                   m_posY=m_posY+(i*dt);
-                  // std::cout << "position Ennemy: " << m_posX << "," << m_posY << std::endl;
+                   std::cout << "position Ennemy: " << m_posX << "," << m_posY << std::endl;
                 }
               }
             }

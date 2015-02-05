@@ -43,11 +43,12 @@ namespace towerdefense {
     Enemy::resetIds();
   }
 
-  std::vector<Enemy*> EnemyManager::getAllEnemies(){
+  std::vector<Enemy*>& EnemyManager::getAllEnemies(){
     return allEnemy;
   }
 
   void EnemyManager::removeEnemy(Enemy* e){
+    // remove-erase idiom
     for (std::vector<Enemy*>::iterator it = allEnemy.begin() ; it != allEnemy.end(); ++it){
       if((*it)->GetId() == e->GetId()){
         allEnemy.erase(it);
