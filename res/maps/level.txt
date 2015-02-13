@@ -1,9 +1,0 @@
-#D###
-#...#
-###.#
-###A#
-
-# = innaccessible monstre et peu poser tour
-. = !#
-D = départ monstre
-A = arrivée monstre
