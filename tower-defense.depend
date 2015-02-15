@@ -11465,7 +11465,7 @@
 	<towerdefense/Animation.h>
 	<iostream>
 
-1423155630 e:\dev\github\towerdefense\include\towerdefense\map.h
+1424032648 e:\dev\github\towerdefense\include\towerdefense\map.h
 	<vector>
 	<iostream>
 	<fstream>
@@ -11474,7 +11474,7 @@
 	<towerdefense/ImageHandler.h>
 	<towerdefense/CrossingPoint.h>
 
-1423157596 e:\dev\github\towerdefense\include\towerdefense\enemy.h
+1424033204 e:\dev\github\towerdefense\include\towerdefense\enemy.h
 	<boost/filesystem.hpp>
 	<SFML/Graphics.hpp>
 	<SFML/Window/Window.hpp>
@@ -11499,7 +11499,7 @@
 	<towerdefense/Entity.h>
 	<towerdefense/Map.h>
 
-1423155255 source:e:\dev\github\towerdefense\src\enemy.cpp
+1424033767 source:e:\dev\github\towerdefense\src\enemy.cpp
 	<towerdefense/Enemy.h>
 
 1421959452 source:e:\dev\github\towerdefense\src\entity.cpp
@@ -11513,7 +11513,7 @@
 	<vector>
 	<SFML/graphics.hpp>
 
-1423155977 source:e:\dev\github\towerdefense\src\map.cpp
+1424032646 source:e:\dev\github\towerdefense\src\map.cpp
 	<towerdefense/Map.h>
 
 1416754762 source:e:\dev\github\towerdefense\src\random.cpp
@@ -11633,10 +11633,10 @@
 1421627820 source:d:\travail\informatique\licence l3\towerdefense\towerdefense\src\tank.cpp
 	<towerdefense/Tank.h>
 
-1423156596 source:e:\dev\github\towerdefense\src\enemymanager.cpp
+1424032835 source:e:\dev\github\towerdefense\src\enemymanager.cpp
 	<towerdefense/EnemyManager.h>
 
-1423154584 e:\dev\github\towerdefense\include\towerdefense\enemymanager.h
+1424032835 e:\dev\github\towerdefense\include\towerdefense\enemymanager.h
 	<iostream>
 	<vector>
 	<SFML/graphics.hpp>
@@ -11644,6 +11644,7 @@
 	<towerdefense/ImageHandler.h>
 	<towerdefense/Tank.h>
 	<towerdefense/Map.h>
+	<towerdefense/CrossingPoint.h>
 
 1422915234 e:\dev\github\towerdefense\include\towerdefense\tank.h
 	"Enemy.h"
@@ -11850,10 +11851,10 @@
 	<towerdefense/Tower.h>
 	<towerdefense/Map.h>
 
-1423155873 source:e:\dev\github\towerdefense\src\levels.cpp
+1424031126 source:e:\dev\github\towerdefense\src\levels.cpp
 	<towerdefense/Levels.h>
 
-1422899767 e:\dev\github\towerdefense\include\towerdefense\levels.h
+1424031082 e:\dev\github\towerdefense\include\towerdefense\levels.h
 	<towerdefense/TowerManager.h>
 	<towerdefense/EnemyManager.h>
 	<towerdefense/Map.h>

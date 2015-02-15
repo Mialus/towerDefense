@@ -10,6 +10,7 @@
 #include <towerdefense/ImageHandler.h>
 #include <towerdefense/Tank.h>
 #include <towerdefense/Map.h>
+#include <towerdefense/CrossingPoint.h>
 
 namespace towerdefense {
 
@@ -26,8 +27,6 @@ namespace towerdefense {
     void removeEnemy(Enemy* e);
 
   private :
-    static Tank* createPTank(unsigned int i, unsigned int j);
-
     std::vector<Enemy*> allEnemy;
   };
 }

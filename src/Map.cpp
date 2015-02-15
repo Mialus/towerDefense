@@ -95,11 +95,11 @@ namespace towerdefense {
             break;
           case 'A':
             m_level.at(j).push_back(MapIdentifier::END);
-            m_crossingPoints.push_back(CrossingPoint(i, j));
+            m_crossingPoints.push_back(new CrossingPoint(i, j));
             break;
           case 'C':
             m_level.at(j).push_back(MapIdentifier::CROSSINGPOINT);
-            m_crossingPoints.push_back(CrossingPoint(i, j));
+            m_crossingPoints.push_back(new CrossingPoint(i, j));
             break;
           case '.':
             m_level.at(j).push_back(MapIdentifier::PATH);
@@ -121,6 +121,10 @@ namespace towerdefense {
   }
 
   CrossingPoint* Map::getEnd(){
-    return &m_crossingPoints.back();
+    return m_crossingPoints.back();
+  }
+
+  std::vector<CrossingPoint*>& Map::getCrossingPoints(){
+    return m_crossingPoints;
   }
 }

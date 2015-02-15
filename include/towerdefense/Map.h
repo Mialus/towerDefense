@@ -38,6 +38,7 @@ namespace towerdefense{
     void setTileHeight(int nTile);
     void changeLevel(std::string levelpath);
     CrossingPoint* getEnd();
+    std::vector<CrossingPoint*>& getCrossingPoints();
 
   private:
     unsigned int m_tileWidth;
@@ -45,7 +46,7 @@ namespace towerdefense{
     unsigned int m_width;
     unsigned int m_height;
     std::vector<std::vector<MapIdentifier>> m_level;
-    std::vector<CrossingPoint> m_crossingPoints;
+    std::vector<CrossingPoint*> m_crossingPoints;
   };
 
 }

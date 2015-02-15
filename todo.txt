@@ -3,3 +3,4 @@
 - Résoudre positions tower
 - Résoudre affichage des cases
 - Gérer tire
+- Finir level class

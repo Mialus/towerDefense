@@ -103,26 +103,27 @@ namespace towerdefense {
     sf::Texture texture = ImageHandler::getTexture(SpriteList::ENEMY);
 
     sprite.setTexture(texture);
-    //std::cout << "position Ennemy: " << m_posX << "," << m_posY << std::endl;
     sprite.setPosition(m_posX*50, m_posY*100);
     window.draw(sprite);
   }
 
   void Enemy::update(float dt){
-    // TO DO Remake function!
-    // m_posX=m_posX+(j*dt*0.5);
-    // m_posY=m_posY+(i*dt*0.5);
-    CrossingPoint* cp = m_crossingPoints.at(0);
-    if ((m_posX >= cp->getX()-10 || m_posX <= cp->getX()+10)
-        && (m_posY >= cp->getY()+10 || m_posY <= cp->getY()-10)){
-            m_crossingPoints.erase(m_crossingPoints.begin());
-            cp = m_crossingPoints.at(0);
-    }
-    if (!(m_posX >= cp->getX()-10 || m_posX <= cp->getX()+10)){
-      m_posX = m_posX+(m_posX - cp->getX())*dt*0.5;
-    }
-    if(!(m_posY >= cp->getY()+10 || m_posY <= cp->getY()-10)){
-      m_posY = m_posY+(m_posY - cp->getY())*dt*0.5;
+    if(!m_crossingPoints.empty()){
+      CrossingPoint* cp = m_crossingPoints.at(0);
+
+      if (!(m_posX >= cp->getX()-10 || m_posX <= cp->getX()+10)){
+        m_posX = m_posX+(m_posX - cp->getX())*dt*0.5;
+      }
+
+      if(!(m_posY >= cp->getY()+10 || m_posY <= cp->getY()-10)){
+        m_posY = m_posY+(m_posY - cp->getY())*dt*0.5;
+      }
+
+      if ((m_posX >= cp->getX()-10 && m_posX <= cp->getX()+10)
+          && (m_posY >= cp->getY()+10 && m_posY <= cp->getY()-10)){
+              m_crossingPoints.erase(m_crossingPoints.begin());
+              cp = m_crossingPoints.at(0);
+      }
     }
   }
 
@@ -130,7 +131,11 @@ namespace towerdefense {
     m_current_id = 0;
   }
 
-  void Enemy::setCrossingPoints(const std::vector<CrossingPoint*> crossingPoints){
+  void Enemy::setCrossingPoints(std::vector<CrossingPoint*> crossingPoints){
     m_crossingPoints = crossingPoints;
+  }
+
+  bool Enemy::endCorssingPoints(){
+    return m_crossingPoints.empty();
   }
 }

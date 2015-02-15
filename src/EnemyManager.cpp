@@ -4,11 +4,6 @@ namespace towerdefense {
 
   EnemyManager::EnemyManager(){}
 
-  Tank* EnemyManager::createPTank(unsigned int i, unsigned int j){
-    Tank* tank = new Tank(i,j);
-    return tank;
-  }
-
   EnemyManager::EnemyManager(int nombreEnemy, Map* iMap){
     // Ajout des ennemies
     for(unsigned int i=0; i<iMap->getLevel().size(); ++i){
@@ -16,7 +11,8 @@ namespace towerdefense {
       for(unsigned int j=0; j<line.size(); ++j){
         if(line[j]==MapIdentifier::START){
           for(int nb=0; nb < nombreEnemy; nb++){
-            allEnemy.push_back(createPTank(i,j));
+            allEnemy.push_back(new Tank(i, j));
+            allEnemy.at(0)->setCrossingPoints(iMap->getCrossingPoints());
           }
         }
       }
@@ -26,7 +22,6 @@ namespace towerdefense {
   void EnemyManager::update(float dt){
     for(Enemy* enemy : allEnemy){
       enemy->update(dt);
-      std::cout << "Pos enemy (" << enemy->GetId() << ") : " << enemy->GetPosX() << "," << enemy->GetPosY() << std::endl;
     }
   }
 

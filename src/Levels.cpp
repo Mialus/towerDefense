@@ -9,6 +9,7 @@ namespace towerdefense {
       m_tMan = iTMan;
       m_eMan = iEMan;
       m_map = m;
+      m_coins = 10000;
   }
 
   Levels::~Levels(){
@@ -17,7 +18,7 @@ namespace towerdefense {
   }
 
   void Levels::update(float dt){
-    // TODO CHECK ENEMIES POSITION
+// TODO (Erizino#1#): Check Enemy position in levels update function
     std::vector<Enemy*> enemies = m_eMan->getAllEnemies();
     for(Enemy* enemy : enemies){
       if(enemy->GetPosX() == m_map->getEnd()->getX() && enemy->GetPosY() == m_map->getEnd()->getY()){

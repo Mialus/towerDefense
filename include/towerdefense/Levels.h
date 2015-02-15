@@ -23,6 +23,7 @@ namespace towerdefense {
       private:
           bool m_gameOver;
           int m_life;
+          int m_coins;
           TowerManager* m_tMan;
           EnemyManager* m_eMan;
           Map* m_map;

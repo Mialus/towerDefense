@@ -38,6 +38,7 @@ namespace towerdefense {
     int GetLevel();
     int GetCoin();
     int GetId();
+    bool endCorssingPoints();
     static void resetIds();
 
   protected:
