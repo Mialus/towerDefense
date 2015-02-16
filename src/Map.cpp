@@ -127,4 +127,9 @@ namespace towerdefense {
   std::vector<CrossingPoint*>& Map::getCrossingPoints(){
     return m_crossingPoints;
   }
+
+  void Map::sortCrossingPoints(){
+// TODO (Erizino#1#): Create Sorted Crossing Points
+
+  }
 }
