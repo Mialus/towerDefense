@@ -25,6 +25,7 @@ namespace towerdefense {
     void clearEnemies();
     std::vector<Enemy*>& getAllEnemies();
     void removeEnemy(Enemy* e);
+    void nextLevel(int nombreEnemy, Map* iMap);
 
   private :
     std::vector<Enemy*> allEnemy;

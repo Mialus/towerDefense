@@ -28,19 +28,19 @@ namespace towerdefense {
     m_posYb=posYb;
   }
 
-  int Enemy::GetPosX(){
+  float Enemy::GetPosX(){
     return m_posX;
   }
 
-  int Enemy::GetPosY(){
+  float Enemy::GetPosY(){
     return m_posY;
   }
 
-  int Enemy::GetPosXb(){
+  float Enemy::GetPosXb(){
     return m_posXb;
   }
 
-  int Enemy::GetPosYb(){
+  float Enemy::GetPosYb(){
     return m_posYb;
   }
 
@@ -111,18 +111,24 @@ namespace towerdefense {
     if(!m_crossingPoints.empty()){
       CrossingPoint* cp = m_crossingPoints.at(0);
 
-      if (!(m_posX >= cp->getX()-10 || m_posX <= cp->getX()+10)){
-        m_posX = m_posX+(m_posX - cp->getX())*dt*0.5;
+      if (m_posX <= cp->getX()-0.1 || m_posX >= cp->getX()+0.1){
+        if(cp->getX() - m_posX < 0){
+          m_posX -= dt*0.905;
+        } else {
+          m_posX += dt*0.905;
+        }
       }
 
-      if(!(m_posY >= cp->getY()+10 || m_posY <= cp->getY()-10)){
-        m_posY = m_posY+(m_posY - cp->getY())*dt*0.5;
+      if(m_posY <= cp->getY()-0.1 || m_posY >= cp->getY()+0.1){
+        if(cp->getY() - m_posY < 0){
+          m_posY -= dt*0.905;
+        } else {
+          m_posY += dt*0.905;
+        }
       }
 
-      if ((m_posX >= cp->getX()-10 && m_posX <= cp->getX()+10)
-          && (m_posY >= cp->getY()+10 && m_posY <= cp->getY()-10)){
-              m_crossingPoints.erase(m_crossingPoints.begin());
-              cp = m_crossingPoints.at(0);
+      if (m_posX >= cp->getX()-0.1 && m_posX <= cp->getX()+0.1 && m_posY >= cp->getY()-0.1 && m_posY <= cp->getY()+0.1){
+        m_crossingPoints.erase(m_crossingPoints.begin());
       }
     }
   }

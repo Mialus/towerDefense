@@ -31,10 +31,10 @@ namespace towerdefense {
     int GetDefense();
     int GetSpeed();
     int GetLife();
-    int GetPosX();
-    int GetPosY();
-    int GetPosXb();
-    int GetPosYb();
+    float GetPosX();
+    float GetPosY();
+    float GetPosXb();
+    float GetPosYb();
     int GetLevel();
     int GetCoin();
     int GetId();

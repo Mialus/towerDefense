@@ -21,7 +21,8 @@ namespace towerdefense {
 // TODO (Erizino#1#): Check Enemy position in levels update function
     std::vector<Enemy*> enemies = m_eMan->getAllEnemies();
     for(Enemy* enemy : enemies){
-      if(enemy->GetPosX() == m_map->getEnd()->getX() && enemy->GetPosY() == m_map->getEnd()->getY()){
+      if(enemy->GetPosX() >= m_map->getEnd()->getX()-0.1 && enemy->GetPosY() <= m_map->getEnd()->getY()+0.1
+         && enemy->GetPosY() >= m_map->getEnd()->getY()-0.1 && enemy->GetPosY() <= m_map->getEnd()->getY()+0.1){
         m_life--;
         m_eMan->removeEnemy(enemy);
       }
