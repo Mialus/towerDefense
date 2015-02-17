@@ -7,6 +7,7 @@ namespace towerdefense{
   TowerManager::~TowerManager(){}
 
   bool TowerManager::alreadyTower(float x, float y){
+// TODO (Erizino#1#): Resolve checking position
     for(Tower t : allTower){
       if(x > t.getPosX() && x < t.getPosX()+ImageHandler::getTexture(SpriteList::TOWER).getSize().x
          && y > t.getPosY() && y < t.getPosY()+ImageHandler::getTexture(SpriteList::TOWER).getSize().y

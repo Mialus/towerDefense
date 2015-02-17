@@ -42,8 +42,6 @@ namespace towerdefense{
     std::vector<CrossingPoint*>& getCrossingPoints();
 
   private:
-    void sortCrossingPoints();
-
     unsigned int m_tileWidth;
     unsigned int m_tileHeight;
     unsigned int m_width;
