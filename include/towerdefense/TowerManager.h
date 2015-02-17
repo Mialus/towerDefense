@@ -22,6 +22,8 @@ namespace towerdefense{
         void clearTowers();
         int nbTowers();
     private:
+        bool alreadyTower(float x, float y);
+
         std::vector<Tower> allTower;
   };
 }

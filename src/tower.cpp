@@ -1,5 +1,4 @@
 #include <towerdefense/Tower.h>
-#include <SFML/Graphics.hpp>
 
 namespace towerdefense {
 

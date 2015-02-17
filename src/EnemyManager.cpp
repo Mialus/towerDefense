@@ -16,7 +16,7 @@ namespace towerdefense {
         if(line[j]==MapIdentifier::START){
           for(int nb=0; nb < nombreEnemy; nb++){
             allEnemy.push_back(new Tank(i, j));
-            allEnemy.at(0)->setCrossingPoints(iMap->getCrossingPoints());
+            allEnemy.at(nb)->setCrossingPoints(iMap->getCrossingPoints());
           }
         }
       }
@@ -24,7 +24,7 @@ namespace towerdefense {
   }
 
   void EnemyManager::update(float dt){
-    for(Enemy* enemy : allEnemy){
+    for(auto enemy : allEnemy){
       enemy->update(dt);
     }
   }

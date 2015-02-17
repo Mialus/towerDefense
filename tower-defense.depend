@@ -3736,7 +3736,7 @@
 
 1416754762 e:\dev\github\towerdefense\src\bin\config.h.in
 
-1424190114 source:e:\dev\github\towerdefense\src\bin\main.cpp
+1424190674 source:e:\dev\github\towerdefense\src\bin\main.cpp
 	<boost/filesystem.hpp>
 	<SFML/Graphics.hpp>
 	"../src/bin/config.h.in"
@@ -11500,7 +11500,7 @@
 	<towerdefense/Entity.h>
 	<towerdefense/Map.h>
 
-1424190160 source:e:\dev\github\towerdefense\src\enemy.cpp
+1424190210 source:e:\dev\github\towerdefense\src\enemy.cpp
 	<towerdefense/Enemy.h>
 
 1421959452 source:e:\dev\github\towerdefense\src\entity.cpp
@@ -11526,9 +11526,8 @@
 	<iostream>
 	<boost/filesystem.hpp>
 
-1422549504 source:e:\dev\github\towerdefense\src\tower.cpp
+1424190752 source:e:\dev\github\towerdefense\src\tower.cpp
 	<towerdefense/Tower.h>
-	<SFML/Graphics.hpp>
 
 1421959452 source:e:\dev\github\towerdefense\src\world.cpp
 	<towerdefense/World.h>
@@ -11634,7 +11633,7 @@
 1421627820 source:d:\travail\informatique\licence l3\towerdefense\towerdefense\src\tank.cpp
 	<towerdefense/Tank.h>
 
-1424105358 source:e:\dev\github\towerdefense\src\enemymanager.cpp
+1424190627 source:e:\dev\github\towerdefense\src\enemymanager.cpp
 	<towerdefense/EnemyManager.h>
 
 1424105358 e:\dev\github\towerdefense\include\towerdefense\enemymanager.h
@@ -11846,14 +11845,14 @@
 1422549504 e:\dev\github\towerdefense\include\towerdefense\antichar.h
 	"Tower.h"
 
-1422801638 e:\dev\github\towerdefense\include\towerdefense\towermanager.h
+1424191842 e:\dev\github\towerdefense\include\towerdefense\towermanager.h
 	<iostream>
 	<vector>
 	<towerdefense/Entity.h>
 	<towerdefense/Tower.h>
 	<towerdefense/Map.h>
 
-1424105358 source:e:\dev\github\towerdefense\src\levels.cpp
+1424190668 source:e:\dev\github\towerdefense\src\levels.cpp
 	<towerdefense/Levels.h>
 
 1424031082 e:\dev\github\towerdefense\include\towerdefense\levels.h
@@ -11864,7 +11863,7 @@
 1422915234 source:e:\dev\github\towerdefense\src\tank.cpp
 	<towerdefense/Tank.h>
 
-1422801636 source:e:\dev\github\towerdefense\src\towermanager.cpp
+1424192495 source:e:\dev\github\towerdefense\src\towermanager.cpp
 	<towerdefense/TowerManager.h>
 
 1424096310 c:\users\erizino\documents\github\towerdefense\include\towerdefense\levels.h

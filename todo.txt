@@ -1,6 +1,4 @@
-- Prendre en charge les points de passage
-- Résoudre problème perte de vie
 - Résoudre positions tower
-- Résoudre affichage des cases
 - Gérer tire
 - Finir level class
+- Résoudre affichage des cases
