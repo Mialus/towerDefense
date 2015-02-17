@@ -54,6 +54,7 @@ namespace towerdefense {
     float m_posXb;
     float m_posYb;
     std::vector<CrossingPoint*> m_crossingPoints;
+    char m_currentCp;
   };
 
 }

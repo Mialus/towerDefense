@@ -37,7 +37,7 @@ int main(int argc, char *argv[]) {
   sf::RenderWindow window(sf::VideoMode(windowWidth, windowHeight), "Tower Defense (version " GAME_VERSION ")");
   window.setKeyRepeatEnabled(false);
   td::ImageHandler::initialize();
-  td::Map mapLevel("res/maps/level2.txt", windowWidth, windowHeight);
+  td::Map mapLevel("res/maps/level1.txt", windowWidth, windowHeight);
   td::TowerManager tMan;
   td::EnemyManager eMan(1, &mapLevel);
   td::Levels level(5, &tMan, &eMan, &mapLevel);

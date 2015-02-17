@@ -5,13 +5,15 @@ namespace towerdefense {
 
   class CrossingPoint {
   public :
-    CrossingPoint(int x, int y);
+    CrossingPoint(int x, int y, char id);
 
     unsigned int getX();
     unsigned int getY();
+    char getId();
   private :
+    unsigned int m_id;
     unsigned int m_x;
-    unsigned int m_y;
+    char m_y;
   };
 }
 

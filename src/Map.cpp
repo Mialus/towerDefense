@@ -48,7 +48,7 @@ namespace towerdefense {
     }
   }
 
-  std::vector<std::vector<MapIdentifier>> Map::getLevel(){
+  std::vector<std::vector<MapIdentifier>>& Map::getLevel(){
       return m_level;
   }
 
@@ -95,11 +95,20 @@ namespace towerdefense {
             break;
           case 'A':
             m_level.at(j).push_back(MapIdentifier::END);
-            m_crossingPoints.push_back(new CrossingPoint(i, j));
+            m_crossingPoints.push_back(new CrossingPoint(i, j, 'e'));
             break;
-          case 'C':
+          case '0':
+          case '1':
+          case '2':
+          case '3':
+          case '4':
+          case '5':
+          case '6':
+          case '7':
+          case '8':
+          case '9':
             m_level.at(j).push_back(MapIdentifier::CROSSINGPOINT);
-            m_crossingPoints.push_back(new CrossingPoint(i, j));
+            m_crossingPoints.push_back(new CrossingPoint(i, j, line[i]));
             break;
           case '.':
             m_level.at(j).push_back(MapIdentifier::PATH);

@@ -4,6 +4,7 @@
 #include <vector>
 #include <iostream>
 #include <fstream>
+#include <string>
 
 #include <SFML/Graphics.hpp>
 
@@ -30,7 +31,7 @@ namespace towerdefense{
     void update(float dt);
     void render(sf::RenderWindow& window);
 
-    std::vector<std::vector<MapIdentifier>> getLevel();
+    std::vector<std::vector<MapIdentifier>>& getLevel();
 
     void setWidth(int width);
     void setHeight(int height);

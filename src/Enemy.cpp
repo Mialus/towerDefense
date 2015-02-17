@@ -93,6 +93,7 @@ namespace towerdefense {
     m_coin = coin;
     m_defense = defense*level;
     m_current_id++;
+    m_currentCp = '0';
   }
 
   Enemy::~Enemy() {
@@ -103,32 +104,33 @@ namespace towerdefense {
     sf::Texture texture = ImageHandler::getTexture(SpriteList::ENEMY);
 
     sprite.setTexture(texture);
-    sprite.setPosition(m_posX*50, m_posY*100);
+    sprite.setPosition(m_posX*50, m_posY*50);
     window.draw(sprite);
   }
 
   void Enemy::update(float dt){
-    if(!m_crossingPoints.empty()){
-      CrossingPoint* cp = m_crossingPoints.at(0);
-
-      if (m_posX <= cp->getX()-0.1 || m_posX >= cp->getX()+0.1){
-        if(cp->getX() - m_posX < 0){
-          m_posX -= dt*0.905;
-        } else {
-          m_posX += dt*0.905;
+    for(CrossingPoint* cp : m_crossingPoints){
+      if(cp->getId() == m_currentCp || m_crossingPoints.size() < 2){
+        if (m_posX <= cp->getX()-0.1 || m_posX >= cp->getX()+0.1){
+          if(cp->getX() - m_posX < 0){
+            m_posX -= dt*0.905;
+          } else {
+            m_posX += dt*0.905;
+          }
         }
-      }
 
-      if(m_posY <= cp->getY()-0.1 || m_posY >= cp->getY()+0.1){
-        if(cp->getY() - m_posY < 0){
-          m_posY -= dt*0.905;
-        } else {
-          m_posY += dt*0.905;
+        if(m_posY <= cp->getY()-0.1 || m_posY >= cp->getY()+0.1){
+          if(cp->getY() - m_posY < 0){
+            m_posY -= dt*0.905;
+          } else {
+            m_posY += dt*0.905;
+          }
         }
-      }
 
-      if (m_posX >= cp->getX()-0.1 && m_posX <= cp->getX()+0.1 && m_posY >= cp->getY()-0.1 && m_posY <= cp->getY()+0.1){
-        m_crossingPoints.erase(m_crossingPoints.begin());
+        if (m_posX >= cp->getX()-0.1 && m_posX <= cp->getX()+0.1 && m_posY >= cp->getY()-0.1 && m_posY <= cp->getY()+0.1){
+          m_crossingPoints.erase(remove(m_crossingPoints.begin(), m_crossingPoints.end(), cp), m_crossingPoints.end());
+          m_currentCp++;
+        }
       }
     }
   }

@@ -3736,7 +3736,7 @@
 
 1416754762 e:\dev\github\towerdefense\src\bin\config.h.in
 
-1422915234 source:e:\dev\github\towerdefense\src\bin\main.cpp
+1424190114 source:e:\dev\github\towerdefense\src\bin\main.cpp
 	<boost/filesystem.hpp>
 	<SFML/Graphics.hpp>
 	"../src/bin/config.h.in"
@@ -11465,16 +11465,17 @@
 	<towerdefense/Animation.h>
 	<iostream>
 
-1424032648 e:\dev\github\towerdefense\include\towerdefense\map.h
+1424187828 e:\dev\github\towerdefense\include\towerdefense\map.h
 	<vector>
 	<iostream>
 	<fstream>
+	<string>
 	<SFML/Graphics.hpp>
 	<towerdefense/Entity.h>
 	<towerdefense/ImageHandler.h>
 	<towerdefense/CrossingPoint.h>
 
-1424033204 e:\dev\github\towerdefense\include\towerdefense\enemy.h
+1424189265 e:\dev\github\towerdefense\include\towerdefense\enemy.h
 	<boost/filesystem.hpp>
 	<SFML/Graphics.hpp>
 	<SFML/Window/Window.hpp>
@@ -11499,7 +11500,7 @@
 	<towerdefense/Entity.h>
 	<towerdefense/Map.h>
 
-1424033767 source:e:\dev\github\towerdefense\src\enemy.cpp
+1424190160 source:e:\dev\github\towerdefense\src\enemy.cpp
 	<towerdefense/Enemy.h>
 
 1421959452 source:e:\dev\github\towerdefense\src\entity.cpp
@@ -11513,7 +11514,7 @@
 	<vector>
 	<SFML/graphics.hpp>
 
-1424032646 source:e:\dev\github\towerdefense\src\map.cpp
+1424188073 source:e:\dev\github\towerdefense\src\map.cpp
 	<towerdefense/Map.h>
 
 1416754762 source:e:\dev\github\towerdefense\src\random.cpp
@@ -11633,10 +11634,10 @@
 1421627820 source:d:\travail\informatique\licence l3\towerdefense\towerdefense\src\tank.cpp
 	<towerdefense/Tank.h>
 
-1424032835 source:e:\dev\github\towerdefense\src\enemymanager.cpp
+1424105358 source:e:\dev\github\towerdefense\src\enemymanager.cpp
 	<towerdefense/EnemyManager.h>
 
-1424032835 e:\dev\github\towerdefense\include\towerdefense\enemymanager.h
+1424105358 e:\dev\github\towerdefense\include\towerdefense\enemymanager.h
 	<iostream>
 	<vector>
 	<SFML/graphics.hpp>
@@ -11852,7 +11853,7 @@
 	<towerdefense/Tower.h>
 	<towerdefense/Map.h>
 
-1424031126 source:e:\dev\github\towerdefense\src\levels.cpp
+1424105358 source:e:\dev\github\towerdefense\src\levels.cpp
 	<towerdefense/Levels.h>
 
 1424031082 e:\dev\github\towerdefense\include\towerdefense\levels.h
@@ -11874,10 +11875,10 @@
 1424099237 source:c:\users\erizino\documents\github\towerdefense\src\levels.cpp
 	<towerdefense/Levels.h>
 
-1423155846 source:e:\dev\github\towerdefense\src\crossingpoint.cpp
+1424188050 source:e:\dev\github\towerdefense\src\crossingpoint.cpp
 	<towerdefense/CrossingPoint.h>
 
-1423155792 e:\dev\github\towerdefense\include\towerdefense\crossingpoint.h
+1424188031 e:\dev\github\towerdefense\include\towerdefense\crossingpoint.h
 
 1423223198 c:\users\erizino\documents\github\towerdefense\include\towerdefense\crossingpoint.h
 
