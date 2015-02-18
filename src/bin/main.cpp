@@ -38,9 +38,8 @@ int main(int argc, char *argv[]) {
   window.setKeyRepeatEnabled(false);
   td::ImageHandler::initialize();
   td::Map mapLevel("res/maps/level2.txt", windowWidth, windowHeight);
-// TODO (Erizino#1#): Fix enemy end
-  td::TowerManager tMan;
   td::EnemyManager eMan(5, &mapLevel);
+  td::TowerManager tMan(&eMan);
   td::Levels level(5, &tMan, &eMan, &mapLevel);
 
   // load resources
@@ -86,9 +85,11 @@ int main(int argc, char *argv[]) {
           default:
             break;
         }
-      } else if (sf::Mouse::isButtonPressed(sf::Mouse::Left)){
-        sf::Vector2i localPosition = sf::Mouse::getPosition(window);
-        tMan.addTower(localPosition.x, localPosition.y,mapLevel.getLevel());
+      } else if (event.type == sf::Event::MouseButtonPressed){
+        if(event.mouseButton.button == sf::Mouse::Left){
+          sf::Vector2i localPosition = sf::Mouse::getPosition(window);
+          tMan.addTower(localPosition.x, localPosition.y,mapLevel.getLevel());
+        }
       }
     }
 

@@ -76,6 +76,9 @@ namespace towerdefense {
     std::ifstream levelTxt(levelpath);
     std::string line;
     m_level = std::vector<std::vector<MapIdentifier>>();
+    if(m_crossingPoints.size() > 0){
+      m_crossingPoints.clear();
+    }
 
     // Loading text file for level definition
     if (levelTxt.is_open())

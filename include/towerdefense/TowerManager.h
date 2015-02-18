@@ -12,7 +12,7 @@ namespace towerdefense{
 
   class TowerManager: public Entity {
     public:
-        TowerManager();
+        TowerManager(EnemyManager* em);
         ~TowerManager();
 
         void update(float dt);
@@ -25,6 +25,7 @@ namespace towerdefense{
         bool alreadyTower(float x, float y);
 
         std::vector<Tower> allTower;
+        EnemyManager* m_emanager;
   };
 }
 #endif // TOWERMANAGER_H

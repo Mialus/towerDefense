@@ -3736,7 +3736,7 @@
 
 1416754762 e:\dev\github\towerdefense\src\bin\config.h.in
 
-1424190674 source:e:\dev\github\towerdefense\src\bin\main.cpp
+1424286402 source:e:\dev\github\towerdefense\src\bin\main.cpp
 	<boost/filesystem.hpp>
 	<SFML/Graphics.hpp>
 	"../src/bin/config.h.in"
@@ -11483,24 +11483,26 @@
 	<towerdefense/Entity.h>
 	<towerdefense/Map.h>
 
-1422892899 e:\dev\github\towerdefense\include\towerdefense\tower.h
+1424286648 e:\dev\github\towerdefense\include\towerdefense\tower.h
 	<SFML/Graphics.hpp>
 	<towerdefense/World.h>
 	<towerdefense/Entity.h>
 	<towerdefense/Map.h>
 	<towerdefense/Bullet.h>
+	<towerdefense/EnemyManager.h>
+	<towerdefense/Enemy.h>
 
-1422892899 source:e:\dev\github\towerdefense\src\bullet.cpp
+1424287133 source:e:\dev\github\towerdefense\src\bullet.cpp
 	<towerdefense/Bullet.h>
 
-1422892899 e:\dev\github\towerdefense\include\towerdefense\bullet.h
-	<towerdefense/Entity.h>
+1424287116 e:\dev\github\towerdefense\include\towerdefense\bullet.h
 	<SFML/Graphics.hpp>
 	<towerdefense/World.h>
 	<towerdefense/Entity.h>
 	<towerdefense/Map.h>
+	<towerdefense/Enemy.h>
 
-1424190210 source:e:\dev\github\towerdefense\src\enemy.cpp
+1424282872 source:e:\dev\github\towerdefense\src\enemy.cpp
 	<towerdefense/Enemy.h>
 
 1421959452 source:e:\dev\github\towerdefense\src\entity.cpp
@@ -11514,7 +11516,7 @@
 	<vector>
 	<SFML/graphics.hpp>
 
-1424188073 source:e:\dev\github\towerdefense\src\map.cpp
+1424282825 source:e:\dev\github\towerdefense\src\map.cpp
 	<towerdefense/Map.h>
 
 1416754762 source:e:\dev\github\towerdefense\src\random.cpp
@@ -11526,7 +11528,7 @@
 	<iostream>
 	<boost/filesystem.hpp>
 
-1424190752 source:e:\dev\github\towerdefense\src\tower.cpp
+1424286838 source:e:\dev\github\towerdefense\src\tower.cpp
 	<towerdefense/Tower.h>
 
 1421959452 source:e:\dev\github\towerdefense\src\world.cpp
@@ -11842,17 +11844,17 @@
 1421959452 source:e:\dev\github\towerdefense\src\antichar.cpp
 	<towerdefense/AntiChar.h>
 
-1422549504 e:\dev\github\towerdefense\include\towerdefense\antichar.h
+1424286253 e:\dev\github\towerdefense\include\towerdefense\antichar.h
 	"Tower.h"
 
-1424191842 e:\dev\github\towerdefense\include\towerdefense\towermanager.h
+1424286373 e:\dev\github\towerdefense\include\towerdefense\towermanager.h
 	<iostream>
 	<vector>
 	<towerdefense/Entity.h>
 	<towerdefense/Tower.h>
 	<towerdefense/Map.h>
 
-1424190668 source:e:\dev\github\towerdefense\src\levels.cpp
+1424192919 source:e:\dev\github\towerdefense\src\levels.cpp
 	<towerdefense/Levels.h>
 
 1424031082 e:\dev\github\towerdefense\include\towerdefense\levels.h
@@ -11863,7 +11865,7 @@
 1422915234 source:e:\dev\github\towerdefense\src\tank.cpp
 	<towerdefense/Tank.h>
 
-1424192836 source:e:\dev\github\towerdefense\src\towermanager.cpp
+1424286414 source:e:\dev\github\towerdefense\src\towermanager.cpp
 	<towerdefense/TowerManager.h>
 
 1424096310 c:\users\erizino\documents\github\towerdefense\include\towerdefense\levels.h

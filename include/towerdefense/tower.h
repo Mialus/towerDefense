@@ -7,12 +7,14 @@
 #include <towerdefense/Entity.h>
 #include <towerdefense/Map.h>
 #include <towerdefense/Bullet.h>
+#include <towerdefense/EnemyManager.h>
+#include <towerdefense/Enemy.h>
 
 namespace towerdefense{
 
   class Tower : public Entity {
   public :
-    Tower(int level,int degat, float posX, float posY);
+    Tower(int level,int degat, float posX, float posY, EnemyManager* em);
     void setLevel(int level);
     void setDegat(int degat,int level);
     void setPosX(int posX);
@@ -29,7 +31,8 @@ namespace towerdefense{
     int m_degat;
     int m_posX;
     int m_posY;
-    std::vector<Bullet> bul;
+    std::vector<Bullet*> m_bullets;
+    EnemyManager* m_emanager;
   };
 
 }
