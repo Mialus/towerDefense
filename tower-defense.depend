@@ -11725,7 +11725,7 @@
 
 1421776809 c:\users\erizino\documents\github\towerdefense\src\bin\config.h.in
 
-1424098293 source:c:\users\erizino\documents\github\towerdefense\src\bin\main.cpp
+1424253290 source:c:\users\erizino\documents\github\towerdefense\src\bin\main.cpp
 	<boost/filesystem.hpp>
 	<SFML/Graphics.hpp>
 	"../src/bin/config.h.in"
@@ -11736,10 +11736,11 @@
 	<towerdefense/EnemyManager.h>
 	<towerdefense/Levels.h>
 
-1424096310 c:\users\erizino\documents\github\towerdefense\include\towerdefense\map.h
+1424253290 c:\users\erizino\documents\github\towerdefense\include\towerdefense\map.h
 	<vector>
 	<iostream>
 	<fstream>
+	<string>
 	<SFML/Graphics.hpp>
 	<towerdefense/Entity.h>
 	<towerdefense/ImageHandler.h>
@@ -11750,7 +11751,7 @@
 	<vector>
 	<SFML/graphics.hpp>
 
-1422908904 c:\users\erizino\documents\github\towerdefense\include\towerdefense\towermanager.h
+1424253290 c:\users\erizino\documents\github\towerdefense\include\towerdefense\towermanager.h
 	<iostream>
 	<vector>
 	<towerdefense/Entity.h>
@@ -11767,7 +11768,7 @@
 	<towerdefense/Map.h>
 	<towerdefense/CrossingPoint.h>
 
-1424098919 c:\users\erizino\documents\github\towerdefense\include\towerdefense\enemy.h
+1424253290 c:\users\erizino\documents\github\towerdefense\include\towerdefense\enemy.h
 	<boost/filesystem.hpp>
 	<SFML/Graphics.hpp>
 	<SFML/Window/Window.hpp>
@@ -11788,10 +11789,10 @@
 	<towerdefense/Entity.h>
 	<towerdefense/Map.h>
 
-1424099195 source:c:\users\erizino\documents\github\towerdefense\src\enemy.cpp
+1424253290 source:c:\users\erizino\documents\github\towerdefense\src\enemy.cpp
 	<towerdefense/Enemy.h>
 
-1424097924 source:c:\users\erizino\documents\github\towerdefense\src\enemymanager.cpp
+1424253290 source:c:\users\erizino\documents\github\towerdefense\src\enemymanager.cpp
 	<towerdefense/EnemyManager.h>
 
 1421776809 source:c:\users\erizino\documents\github\towerdefense\src\entity.cpp
@@ -11800,7 +11801,7 @@
 1421776809 source:c:\users\erizino\documents\github\towerdefense\src\imagehandler.cpp
 	<towerdefense/ImageHandler.h>
 
-1424096310 source:c:\users\erizino\documents\github\towerdefense\src\map.cpp
+1424253290 source:c:\users\erizino\documents\github\towerdefense\src\map.cpp
 	<towerdefense/Map.h>
 
 1421776809 source:c:\users\erizino\documents\github\towerdefense\src\random.cpp
@@ -11821,9 +11822,8 @@
 1422912814 source:c:\users\erizino\documents\github\towerdefense\src\tank.cpp
 	<towerdefense/Tank.h>
 
-1422908904 source:c:\users\erizino\documents\github\towerdefense\src\tower.cpp
+1424253290 source:c:\users\erizino\documents\github\towerdefense\src\tower.cpp
 	<towerdefense/Tower.h>
-	<SFML/Graphics.hpp>
 
 1422908904 source:c:\users\erizino\documents\github\towerdefense\src\towermanager.cpp
 	<towerdefense/TowerManager.h>
@@ -11871,7 +11871,7 @@
 	<towerdefense/EnemyManager.h>
 	<towerdefense/Map.h>
 
-1424099237 source:c:\users\erizino\documents\github\towerdefense\src\levels.cpp
+1424253290 source:c:\users\erizino\documents\github\towerdefense\src\levels.cpp
 	<towerdefense/Levels.h>
 
 1424188050 source:e:\dev\github\towerdefense\src\crossingpoint.cpp
@@ -11879,8 +11879,8 @@
 
 1424188031 e:\dev\github\towerdefense\include\towerdefense\crossingpoint.h
 
-1423223198 c:\users\erizino\documents\github\towerdefense\include\towerdefense\crossingpoint.h
+1424253290 c:\users\erizino\documents\github\towerdefense\include\towerdefense\crossingpoint.h
 
-1423223198 source:c:\users\erizino\documents\github\towerdefense\src\crossingpoint.cpp
+1424253290 source:c:\users\erizino\documents\github\towerdefense\src\crossingpoint.cpp
 	<towerdefense/CrossingPoint.h>
 

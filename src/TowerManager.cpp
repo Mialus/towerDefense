@@ -8,11 +8,19 @@ namespace towerdefense{
 
   bool TowerManager::alreadyTower(float x, float y){
 // TODO (Erizino#1#): Resolve checking position
+    unsigned int width_tower = ImageHandler::getTexture(SpriteList::TOWER).getSize().x;
+    unsigned int height_tower = ImageHandler::getTexture(SpriteList::TOWER).getSize().y;
+    float x_bot = x+width_tower;
+    float y_bot = y+height_tower;
     for(Tower t : allTower){
-      if(x > t.getPosX() && x < t.getPosX()+ImageHandler::getTexture(SpriteList::TOWER).getSize().x
-         && y > t.getPosY() && y < t.getPosY()+ImageHandler::getTexture(SpriteList::TOWER).getSize().y
-         && x+ImageHandler::getTexture(SpriteList::TOWER).getSize().x > t.getPosX() && x+ImageHandler::getTexture(SpriteList::TOWER).getSize().x < t.getPosX()+ImageHandler::getTexture(SpriteList::TOWER).getSize().x
-         && y+ImageHandler::getTexture(SpriteList::TOWER).getSize().y > t.getPosY() && y+ImageHandler::getTexture(SpriteList::TOWER).getSize().y < t.getPosY()+ImageHandler::getTexture(SpriteList::TOWER).getSize().y)
+      if(x > t.getPosX()
+         && x < t.getPosX()+width_tower
+         && y > t.getPosY()
+         && y < t.getPosY()+height_tower
+         && x_bot > t.getPosX()
+         && x_bot < t.getPosX()+width_tower
+         && y_bot > t.getPosY()
+         && y_bot < t.getPosY()+height_tower)
           return true;
     }
     return false;
