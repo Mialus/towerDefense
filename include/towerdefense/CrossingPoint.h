@@ -10,6 +10,7 @@ namespace towerdefense {
     unsigned int getX();
     unsigned int getY();
     char getId();
+
   private :
     unsigned int m_id;
     unsigned int m_x;

@@ -15,16 +15,13 @@ namespace towerdefense{
   class Tower : public Entity {
   public :
     Tower(int level,int degat, float posX, float posY, EnemyManager* em);
-    void setLevel(int level);
-    void setDegat(int degat,int level);
-    void setPosX(int posX);
-    void setPosY(int posY);
-    void render(sf::RenderWindow& window);
-    int getLevel();
+
     int getDegat();
     int getPosX();
     int getPosY();
+
     void update(float dt);
+    void render(sf::RenderWindow& window);
 
   private :
     int m_level;
@@ -33,6 +30,7 @@ namespace towerdefense{
     int m_posY;
     std::vector<Bullet*> m_bullets;
     EnemyManager* m_emanager;
+    float m_dt_cumulated;
   };
 
 }

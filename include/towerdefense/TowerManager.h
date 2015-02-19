@@ -18,13 +18,13 @@ namespace towerdefense{
         void update(float dt);
         void render(sf::RenderWindow& window);
 
-        void addTower(float x, float y, std::vector<std::vector<MapIdentifier>> level);
+        void addTower(float x, float y, const std::vector<std::vector<MapIdentifier>> level);
         void clearTowers();
         int nbTowers();
     private:
         bool alreadyTower(float x, float y);
 
-        std::vector<Tower> allTower;
+        std::vector<Tower*> allTower;
         EnemyManager* m_emanager;
   };
 }

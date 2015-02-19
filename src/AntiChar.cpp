@@ -2,6 +2,6 @@
 
 namespace towerdefense{
 
-AntiChar::~AntiChar()
-{}
+  AntiChar::~AntiChar() {}
+
 }

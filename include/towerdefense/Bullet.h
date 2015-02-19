@@ -12,7 +12,8 @@ namespace towerdefense {
 
   class Bullet : public Entity {
   public :
-    Bullet(float posX,float posY, Enemy* e);
+    Bullet(float posX,float posY, int dmg, Enemy* e);
+
     void update(float dt);
     void render(sf::RenderWindow& window);
 
@@ -23,6 +24,7 @@ namespace towerdefense {
   private :
      float m_posX;
      float m_posY;
+     int m_dmg;
      Enemy* m_cible;
   };
 

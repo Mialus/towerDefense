@@ -14,40 +14,28 @@ namespace towerdefense {
 
   class Enemy : public Entity {
   public:
-    Enemy(int speed,int life,int level,int coin,int defense, float posX, float posY);
+    Enemy(int speed,int life,int coin,int defense, float posX, float posY);
     ~Enemy();
-    void SetDefense(int defense,int level);
+
     void update(float dt);
     void render(sf::RenderWindow& window);
-    void SetSpeed(int speed);
-    void SetLife(int life);
-    void SetLevel(int level);
-    void SetPosX(int pos);
-    void SetPosY(int posY);
-    void SetPosXb(int pos);
-    void SetPosYb(int posY);
-    void SetCoin(int coin);
+
     void setCrossingPoints(const std::vector<CrossingPoint*> crossingPoints);
+
     int GetDefense();
-    int GetSpeed();
+    float GetSpeed();
     int GetLife();
     float GetPosX();
     float GetPosY();
-    float GetPosXb();
-    float GetPosYb();
-    int GetLevel();
     int GetCoin();
-    int GetId();
+    void loseLife(int life);
+
     bool endCorssingPoints();
-    static void resetIds();
 
   protected:
-    static int m_current_id;
-    int m_id;
     int m_defense;
-    int m_level;
     int m_life;
-    int m_speed;
+    float m_speed;
     int m_coin;
     float m_posX;
     float m_posY;

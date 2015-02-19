@@ -24,8 +24,12 @@ namespace towerdefense {
   }
 
   void EnemyManager::update(float dt){
-    for(auto enemy : allEnemy){
-      enemy->update(dt);
+    for(Enemy* enemy : allEnemy){
+      if(enemy->GetLife() > 0){
+        enemy->update(dt);
+      } else {
+        removeEnemy(enemy);
+      }
     }
   }
 
@@ -37,7 +41,6 @@ namespace towerdefense {
 
   void EnemyManager::clearEnemies(){
     allEnemy.clear();
-    Enemy::resetIds();
   }
 
   std::vector<Enemy*>& EnemyManager::getAllEnemies(){

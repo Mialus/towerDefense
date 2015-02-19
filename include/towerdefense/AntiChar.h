@@ -2,6 +2,7 @@
 #define ANTICHAR_H
 
 #include "Tower.h"
+
 namespace towerdefense{
 
 class AntiChar : Tower

@@ -2,35 +2,35 @@
 
 namespace towerdefense {
 
-  Bullet::Bullet(float posX,float posY, Enemy* e){
+  Bullet::Bullet(float posX,float posY, int dmg, Enemy* e){
     m_posX=posX;
     m_posY=posY;
+    m_dmg = dmg;
     m_cible = e;
   }
 
   void Bullet::update(float dt){
-    if (m_posX <= m_cible->GetPosX()-0.1 || m_posX >= m_cible->GetPosX()+0.1){
-      if(m_cible->GetPosX() - m_posX < 0){
-        m_posX -= dt*1.105;
+    if (m_posX/50.0 <= m_cible->GetPosX()-0.1 || m_posX/50.0 >= m_cible->GetPosX()+0.1){
+      if(m_cible->GetPosX() - m_posX/50.0 < 0){
+        m_posX -= dt*180.105;
       } else {
-        m_posX += dt*1.105;
+        m_posX += dt*180.105;
       }
     }
 
-    if(m_posY <= m_cible->GetPosY()-0.1 || m_posY >= m_cible->GetPosY()+0.1){
-      if(m_cible->GetPosY() - m_posY < 0){
-        m_posY -= dt*1.105;
+    if(m_posY/100.0 <= m_cible->GetPosY()-0.1 || m_posY/100.0 >= m_cible->GetPosY()+0.1){
+      if(m_cible->GetPosY() - m_posY/100.0 < 0){
+        m_posY -= dt*200.105;
       } else {
-        m_posY += dt*1.105;
+        m_posY += dt*200.105;
       }
     }
 
-    if (m_posX >= m_cible->GetPosX()-0.1
-        && m_posX <= m_cible->GetPosX()+0.1
-        && m_posY >= m_cible->GetPosY()-0.1
-        && m_posY <= m_cible->GetPosY()+0.1){
-// TODO (Erizino#1#): Need to add dmg to enemy
-
+    if (m_posX/50.0 >= m_cible->GetPosX()-0.1
+        && m_posX/50.0 <= m_cible->GetPosX()+0.1
+        && m_posY/100.0 >= m_cible->GetPosY()-0.1
+        && m_posY/100.0 <= m_cible->GetPosY()+0.1){
+      m_cible->loseLife(m_dmg);
     }
   }
 

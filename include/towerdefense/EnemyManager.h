@@ -20,8 +20,10 @@ namespace towerdefense {
     EnemyManager();
     EnemyManager(int nombreEnemy, Map* iMap);
     virtual ~EnemyManager();
+
     void update(float dt);
     void render(sf::RenderWindow& window);
+
     void clearEnemies();
     std::vector<Enemy*>& getAllEnemies();
     void removeEnemy(Enemy* e);

@@ -2,26 +2,6 @@
 
 namespace towerdefense {
 
-  void Tower::setLevel(int level){
-    m_level=level;
-  }
-
-  void Tower::setDegat(int degat,int level){
-    m_degat=degat*level;
-  }
-
-  void Tower::setPosX(int posX){
-    m_posX=posX;
-  }
-
-  void Tower::setPosY(int posY){
-    m_posY=posY;
-  }
-
-  int Tower::getLevel(){
-    return m_level;
-  }
-
   int Tower::getDegat(){
     return m_degat;
   }
@@ -35,28 +15,29 @@ namespace towerdefense {
   }
 
   Tower::Tower(int level,int degat, float posX, float posY, EnemyManager* em){
-    setLevel(level);
-    setDegat(degat,level);
-    setPosX(posX);
-    setPosY(posY);
+    m_level=level;
+    m_degat=degat*level;
+    m_posX=posX;
+    m_posY=posY;
     m_emanager = em;
+    m_dt_cumulated = 0;
   }
 
-// TODO (Erizino#1#): Fix Bullet creation
   void Tower::update(float dt){
+    m_dt_cumulated += dt;
     for(Enemy* e : m_emanager->getAllEnemies()){
-      if((e->GetPosX()-m_posX < 100 && e->GetPosX()-m_posX > -100)
-         && (e->GetPosY()-m_posY < 100 && e->GetPosY()-m_posY > -100)){
-          std::cout << "Bullet Created!" << std::endl;
-        m_bullets.push_back(new Bullet(m_posX+ImageHandler::getTexture(SpriteList::TOWER).getSize().x/2, m_posY, e));
+      if((e->GetPosX()-m_posX/50.0 <= 2.1 && e->GetPosX()-m_posX/50.0 >= -2.1)
+         && (e->GetPosY()-m_posY/100.0 <= 2.1 && e->GetPosY()-m_posY/100.0 >= -2.1)
+         && m_dt_cumulated > 1){
+        m_bullets.push_back(new Bullet(m_posX+ImageHandler::getTexture(SpriteList::TOWER).getSize().x/2, m_posY, m_degat, e));
+        m_dt_cumulated = 0;
       }
     }
     for(Bullet* b : m_bullets){
-        std::cout << "Bullet Update!" << std::endl;
-      if (b->getX() >= b->getCible()->GetPosX()-0.1
-        && b->getX() <= b->getCible()->GetPosX()+0.1
-        && b->getY() >= b->getCible()->GetPosY()-0.1
-        && b->getY() <= b->getCible()->GetPosY()+0.1){
+      if (b->getX()/50.0 >= b->getCible()->GetPosX()-0.1
+        && b->getX()/50.0 <= b->getCible()->GetPosX()+0.1
+        && b->getY()/100.0 >= b->getCible()->GetPosY()-0.1
+        && b->getY()/100.0 <= b->getCible()->GetPosY()+0.1){
           m_bullets.erase(remove(m_bullets.begin(), m_bullets.end(), b), m_bullets.end());
       }
       b->update(dt);
@@ -69,12 +50,8 @@ namespace towerdefense {
 
     sprite.setTexture(texture);
     sprite.setPosition(m_posX, m_posY);
-    std::cout << "Bullet Rendered1!" << std::endl;
     window.draw(sprite);
-    std::cout << "Bullet Rendered2!" << std::endl;
-// TODO (Erizino#1#): Fiw bullet render
     for(Bullet* b : m_bullets){
-        std::cout << "Bullet Rendered3!" << std::endl;
       b->render(window);
     }
   }
