@@ -10,6 +10,7 @@ namespace towerdefense {
       m_eMan = iEMan;
       m_map = m;
       m_coins = 100;
+      m_paused = false;
       if(!m_font.loadFromFile("res/fonts/Square.ttf")){
         std::cout << "Font can't be loaded !" << std::endl;
         exit(1);
@@ -30,8 +31,15 @@ namespace towerdefense {
         m_eMan->removeEnemy(enemy);
       }
     }
-    if(m_life <= 0){
+
+    if(m_life <= 0 && !m_gameOver){
       m_gameOver = true;
+      pause();
+    }
+
+    if(m_eMan->m_enemiKilled){
+      winCoins(10);
+      m_eMan->m_enemiKilled = false;
     }
   }
 
@@ -44,47 +52,41 @@ namespace towerdefense {
   }
 
   void Levels::render(sf::RenderWindow& window){
-    sf::Text lbl_life;
-    sf::Text lbl_coins;
-    sf::Text txt_life;
-    sf::Text txt_coins;
     std::string str;
     std::ostringstream convert;
 
-    lbl_life.setFont(m_font);
-    lbl_life.setString("Life : ");
-    lbl_life.setCharacterSize(20);
-    lbl_life.setColor(sf::Color::Black);
-    lbl_life.setPosition(0, 460);
-
-    lbl_coins.setFont(m_font);
-    lbl_coins.setString("Coins : ");
-    lbl_coins.setCharacterSize(20);
-    lbl_coins.setColor(sf::Color::Black);
-    lbl_coins.setPosition(0, 480);
+    drawString(window, "Life : ", 0, 460);
+    drawString(window, "Coins : ", 0, 480);
 
     convert << m_life;
     str = convert.str();
-    txt_life.setFont(m_font);
-    txt_life.setString(str);
-    txt_life.setCharacterSize(20);
-    txt_life.setColor(sf::Color::Black);
-    txt_life.setPosition(100, 460);
-
+    drawString(window, convert.str(), 100, 460);
     convert.str("");
     convert.clear();
     convert << m_coins;
     str = convert.str();
-    txt_coins.setFont(m_font);
-    txt_coins.setString(str);
-    txt_coins.setCharacterSize(20);
-    txt_coins.setColor(sf::Color::Black);
-    txt_coins.setPosition(100, 480);
+    drawString(window, convert.str(), 100, 480);
 
-    window.draw(lbl_life);
-    window.draw(lbl_coins);
-    window.draw(txt_coins);
-    window.draw(txt_life);
+    if(m_paused && !badEnd() && !goodEnd()){
+      sf::Text txt("Paused", m_font, 30);
+      drawString(window, "Paused", 250-txt.getLocalBounds().width/2, 235, 30);
+    } else if (badEnd()) {
+      sf::Text txt("You lose! Press R to restart", m_font, 30);
+      drawString(window, "You lose! Press R to restart", 250-txt.getLocalBounds().width/2, 235, 30);
+    } else if (goodEnd()) {
+      sf::Text txt("You win!", m_font, 30);
+      drawString(window, "You win!", 250-txt.getLocalBounds().width/2, 235, 30);
+    }
+  }
+
+  void Levels::drawString(sf::RenderWindow& window, const std::string str, int x, int y, int charsize){
+    sf::Text txt;
+    txt.setFont(m_font);
+    txt.setString(str);
+    txt.setCharacterSize(charsize);
+    txt.setColor(sf::Color::Black);
+    txt.setPosition(x, y);
+    window.draw(txt);
   }
 
   void Levels::changeLevel(int life){
@@ -92,6 +94,7 @@ namespace towerdefense {
     m_gameOver=false;
     m_tMan->clearTowers();
     m_eMan->clearEnemies();
+    m_coins = 100;
   }
 
   int Levels::getCoins(){
@@ -100,5 +103,23 @@ namespace towerdefense {
 
   void Levels::cost(int coins){
     m_coins -= coins;
+  }
+
+  bool Levels::isPaused(){
+    return m_paused;
+  }
+
+  void Levels::pause(){
+    if(m_paused){
+      m_paused = false;
+    } else {
+      m_paused = true;
+    }
+    m_eMan->pause();
+    m_tMan->pause();
+  }
+
+  void Levels::winCoins(int coins){
+    m_coins += coins;
   }
 }

@@ -38,9 +38,9 @@ int main(int argc, char *argv[]) {
   window.setKeyRepeatEnabled(false);
   td::ImageHandler::initialize();
   td::Map mapLevel("res/maps/level1.txt", windowWidth, windowHeight);
-  td::EnemyManager eMan(5, &mapLevel);
+  td::EnemyManager eMan(10, &mapLevel);
   td::TowerManager tMan(&eMan);
-  td::Levels level(5, &tMan, &eMan, &mapLevel);
+  td::Levels level(2, &tMan, &eMan, &mapLevel);
 
   // load resources
   fs::path bindir_path(argv[0]);
@@ -64,34 +64,49 @@ int main(int argc, char *argv[]) {
   sf::Clock clock;
   while (window.isOpen()) {
 
+    if(level.goodEnd() && !level.badEnd()){
+      mapLevel.changeLevel("res/maps/level2.txt");
+      level.changeLevel(1);
+      eMan.nextLevel(10, &mapLevel);
+    }
+
     // input
     sf::Event event;
     while (window.pollEvent(event)) {
       if (event.type == sf::Event::Closed) {
         window.close();
       } else if (event.type == sf::Event::KeyPressed) {
-
-        switch (event.key.code) {
-          case sf::Keyboard::Escape:
+        if(level.badEnd()){
+          if(event.key.code == sf::Keyboard::R){
+            level.pause();
+            mapLevel.changeLevel("res/maps/level1.txt");
+            level.changeLevel(2);
+            eMan.nextLevel(10, &mapLevel);
+          } else if (event.key.code == sf::Keyboard::Escape) {
             window.close();
-            break;
+          }
+        } else {
+          switch (event.key.code) {
+            case sf::Keyboard::Escape:
+              window.close();
+              break;
 
-          case sf::Keyboard::Space:
-            mapLevel.changeLevel("res/maps/level2.txt");
-            level.changeLevel(10);
-            eMan.nextLevel(1, &mapLevel);
-            break;
+            case sf::Keyboard::P:
+              level.pause();
+              break;
 
-          default:
-            break;
+            default:
+              break;
+          }
         }
-      } else if (event.type == sf::Event::MouseButtonPressed){
-// TODO (Erizino#1#): Fix adding tower
+      } else if (event.type == sf::Event::MouseButtonPressed
+                 && !level.isPaused()){
         if(event.mouseButton.button == sf::Mouse::Left
            && level.getCoins() >= 50){
           sf::Vector2i localPosition = sf::Mouse::getPosition(window);
-          tMan.addTower(localPosition.x, localPosition.y,mapLevel.getLevel());
-          level.cost(50);
+          if(tMan.addTower(localPosition.x, localPosition.y,mapLevel.getLevel())){
+            level.cost(50);
+          }
         }
       }
     }

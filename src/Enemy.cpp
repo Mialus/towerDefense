@@ -27,17 +27,15 @@ namespace towerdefense {
   }
 
   void Enemy::loseLife(int life){
-    std::cout << "Avant : " << m_life;
     m_life -= life;
-    std::cout << "  Après : " << m_life << std::endl;
   }
 
   Enemy::Enemy(int speed,int life,int coin, int defense, float posY, float posX)
   {
     m_life = life;
     m_speed = speed;
-    m_posX = posX+0.001;
-    m_posY = posY;
+    m_posX = posX+0.5;
+    m_posY = posY+0.5;
     m_posXb = -5;
     m_posYb = -5;
     m_coin = coin;
@@ -76,7 +74,10 @@ namespace towerdefense {
           }
         }
 
-        if (m_posX >= cp->getX()-0.1 && m_posX <= cp->getX()+0.1 && m_posY >= cp->getY()-0.1 && m_posY <= cp->getY()+0.1){
+        if (m_posX >= cp->getX()-0.1
+            && m_posX <= cp->getX()+0.1
+            && m_posY >= cp->getY()-0.1
+            && m_posY <= cp->getY()+0.1){
           m_crossingPoints.erase(remove(m_crossingPoints.begin(), m_crossingPoints.end(), cp), m_crossingPoints.end());
           m_currentCp++;
         }

@@ -4,6 +4,7 @@ namespace towerdefense{
 
   TowerManager::TowerManager(EnemyManager* em){
     m_emanager = em;
+    m_paused = false;
   }
 
   TowerManager::~TowerManager(){}
@@ -35,7 +36,7 @@ namespace towerdefense{
     return false;
   }
 
-  void TowerManager::addTower(float x, float y, std::vector<std::vector<MapIdentifier>> level){
+  bool TowerManager::addTower(float x, float y, std::vector<std::vector<MapIdentifier>> level){
     std::vector<MapIdentifier> line = level[(int)(y/100)];
     std::vector<MapIdentifier> line_bot = level[(int)((y+ImageHandler::getTexture(SpriteList::TOWER).getSize().y)/100)];
     if(line[(int)(x/50)]==MapIdentifier::FIELD
@@ -44,12 +45,16 @@ namespace towerdefense{
        && line_bot[(int)((x+ImageHandler::getTexture(SpriteList::TOWER).getSize().x)/50)]==MapIdentifier::FIELD
        && !alreadyTower(x,y)){
       allTower.push_back(new Tower(1, 50, x, y, m_emanager));
+      return true;
     }
+    return false;
   }
 
   void TowerManager::update(float dt){
-    for(Tower* t : allTower){
-      t->update(dt);
+    if(!m_paused){
+      for(Tower* t : allTower){
+        t->update(dt);
+      }
     }
   }
 
@@ -63,7 +68,11 @@ namespace towerdefense{
     allTower.clear();
   }
 
-  int TowerManager::nbTowers(){
-    return allTower.size();
+  void TowerManager::pause(){
+    if(m_paused){
+      m_paused = false;
+    } else {
+      m_paused = true;
+    }
   }
 }

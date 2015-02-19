@@ -3736,7 +3736,7 @@
 
 1416754762 e:\dev\github\towerdefense\src\bin\config.h.in
 
-1424348899 source:e:\dev\github\towerdefense\src\bin\main.cpp
+1424362041 source:e:\dev\github\towerdefense\src\bin\main.cpp
 	<boost/filesystem.hpp>
 	<SFML/Graphics.hpp>
 	"../src/bin/config.h.in"
@@ -11502,7 +11502,7 @@
 	<towerdefense/Map.h>
 	<towerdefense/Enemy.h>
 
-1424345974 source:e:\dev\github\towerdefense\src\enemy.cpp
+1424361973 source:e:\dev\github\towerdefense\src\enemy.cpp
 	<towerdefense/Enemy.h>
 
 1421959452 source:e:\dev\github\towerdefense\src\entity.cpp
@@ -11635,10 +11635,10 @@
 1421627820 source:d:\travail\informatique\licence l3\towerdefense\towerdefense\src\tank.cpp
 	<towerdefense/Tank.h>
 
-1424345974 source:e:\dev\github\towerdefense\src\enemymanager.cpp
+1424360704 source:e:\dev\github\towerdefense\src\enemymanager.cpp
 	<towerdefense/EnemyManager.h>
 
-1424345974 e:\dev\github\towerdefense\include\towerdefense\enemymanager.h
+1424359772 e:\dev\github\towerdefense\include\towerdefense\enemymanager.h
 	<iostream>
 	<vector>
 	<SFML/graphics.hpp>
@@ -11648,7 +11648,7 @@
 	<towerdefense/Map.h>
 	<towerdefense/CrossingPoint.h>
 
-1424346067 e:\dev\github\towerdefense\include\towerdefense\tank.h
+1424356711 e:\dev\github\towerdefense\include\towerdefense\tank.h
 	"Enemy.h"
 
 1422450259 source:d:\travail\informatique\licence l3\towerdefense\towerdefense\src\towermanager.cpp
@@ -11849,17 +11849,18 @@
 1424345974 e:\dev\github\towerdefense\include\towerdefense\antichar.h
 	"Tower.h"
 
-1424345974 e:\dev\github\towerdefense\include\towerdefense\towermanager.h
+1424360567 e:\dev\github\towerdefense\include\towerdefense\towermanager.h
 	<iostream>
 	<vector>
 	<towerdefense/Entity.h>
 	<towerdefense/Tower.h>
 	<towerdefense/Map.h>
+	<towerdefense/EnemyManager.h>
 
-1424192919 source:e:\dev\github\towerdefense\src\levels.cpp
+1424361771 source:e:\dev\github\towerdefense\src\levels.cpp
 	<towerdefense/Levels.h>
 
-1424348816 e:\dev\github\towerdefense\include\towerdefense\levels.h
+1424359616 e:\dev\github\towerdefense\include\towerdefense\levels.h
 	<iomanip>
 	<locale>
 	<sstream>
@@ -11872,7 +11873,7 @@
 1422915234 source:e:\dev\github\towerdefense\src\tank.cpp
 	<towerdefense/Tank.h>
 
-1424345974 source:e:\dev\github\towerdefense\src\towermanager.cpp
+1424360594 source:e:\dev\github\towerdefense\src\towermanager.cpp
 	<towerdefense/TowerManager.h>
 
 1424096310 c:\users\erizino\documents\github\towerdefense\include\towerdefense\levels.h

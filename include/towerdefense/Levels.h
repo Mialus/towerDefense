@@ -24,13 +24,19 @@ namespace towerdefense {
           virtual void render(sf::RenderWindow& window);
 
           int getCoins();
+          void winCoins(int coins);
           void cost(int coins);
           void changeLevel(int life);
           bool goodEnd();
           bool badEnd();
+          bool isPaused();
+          void pause();
 
       private:
+          void drawString(sf::RenderWindow& window, const std::string str, int x, int y, int charsize=20);
+
           bool m_gameOver;
+          bool m_paused;
           int m_life;
           int m_coins;
           TowerManager* m_tMan;

@@ -9,14 +9,20 @@ namespace towerdefense {
   }
 
   void EnemyManager::nextLevel(int nombreEnemy, Map* iMap){
-    // Ajout des ennemies
+    m_nbEnemy = nombreEnemy;
+    m_map = iMap;
+    m_dtCumulated = 0;
+    m_paused = false;
+    m_enemiKilled = false;
     for(unsigned int i=0; i<iMap->getLevel().size(); ++i){
       std::vector<MapIdentifier> line = iMap->getLevel()[i];
       for(unsigned int j=0; j<line.size(); ++j){
         if(line[j]==MapIdentifier::START){
-          for(int nb=0; nb < nombreEnemy; nb++){
-            allEnemy.push_back(new Tank(i, j));
-            allEnemy.at(nb)->setCrossingPoints(iMap->getCrossingPoints());
+          m_xStart = i;
+          m_yStart = j;
+          if(nombreEnemy > 0){
+            addEnemy();
+            m_nbEnemy--;
           }
         }
       }
@@ -24,11 +30,21 @@ namespace towerdefense {
   }
 
   void EnemyManager::update(float dt){
-    for(Enemy* enemy : allEnemy){
-      if(enemy->GetLife() > 0){
-        enemy->update(dt);
-      } else {
-        removeEnemy(enemy);
+    if(!m_paused){
+      m_dtCumulated += dt;
+      if(m_nbEnemy > 0 && m_dtCumulated >= 1.5){
+        addEnemy();
+        m_nbEnemy--;
+        m_dtCumulated = 0;
+      }
+
+      for(Enemy* enemy : allEnemy){
+        if(enemy->GetLife() > 0){
+          enemy->update(dt);
+        } else {
+          removeEnemy(enemy);
+          m_enemiKilled = true;
+        }
       }
     }
   }
@@ -49,6 +65,20 @@ namespace towerdefense {
 
   void EnemyManager::removeEnemy(Enemy* e){
     allEnemy.erase(remove(allEnemy.begin(), allEnemy.end(), e), allEnemy.end());
+  }
+
+  void EnemyManager::addEnemy(){
+    Enemy* e = new Tank(m_xStart,m_yStart);
+    e->setCrossingPoints(m_map->getCrossingPoints());
+    allEnemy.push_back(e);
+  }
+
+  void EnemyManager::pause(){
+    if(m_paused){
+      m_paused = false;
+    } else {
+      m_paused = true;
+    }
   }
 
   EnemyManager::~EnemyManager(){}

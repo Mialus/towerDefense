@@ -7,6 +7,7 @@
 #include <towerdefense/Entity.h>
 #include <towerdefense/Tower.h>
 #include <towerdefense/Map.h>
+#include <towerdefense/EnemyManager.h>
 
 namespace towerdefense{
 
@@ -18,14 +19,17 @@ namespace towerdefense{
         void update(float dt);
         void render(sf::RenderWindow& window);
 
-        void addTower(float x, float y, const std::vector<std::vector<MapIdentifier>> level);
+        bool addTower(float x, float y, const std::vector<std::vector<MapIdentifier>> level);
         void clearTowers();
-        int nbTowers();
+
+        void pause();
+
     private:
         bool alreadyTower(float x, float y);
 
         std::vector<Tower*> allTower;
         EnemyManager* m_emanager;
+        bool m_paused;
   };
 }
 #endif // TOWERMANAGER_H

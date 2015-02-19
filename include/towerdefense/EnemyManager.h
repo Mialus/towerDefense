@@ -29,8 +29,19 @@ namespace towerdefense {
     void removeEnemy(Enemy* e);
     void nextLevel(int nombreEnemy, Map* iMap);
 
+    void pause();
+    bool m_enemiKilled;
+
   private :
+    void addEnemy();
+
     std::vector<Enemy*> allEnemy;
+    Map* m_map;
+    int m_nbEnemy;
+    int m_xStart;
+    int m_yStart;
+    float m_dtCumulated;
+    bool m_paused;
   };
 }
 #endif

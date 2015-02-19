@@ -1,3 +1,1 @@
-- Gérer tire
-- Finir level class
-- Résoudre affichage des cases
+- Résoudre problèmes d'affichage
