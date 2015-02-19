@@ -86,9 +86,12 @@ int main(int argc, char *argv[]) {
             break;
         }
       } else if (event.type == sf::Event::MouseButtonPressed){
-        if(event.mouseButton.button == sf::Mouse::Left){
+// TODO (Erizino#1#): Fix adding tower
+        if(event.mouseButton.button == sf::Mouse::Left
+           && level.getCoins() >= 50){
           sf::Vector2i localPosition = sf::Mouse::getPosition(window);
           tMan.addTower(localPosition.x, localPosition.y,mapLevel.getLevel());
+          level.cost(50);
         }
       }
     }
