@@ -15,22 +15,22 @@ namespace towerdefense{
     float x_bot = x+width_tower;
     float y_bot = y+height_tower;
     for(Tower* t : allTower){
-      if(  (x > t->getPosX()
-         && x < t->getPosX()+width_tower
-         && y > t->getPosY()
-         && y < t->getPosY()+height_tower)
-         ||(x > t->getPosX()
-         && x < t->getPosX()+width_tower
-         && y_bot > t->getPosY()
-         && y_bot < t->getPosY()+height_tower)
-         ||(x_bot > t->getPosX()
-         && x_bot < t->getPosX()+width_tower
-         && y > t->getPosY()
-         && y < t->getPosY()+height_tower)
-         ||(x_bot > t->getPosX()
-         && x_bot < t->getPosX()+width_tower
-         && y_bot > t->getPosY()
-         && y_bot < t->getPosY()+height_tower))
+      if(  (x >= t->getPosX()
+         && x <= t->getPosX()+width_tower
+         && y >= t->getPosY()
+         && y <= t->getPosY()+height_tower)
+         ||(x >= t->getPosX()
+         && x <= t->getPosX()+width_tower
+         && y_bot >= t->getPosY()
+         && y_bot <= t->getPosY()+height_tower)
+         ||(x_bot >= t->getPosX()
+         && x_bot <= t->getPosX()+width_tower
+         && y >= t->getPosY()
+         && y <= t->getPosY()+height_tower)
+         ||(x_bot >= t->getPosX()
+         && x_bot <= t->getPosX()+width_tower
+         && y_bot >= t->getPosY()
+         && y_bot <= t->getPosY()+height_tower))
           return true;
     }
     return false;
