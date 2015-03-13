@@ -69,10 +69,6 @@ namespace towerdefense{
   }
 
   void TowerManager::pause(){
-    if(m_paused){
-      m_paused = false;
-    } else {
-      m_paused = true;
-    }
+    m_paused = !m_paused;
   }
 }

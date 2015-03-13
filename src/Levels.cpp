@@ -110,11 +110,7 @@ namespace towerdefense {
   }
 
   void Levels::pause(){
-    if(m_paused){
-      m_paused = false;
-    } else {
-      m_paused = true;
-    }
+    m_paused = !m_paused;
     m_eMan->pause();
     m_tMan->pause();
   }
